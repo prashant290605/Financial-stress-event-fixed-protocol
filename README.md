@@ -6,6 +6,10 @@ This repository accompanies the research paper:
 
 It provides the code, configuration files, event definitions, reproduction scripts, result tables, and publication figures required to regenerate the main analyses in the paper.
 
+## Repository Purpose
+
+This repository accompanies the research paper and provides the code, configuration, event definitions, figures, tables, and scripts necessary to reproduce the published analyses. It is intended as a public reproducibility package for inspection, reuse, and citation.
+
 ## Abstract
 
 Financial stress detection is important for risk monitoring, market surveillance, and decision support, but consistent evaluation is difficult because stress events are rare, event boundaries are ambiguous, and detector outputs are often compared under incompatible labeling rules. The paper presents a reproducible event-fixed evaluation protocol for daily financial stress detectors. The protocol fixes documented stress events before detector inspection, applies deterministic preprocessing, assigns rule-based drawdown severity categories, and reports pointwise, event-level, delay, uncertainty, multi-asset, and cost-sensitive metrics. As an illustrative use case, the paper compares a volatility percentile trigger with a hybrid retrospective confirmation rule that requires local instability evidence. The results show that event-fixed evaluation changes detector interpretation: the same confirmation rule can appear attractive under false-alarm-sensitive metrics while remaining weaker for recall, event coverage, and timeliness.
@@ -16,14 +20,12 @@ Financial stress detection is important for risk monitoring, market surveillance
 config/                 Experiment configuration
 data/                   Event files, processed data, and raw market-data location
 docs/                   Data, figure, table, and protocol documentation
-external/NAB/           NAB auxiliary-validation files
 figures/final/          Publication figures used by the manuscript
 paper/                  Manuscript source and Springer template files
 results/                Reproducible result tables and generated outputs
 scripts/                Reproduction, data-preparation, and figure-generation scripts
 src/                    Core paper implementation
 tests/                  Reproducibility and consistency tests
-archive/                Legacy material not required for the paper workflow
 ```
 
 ## Installation
@@ -55,21 +57,9 @@ See [docs/DATA.md](docs/DATA.md) for data-source and format details.
 
 ## NAB Setup
 
-NAB is used only for auxiliary qualitative validation. If `external/NAB/` is not already present, obtain it with:
+NAB is optional and can be obtained separately using [docs/NAB_SETUP.md](docs/NAB_SETUP.md). It is used only for auxiliary qualitative validation and is not included as a repository directory.
 
-```bash
-mkdir -p external
-git clone https://github.com/numenta/NAB.git external/NAB
-```
-
-Windows PowerShell:
-
-```powershell
-New-Item -ItemType Directory -Force external
-git clone https://github.com/numenta/NAB.git external/NAB
-```
-
-See [docs/NAB_SETUP.md](docs/NAB_SETUP.md) for details.
+Follow the setup guide before running the full workflow if you want to regenerate the NAB auxiliary outputs.
 
 ## Reproduction Workflow
 
@@ -112,10 +102,11 @@ The tests check required reproducibility artifacts, key metric values, generated
 
 ## Manuscript
 
-The manuscript files are in `paper/`. The Springer/JDSA manuscript source is:
+The manuscript files are in `paper/`. The current manuscript source and compiled PDF are:
 
 ```text
-paper/JDSA_Paper.tex
+paper/manuscript.tex
+paper/manuscript.pdf
 ```
 
 The manuscript references the final figure files under `figures/final/`.
@@ -125,7 +116,7 @@ The manuscript references the final figure files under `figures/final/`.
 Citation information will be added after publication. Until then, cite the repository as:
 
 ```text
-Singh, P., and Singh, P. Financial-stress-event-fixed-protocol reproducibility repository.
+Singh, P., and Singh, P. A Reproducible Event-Fixed Protocol for Evaluating Financial Stress Detectors: reproducibility repository.
 GitHub: https://github.com/prashant290605/Financial-stress-event-fixed-protocol
 ```
 

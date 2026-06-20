@@ -8,6 +8,7 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{microtype}
 \usepackage{array}
+\usepackage{url}
 \setlength{\emergencystretch}{3em}
 \raggedbottom
 
@@ -506,7 +507,7 @@ The default hybrid rule uses a symmetric $\pm W$ confirmation window and therefo
 \section{Reproducibility and Code Availability}
 The study is accompanied by a reproducibility package intended to support independent inspection and regeneration of the reported analyses. The package includes the fixed event panel, the per-asset mapped event table, full event-source strings, detector settings, preprocessing windows, bootstrap settings, and the random seed. The reported experiments use seed 42 and calibrate thresholds on the first 70\% of each processed asset series.
 
-The reproducibility package is prepared for archival release; the persistent repository identifier and version tag will be added before journal submission. The archived package will include package requirements, data-download instructions, expected runtimes, generated-output locations, and known reproduction limitations.
+The reproducibility package is publicly available at \url{https://github.com/prashant290605/Financial-stress-event-fixed-protocol}. The repository includes package requirements, data-download instructions, expected runtimes, generated-output locations, and known reproduction limitations.
 
 \section{Conclusion}
 This paper presents a reproducible event-fixed evaluation protocol for financial stress detectors. By fixing the stress-event panel before detector inspection, mapping events to trading calendars, assigning descriptive severity categories, and reporting pointwise, event-level, delay, alignment, exploratory bootstrap, and cost-sensitive metrics, the protocol makes detector comparisons less dependent on a single aggregate score.
@@ -529,7 +530,7 @@ The authors received no specific funding for this work.
 The financial market series used in this study are publicly available adjusted-close series for SPY, QQQ, IWM, HYG, and TLT. The financial-stress event records are documented by the sources summarized in Table~\ref{tab:events} and retained with the event panel in the reproducibility materials. The analysis can be reproduced using the accompanying code, event definitions, and data-download instructions.
 
 \bmhead{Code availability}
-Code and reproducibility materials will be made publicly available through a version-controlled repository prior to publication. The repository link will be added upon archival.
+Code and reproducibility materials are publicly available at \url{https://github.com/prashant290605/Financial-stress-event-fixed-protocol}.
 
 \bmhead{Competing interests}
 The authors declare no competing interests.
