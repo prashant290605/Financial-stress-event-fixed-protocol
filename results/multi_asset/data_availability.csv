@@ -1,0 +1,6 @@
+ticker,asset_name,start_date,end_date,number_of_trading_days,number_of_events_mapped,notes
+SPY,SPDR S&P 500 ETF Trust,2000-03-15,2023-12-29,5987,13,loaded local CSV C:/Users/prash/Downloads/BTP Project/data/raw_market/SPY.csv
+QQQ,Invesco QQQ Trust,2000-03-15,2023-12-29,5987,13,loaded local CSV C:/Users/prash/Downloads/BTP Project/data/raw_market/QQQ.csv
+IWM,iShares Russell 2000 ETF,2000-08-08,2023-12-29,5886,13,"loaded local CSV C:/Users/prash/Downloads/BTP Project/data/raw_market/IWM.csv; available processed period starts after SPY, events before asset inception are mapped to the nearest available asset trading date"
+HYG,iShares iBoxx $ High Yield Corporate Bond ETF,2007-06-21,2023-12-29,4161,13,"loaded local CSV C:/Users/prash/Downloads/BTP Project/data/raw_market/HYG.csv; available processed period starts after SPY, events before asset inception are mapped to the nearest available asset trading date"
+TLT,iShares 20+ Year Treasury Bond ETF,2002-10-09,2023-12-29,5343,13,"loaded local CSV C:/Users/prash/Downloads/BTP Project/data/raw_market/TLT.csv; available processed period starts after SPY, events before asset inception are mapped to the nearest available asset trading date"

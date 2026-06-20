@@ -1,0 +1,13 @@
+ticker,ratio_fp_to_fn,method,fp,fn,cost,preferred_method_at_ratio
+SPY,1,Volatility percentile,195,1189,1384.0,Hybrid volatility + instability confirmation
+SPY,2,Volatility percentile,195,1189,1579.0,Hybrid volatility + instability confirmation
+SPY,5,Volatility percentile,195,1189,2164.0,Hybrid volatility + instability confirmation
+SPY,10,Volatility percentile,195,1189,3139.0,Hybrid volatility + instability confirmation
+SPY,20,Volatility percentile,195,1189,5089.0,Hybrid volatility + instability confirmation
+SPY,50,Volatility percentile,195,1189,10939.0,Hybrid volatility + instability confirmation
+SPY,1,Hybrid volatility + instability confirmation,24,1348,1372.0,Hybrid volatility + instability confirmation
+SPY,2,Hybrid volatility + instability confirmation,24,1348,1396.0,Hybrid volatility + instability confirmation
+SPY,5,Hybrid volatility + instability confirmation,24,1348,1468.0,Hybrid volatility + instability confirmation
+SPY,10,Hybrid volatility + instability confirmation,24,1348,1588.0,Hybrid volatility + instability confirmation
+SPY,20,Hybrid volatility + instability confirmation,24,1348,1828.0,Hybrid volatility + instability confirmation
+SPY,50,Hybrid volatility + instability confirmation,24,1348,2548.0,Hybrid volatility + instability confirmation

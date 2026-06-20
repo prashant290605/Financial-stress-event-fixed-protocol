@@ -1,0 +1,14 @@
+event_name,severity_label,volatility_detected,hybrid_detected,volatility_first_delay,hybrid_first_delay,volatility_coverage,hybrid_coverage
+Dot-com selloff,high,True,True,4.0,4.0,0.24096385542168675,0.0963855421686747
+September 11 reopening,critical,True,True,6.0,6.0,0.1322314049586777,0.12396694214876033
+WorldCom selloff,critical,True,True,-8.0,-4.0,0.4462809917355372,0.30578512396694213
+Quant crisis,medium,False,False,,,0.0,0.0
+Lehman crisis,critical,True,True,-7.0,33.0,0.5619834710743802,0.23140495867768596
+Flash crash,high,True,True,11.0,11.0,0.17355371900826447,0.17355371900826447
+U.S. downgrade selloff,critical,True,False,2.0,,0.4049586776859504,0.0
+China devaluation selloff,medium,True,True,8.0,8.0,0.11570247933884298,0.11570247933884298
+Volmageddon,medium,False,False,,,0.0,0.0
+Q4 2018 selloff,high,True,True,4.0,4.0,0.12396694214876033,0.12396694214876033
+COVID crash,critical,True,True,-8.0,-8.0,0.4049586776859504,0.4049586776859504
+Inflation selloff,high,True,False,-24.0,,0.3305785123966942,0.0
+Bank stress,medium,False,False,,,0.0,0.0

@@ -1,0 +1,13 @@
+ticker,ratio_false_alarm_to_missed_event,delay_cost,method,false_alarm_days,missed_events,total_positive_delay,cost,preferred_method_at_ratio
+SPY,0.01,0.05,Volatility percentile,195,3,35.0,6.7,Volatility percentile
+SPY,0.05,0.05,Volatility percentile,195,3,35.0,14.5,Hybrid volatility + instability confirmation
+SPY,0.1,0.05,Volatility percentile,195,3,35.0,24.25,Hybrid volatility + instability confirmation
+SPY,0.25,0.05,Volatility percentile,195,3,35.0,53.5,Hybrid volatility + instability confirmation
+SPY,0.5,0.05,Volatility percentile,195,3,35.0,102.25,Hybrid volatility + instability confirmation
+SPY,1.0,0.05,Volatility percentile,195,3,35.0,199.75,Hybrid volatility + instability confirmation
+SPY,0.01,0.05,Hybrid volatility + instability confirmation,24,5,66.0,8.540000000000001,Volatility percentile
+SPY,0.05,0.05,Hybrid volatility + instability confirmation,24,5,66.0,9.5,Hybrid volatility + instability confirmation
+SPY,0.1,0.05,Hybrid volatility + instability confirmation,24,5,66.0,10.700000000000001,Hybrid volatility + instability confirmation
+SPY,0.25,0.05,Hybrid volatility + instability confirmation,24,5,66.0,14.3,Hybrid volatility + instability confirmation
+SPY,0.5,0.05,Hybrid volatility + instability confirmation,24,5,66.0,20.3,Hybrid volatility + instability confirmation
+SPY,1.0,0.05,Hybrid volatility + instability confirmation,24,5,66.0,32.3,Hybrid volatility + instability confirmation

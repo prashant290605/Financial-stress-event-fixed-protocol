@@ -1,0 +1,54 @@
+{
+  "seed": 42,
+  "spy": {
+    "source": "Yahoo Finance export stored locally at data/raw_market/spy.csv",
+    "price_column": "Adj Close",
+    "processed_output": "data/processed/spy_processed.csv",
+    "rolling_vol_window": 20,
+    "zscore_window": 50,
+    "signal_weights": {
+      "log_return": 0.5,
+      "rolling_volatility": 0.3,
+      "return_zscore": 0.2
+    }
+  },
+  "events": {
+    "input": "data/events_spy_seed.csv",
+    "output": "data/events_spy.csv",
+    "half_window": 60,
+    "severity_half_window": 20,
+    "severity_rule": "severity_score=max_drawdown_abs within mapped_trading_date +/- 20 trading days; critical=top tercile, high=middle tercile, medium=bottom tercile"
+  },
+  "features": {
+    "ar_window": 36,
+    "mmd_window": 30,
+    "smooth_window": 5,
+    "cis_window": 10
+  },
+  "detectors": {
+    "calibration_fraction": 0.7,
+    "score_threshold_quantile": 0.9,
+    "volatility_threshold_quantile": 0.9,
+    "cusum_threshold_quantile": 0.9,
+    "hybrid_windows": [0, 5, 10, 20, 30, 45, 60],
+    "default_hybrid_window": 10
+  },
+  "bootstrap": {
+    "n_resamples": 2000,
+    "block_length": 20
+  },
+  "synthetic": {
+    "n_series": 30,
+    "length": 800,
+    "student_t_df_range": [3.0, 8.0],
+    "laplace_scale_range": [0.01, 0.05],
+    "calm_vol_range": [0.005, 0.02],
+    "stress_vol_multiplier_range": [1.5, 4.0],
+    "drift_magnitude_range": [-0.08, -0.02],
+    "nonlinear_beta_range": [0.01, 0.08]
+  },
+  "nab": {
+    "root": "external/NAB",
+    "windows_file": "labels/combined_windows.json"
+  }
+}

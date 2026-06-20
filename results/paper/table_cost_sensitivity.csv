@@ -1,0 +1,7 @@
+fp_to_fn_cost_ratio,volatility_cost,hybrid_cost,preferred_method
+1,1384.0,1372.0,hybrid
+2,1579.0,1396.0,hybrid
+5,2164.0,1468.0,hybrid
+10,3139.0,1588.0,hybrid
+20,5089.0,1828.0,hybrid
+50,10939.0,2548.0,hybrid

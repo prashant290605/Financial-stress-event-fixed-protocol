@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# LaTeX build products
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# Local data caches
+data/raw_market/*.csv
+data/raw_market/.yfinance_cache/
+
+# Large or legacy generated artifacts
+archive/
+
+# Third-party benchmark; fetch with docs/NAB_SETUP.md
+external/NAB/
+
+# Node/dashboard artifacts from archived legacy app
+node_modules/
+.next/

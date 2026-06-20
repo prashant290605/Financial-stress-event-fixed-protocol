@@ -1,0 +1,9 @@
+parameter,value
+n_series,30
+length,800
+student_t_df_range,"[3.0, 8.0]"
+laplace_scale_range,"[0.01, 0.05]"
+calm_vol_range,"[0.005, 0.02]"
+stress_vol_multiplier_range,"[1.5, 4.0]"
+drift_magnitude_range,"[-0.08, -0.02]"
+nonlinear_beta_range,"[0.01, 0.08]"

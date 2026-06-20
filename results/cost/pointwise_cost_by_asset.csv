@@ -1,0 +1,61 @@
+ticker,ratio_fp_to_fn,method,fp,fn,cost,preferred_method_at_ratio
+SPY,1,Volatility percentile,195,1189,1384.0,Hybrid volatility + instability confirmation
+SPY,2,Volatility percentile,195,1189,1579.0,Hybrid volatility + instability confirmation
+SPY,5,Volatility percentile,195,1189,2164.0,Hybrid volatility + instability confirmation
+SPY,10,Volatility percentile,195,1189,3139.0,Hybrid volatility + instability confirmation
+SPY,20,Volatility percentile,195,1189,5089.0,Hybrid volatility + instability confirmation
+SPY,50,Volatility percentile,195,1189,10939.0,Hybrid volatility + instability confirmation
+SPY,1,Hybrid volatility + instability confirmation,24,1348,1372.0,Hybrid volatility + instability confirmation
+SPY,2,Hybrid volatility + instability confirmation,24,1348,1396.0,Hybrid volatility + instability confirmation
+SPY,5,Hybrid volatility + instability confirmation,24,1348,1468.0,Hybrid volatility + instability confirmation
+SPY,10,Hybrid volatility + instability confirmation,24,1348,1588.0,Hybrid volatility + instability confirmation
+SPY,20,Hybrid volatility + instability confirmation,24,1348,1828.0,Hybrid volatility + instability confirmation
+SPY,50,Hybrid volatility + instability confirmation,24,1348,2548.0,Hybrid volatility + instability confirmation
+QQQ,1,Volatility percentile,173,1257,1430.0,Volatility percentile
+QQQ,2,Volatility percentile,173,1257,1603.0,Hybrid volatility + instability confirmation
+QQQ,5,Volatility percentile,173,1257,2122.0,Hybrid volatility + instability confirmation
+QQQ,10,Volatility percentile,173,1257,2987.0,Hybrid volatility + instability confirmation
+QQQ,20,Volatility percentile,173,1257,4717.0,Hybrid volatility + instability confirmation
+QQQ,50,Volatility percentile,173,1257,9907.0,Hybrid volatility + instability confirmation
+QQQ,1,Hybrid volatility + instability confirmation,27,1418,1445.0,Volatility percentile
+QQQ,2,Hybrid volatility + instability confirmation,27,1418,1472.0,Hybrid volatility + instability confirmation
+QQQ,5,Hybrid volatility + instability confirmation,27,1418,1553.0,Hybrid volatility + instability confirmation
+QQQ,10,Hybrid volatility + instability confirmation,27,1418,1688.0,Hybrid volatility + instability confirmation
+QQQ,20,Hybrid volatility + instability confirmation,27,1418,1958.0,Hybrid volatility + instability confirmation
+QQQ,50,Hybrid volatility + instability confirmation,27,1418,2768.0,Hybrid volatility + instability confirmation
+IWM,1,Volatility percentile,247,1236,1483.0,Volatility percentile
+IWM,2,Volatility percentile,247,1236,1730.0,Hybrid volatility + instability confirmation
+IWM,5,Volatility percentile,247,1236,2471.0,Hybrid volatility + instability confirmation
+IWM,10,Volatility percentile,247,1236,3706.0,Hybrid volatility + instability confirmation
+IWM,20,Volatility percentile,247,1236,6176.0,Hybrid volatility + instability confirmation
+IWM,50,Volatility percentile,247,1236,13586.0,Hybrid volatility + instability confirmation
+IWM,1,Hybrid volatility + instability confirmation,122,1372,1494.0,Volatility percentile
+IWM,2,Hybrid volatility + instability confirmation,122,1372,1616.0,Hybrid volatility + instability confirmation
+IWM,5,Hybrid volatility + instability confirmation,122,1372,1982.0,Hybrid volatility + instability confirmation
+IWM,10,Hybrid volatility + instability confirmation,122,1372,2592.0,Hybrid volatility + instability confirmation
+IWM,20,Hybrid volatility + instability confirmation,122,1372,3812.0,Hybrid volatility + instability confirmation
+IWM,50,Hybrid volatility + instability confirmation,122,1372,7472.0,Hybrid volatility + instability confirmation
+HYG,1,Volatility percentile,192,991,1183.0,Hybrid volatility + instability confirmation
+HYG,2,Volatility percentile,192,991,1375.0,Hybrid volatility + instability confirmation
+HYG,5,Volatility percentile,192,991,1951.0,Hybrid volatility + instability confirmation
+HYG,10,Volatility percentile,192,991,2911.0,Hybrid volatility + instability confirmation
+HYG,20,Volatility percentile,192,991,4831.0,Hybrid volatility + instability confirmation
+HYG,50,Volatility percentile,192,991,10591.0,Hybrid volatility + instability confirmation
+HYG,1,Hybrid volatility + instability confirmation,70,1054,1124.0,Hybrid volatility + instability confirmation
+HYG,2,Hybrid volatility + instability confirmation,70,1054,1194.0,Hybrid volatility + instability confirmation
+HYG,5,Hybrid volatility + instability confirmation,70,1054,1404.0,Hybrid volatility + instability confirmation
+HYG,10,Hybrid volatility + instability confirmation,70,1054,1754.0,Hybrid volatility + instability confirmation
+HYG,20,Hybrid volatility + instability confirmation,70,1054,2454.0,Hybrid volatility + instability confirmation
+HYG,50,Hybrid volatility + instability confirmation,70,1054,4554.0,Hybrid volatility + instability confirmation
+TLT,1,Volatility percentile,347,914,1261.0,Volatility percentile
+TLT,2,Volatility percentile,347,914,1608.0,Hybrid volatility + instability confirmation
+TLT,5,Volatility percentile,347,914,2649.0,Hybrid volatility + instability confirmation
+TLT,10,Volatility percentile,347,914,4384.0,Hybrid volatility + instability confirmation
+TLT,20,Volatility percentile,347,914,7854.0,Hybrid volatility + instability confirmation
+TLT,50,Volatility percentile,347,914,18264.0,Hybrid volatility + instability confirmation
+TLT,1,Hybrid volatility + instability confirmation,207,1151,1358.0,Volatility percentile
+TLT,2,Hybrid volatility + instability confirmation,207,1151,1565.0,Hybrid volatility + instability confirmation
+TLT,5,Hybrid volatility + instability confirmation,207,1151,2186.0,Hybrid volatility + instability confirmation
+TLT,10,Hybrid volatility + instability confirmation,207,1151,3221.0,Hybrid volatility + instability confirmation
+TLT,20,Hybrid volatility + instability confirmation,207,1151,5291.0,Hybrid volatility + instability confirmation
+TLT,50,Hybrid volatility + instability confirmation,207,1151,11501.0,Hybrid volatility + instability confirmation

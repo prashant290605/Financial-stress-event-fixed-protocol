@@ -1,0 +1,7 @@
+severity_label,method,event_detection_rate,median_first_delay,mean_event_coverage
+high,Volatility percentile,0.55,-8.9,0.17522154734641043
+high,Hybrid volatility + instability confirmation,0.3,-1.25,0.065881708652793
+critical,Volatility percentile,0.8400000000000001,-2.6,0.3166942148760331
+critical,Hybrid volatility + instability confirmation,0.68,2.0,0.17553719008264462
+medium,Volatility percentile,0.15,-26.0,0.046280991735537194
+medium,Hybrid volatility + instability confirmation,0.1,-26.0,0.01115702479338843

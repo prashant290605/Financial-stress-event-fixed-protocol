@@ -1,0 +1,91 @@
+ticker,severity_label,method,event_detection_rate,median_first_detection_delay,mean_event_coverage
+SPY,high,Volatility percentile,1.0,4.0,0.21726575724385144
+SPY,high,CUSUM,0.5,-60.0,0.5
+SPY,high,Instability score,1.0,-36.0,0.2037488798167878
+SPY,high,MMD-only confirmation,1.0,-6.0,0.20496863487005873
+SPY,high,Kappa-only confirmation,0.75,-22.0,0.09578811112217464
+SPY,high,Hybrid volatility + instability confirmation,0.75,4.0,0.09847655083142487
+SPY,critical,Volatility percentile,1.0,-7.0,0.3900826446280992
+SPY,critical,CUSUM,0.2,-60.0,0.2
+SPY,critical,Instability score,1.0,-35.0,0.1553719008264463
+SPY,critical,MMD-only confirmation,0.8,-12.5,0.14545454545454545
+SPY,critical,Kappa-only confirmation,1.0,-51.0,0.12892561983471076
+SPY,critical,Hybrid volatility + instability confirmation,0.8,1.0,0.21322314049586777
+SPY,medium,Volatility percentile,0.25,8.0,0.028925619834710745
+SPY,medium,CUSUM,0.75,-60.0,0.6611570247933884
+SPY,medium,Instability score,0.75,-60.0,0.15495867768595042
+SPY,medium,MMD-only confirmation,0.75,-58.0,0.14049586776859505
+SPY,medium,Kappa-only confirmation,0.5,-25.0,0.11776859504132231
+SPY,medium,Hybrid volatility + instability confirmation,0.25,8.0,0.028925619834710745
+QQQ,high,Volatility percentile,0.25,-21.0,0.22289156626506024
+QQQ,high,CUSUM,0.5,-60.0,0.5
+QQQ,high,Instability score,0.75,-22.0,0.14487702877626207
+QQQ,high,MMD-only confirmation,0.75,-54.0,0.18353579607686948
+QQQ,high,Kappa-only confirmation,0.75,-22.0,0.08383949019217365
+QQQ,high,Hybrid volatility + instability confirmation,0.25,-21.0,0.12349397590361445
+QQQ,critical,Volatility percentile,1.0,-2.0,0.3371900826446281
+QQQ,critical,CUSUM,0.4,-30.5,0.2892561983471075
+QQQ,critical,Instability score,0.8,-14.5,0.16363636363636364
+QQQ,critical,MMD-only confirmation,1.0,-17.0,0.13553719008264462
+QQQ,critical,Kappa-only confirmation,0.8,-40.0,0.1322314049586777
+QQQ,critical,Hybrid volatility + instability confirmation,0.8,7.5,0.1256198347107438
+QQQ,medium,Volatility percentile,0.0,,0.0
+QQQ,medium,CUSUM,0.75,-60.0,0.6880165289256198
+QQQ,medium,Instability score,0.75,17.0,0.13016528925619836
+QQQ,medium,MMD-only confirmation,0.75,15.0,0.07851239669421488
+QQQ,medium,Kappa-only confirmation,0.25,-22.0,0.1322314049586777
+QQQ,medium,Hybrid volatility + instability confirmation,0.0,,0.0
+IWM,high,Volatility percentile,0.5,-7.0,0.11983471074380164
+IWM,high,CUSUM,0.5,-60.0,0.31611570247933884
+IWM,high,Instability score,1.0,-12.0,0.2720159869936323
+IWM,high,MMD-only confirmation,1.0,-20.5,0.26595312288307815
+IWM,high,Kappa-only confirmation,0.75,-58.0,0.08240753285462674
+IWM,high,Hybrid volatility + instability confirmation,0.25,5.0,0.06198347107438017
+IWM,critical,Volatility percentile,1.0,1.0,0.3619834710743802
+IWM,critical,CUSUM,0.2,-60.0,0.07933884297520662
+IWM,critical,Instability score,1.0,-60.0,0.20661157024793386
+IWM,critical,MMD-only confirmation,0.8,-30.5,0.2132231404958677
+IWM,critical,Kappa-only confirmation,1.0,-60.0,0.143801652892562
+IWM,critical,Hybrid volatility + instability confirmation,0.8,7.5,0.18347107438016527
+IWM,medium,Volatility percentile,0.0,,0.0
+IWM,medium,CUSUM,0.75,-60.0,0.390495867768595
+IWM,medium,Instability score,0.75,4.0,0.024793388429752067
+IWM,medium,MMD-only confirmation,0.5,-7.5,0.0371900826446281
+IWM,medium,Kappa-only confirmation,0.25,1.0,0.03925619834710744
+IWM,medium,Hybrid volatility + instability confirmation,0.0,,0.0
+HYG,high,Volatility percentile,0.5,4.5,0.08677685950413223
+HYG,high,CUSUM,0.0,,0.0
+HYG,high,Instability score,0.75,0.0,0.16921826310797994
+HYG,high,MMD-only confirmation,0.75,2.0,0.16312152824820486
+HYG,high,Kappa-only confirmation,0.75,-51.0,0.061644763582170435
+HYG,high,Hybrid volatility + instability confirmation,0.25,7.0,0.045454545454545456
+HYG,critical,Volatility percentile,0.6,-3.0,0.24958677685950414
+HYG,critical,CUSUM,0.0,,0.0
+HYG,critical,Instability score,1.0,-14.0,0.17157566725375967
+HYG,critical,MMD-only confirmation,0.8,17.5,0.11719279230456578
+HYG,critical,Kappa-only confirmation,1.0,-11.0,0.18127624983064622
+HYG,critical,Hybrid volatility + instability confirmation,0.4,-5.0,0.17851239669421487
+HYG,medium,Volatility percentile,0.0,,0.0
+HYG,medium,CUSUM,0.0,,0.0
+HYG,medium,Instability score,0.5,-27.0,0.08869073510221837
+HYG,medium,MMD-only confirmation,0.5,-13.0,0.10258808177468465
+HYG,medium,Kappa-only confirmation,0.75,-55.0,0.08623314484558504
+HYG,medium,Hybrid volatility + instability confirmation,0.0,,0.0
+TLT,high,Volatility percentile,0.5,-25.0,0.22933884297520662
+TLT,high,CUSUM,0.75,-60.0,0.6239669421487604
+TLT,high,Instability score,0.5,-24.0,0.18107302533532044
+TLT,high,MMD-only confirmation,0.75,6.0,0.15661834439777808
+TLT,high,Kappa-only confirmation,1.0,-3.5,0.11739601679989162
+TLT,high,Hybrid volatility + instability confirmation,0.0,,0.0
+TLT,critical,Volatility percentile,0.6,-2.0,0.24462809917355371
+TLT,critical,CUSUM,0.6,-5.0,0.12231404958677686
+TLT,critical,Instability score,1.0,0.0,0.34095650995800025
+TLT,critical,MMD-only confirmation,1.0,6.0,0.23571331797859368
+TLT,critical,Kappa-only confirmation,1.0,-10.0,0.1696518086980084
+TLT,critical,Hybrid volatility + instability confirmation,0.6,-1.0,0.1768595041322314
+TLT,medium,Volatility percentile,0.5,-60.0,0.20247933884297523
+TLT,medium,CUSUM,0.5,-27.5,0.3140495867768595
+TLT,medium,Instability score,0.75,-38.0,0.04132231404958678
+TLT,medium,MMD-only confirmation,0.75,-28.0,0.07644628099173553
+TLT,medium,Kappa-only confirmation,0.75,-59.0,0.11570247933884298
+TLT,medium,Hybrid volatility + instability confirmation,0.25,-60.0,0.026859504132231406

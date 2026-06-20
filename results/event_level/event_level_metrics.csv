@@ -1,0 +1,391 @@
+ticker,event_id,event_name,severity_label,method,detected_event,first_detection_delay,closest_detection_delay,event_coverage,pre_event_detection,post_event_detection,n_alarm_days_in_window
+SPY,E01,Dot-com selloff,high,Volatility percentile,True,4.0,4.0,0.24096385542168675,False,True,20
+SPY,E01,Dot-com selloff,high,CUSUM,False,,,0.0,False,False,0
+SPY,E01,Dot-com selloff,high,Instability score,True,-22.0,0.0,0.25301204819277107,True,True,21
+SPY,E01,Dot-com selloff,high,MMD-only confirmation,True,-15.0,-9.0,0.08433734939759036,True,False,7
+SPY,E01,Dot-com selloff,high,Kappa-only confirmation,True,-22.0,0.0,0.3253012048192771,True,True,27
+SPY,E01,Dot-com selloff,high,Hybrid volatility + instability confirmation,True,4.0,4.0,0.0963855421686747,False,True,8
+SPY,E02,September 11 reopening,critical,Volatility percentile,True,6.0,6.0,0.1322314049586777,False,True,16
+SPY,E02,September 11 reopening,critical,CUSUM,False,,,0.0,False,False,0
+SPY,E02,September 11 reopening,critical,Instability score,True,-58.0,8.0,0.1652892561983471,True,True,20
+SPY,E02,September 11 reopening,critical,MMD-only confirmation,True,-48.0,8.0,0.06611570247933884,True,True,8
+SPY,E02,September 11 reopening,critical,Kappa-only confirmation,True,-51.0,-25.0,0.2396694214876033,True,True,29
+SPY,E02,September 11 reopening,critical,Hybrid volatility + instability confirmation,True,6.0,6.0,0.12396694214876033,False,True,15
+SPY,E03,WorldCom selloff,critical,Volatility percentile,True,-8.0,0.0,0.4462809917355372,True,True,54
+SPY,E03,WorldCom selloff,critical,CUSUM,False,,,0.0,False,False,0
+SPY,E03,WorldCom selloff,critical,Instability score,True,6.0,6.0,0.14049586776859505,False,True,17
+SPY,E03,WorldCom selloff,critical,MMD-only confirmation,True,8.0,8.0,0.10743801652892562,False,True,13
+SPY,E03,WorldCom selloff,critical,Kappa-only confirmation,True,-60.0,-58.0,0.024793388429752067,True,False,3
+SPY,E03,WorldCom selloff,critical,Hybrid volatility + instability confirmation,True,-4.0,0.0,0.30578512396694213,True,True,37
+SPY,E04,Quant crisis,medium,Volatility percentile,False,,,0.0,False,False,0
+SPY,E04,Quant crisis,medium,CUSUM,False,,,0.0,False,False,0
+SPY,E04,Quant crisis,medium,Instability score,True,-60.0,17.0,0.19834710743801653,True,True,24
+SPY,E04,Quant crisis,medium,MMD-only confirmation,True,-60.0,16.0,0.2809917355371901,True,True,34
+SPY,E04,Quant crisis,medium,Kappa-only confirmation,False,,,0.0,False,False,0
+SPY,E04,Quant crisis,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+SPY,E05,Lehman crisis,critical,Volatility percentile,True,-7.0,0.0,0.5619834710743802,True,True,68
+SPY,E05,Lehman crisis,critical,CUSUM,False,,,0.0,False,False,0
+SPY,E05,Lehman crisis,critical,Instability score,True,43.0,43.0,0.08264462809917356,False,True,10
+SPY,E05,Lehman crisis,critical,MMD-only confirmation,True,24.0,24.0,0.19008264462809918,False,True,23
+SPY,E05,Lehman crisis,critical,Kappa-only confirmation,True,-52.0,2.0,0.0743801652892562,True,True,9
+SPY,E05,Lehman crisis,critical,Hybrid volatility + instability confirmation,True,33.0,33.0,0.23140495867768596,False,True,28
+SPY,E06,Flash crash,high,Volatility percentile,True,11.0,11.0,0.17355371900826447,False,True,21
+SPY,E06,Flash crash,high,CUSUM,False,,,0.0,False,False,0
+SPY,E06,Flash crash,high,Instability score,True,-56.0,-1.0,0.4049586776859504,True,True,49
+SPY,E06,Flash crash,high,MMD-only confirmation,True,-58.0,-1.0,0.45454545454545453,True,True,55
+SPY,E06,Flash crash,high,Kappa-only confirmation,False,,,0.0,False,False,0
+SPY,E06,Flash crash,high,Hybrid volatility + instability confirmation,True,11.0,11.0,0.17355371900826447,False,True,21
+SPY,E07,U.S. downgrade selloff,critical,Volatility percentile,True,2.0,2.0,0.4049586776859504,False,True,49
+SPY,E07,U.S. downgrade selloff,critical,CUSUM,False,,,0.0,False,False,0
+SPY,E07,U.S. downgrade selloff,critical,Instability score,True,-60.0,-60.0,0.008264462809917356,True,False,1
+SPY,E07,U.S. downgrade selloff,critical,MMD-only confirmation,False,,,0.0,False,False,0
+SPY,E07,U.S. downgrade selloff,critical,Kappa-only confirmation,True,11.0,11.0,0.15702479338842976,False,True,19
+SPY,E07,U.S. downgrade selloff,critical,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+SPY,E08,China devaluation selloff,medium,Volatility percentile,True,8.0,8.0,0.11570247933884298,False,True,14
+SPY,E08,China devaluation selloff,medium,CUSUM,True,-60.0,-1.0,0.6446280991735537,True,True,78
+SPY,E08,China devaluation selloff,medium,Instability score,True,2.0,2.0,0.36363636363636365,False,True,44
+SPY,E08,China devaluation selloff,medium,MMD-only confirmation,True,13.0,13.0,0.24793388429752067,False,True,30
+SPY,E08,China devaluation selloff,medium,Kappa-only confirmation,True,0.0,0.0,0.3305785123966942,False,True,40
+SPY,E08,China devaluation selloff,medium,Hybrid volatility + instability confirmation,True,8.0,8.0,0.11570247933884298,False,True,14
+SPY,E09,Volmageddon,medium,Volatility percentile,False,,,0.0,False,False,0
+SPY,E09,Volmageddon,medium,CUSUM,True,-60.0,0.0,1.0,True,True,121
+SPY,E09,Volmageddon,medium,Instability score,True,-60.0,-54.0,0.05785123966942149,True,False,7
+SPY,E09,Volmageddon,medium,MMD-only confirmation,True,-58.0,-55.0,0.03305785123966942,True,False,4
+SPY,E09,Volmageddon,medium,Kappa-only confirmation,True,-50.0,33.0,0.14049586776859505,True,True,17
+SPY,E09,Volmageddon,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+SPY,E10,Q4 2018 selloff,high,Volatility percentile,True,4.0,4.0,0.12396694214876033,False,True,15
+SPY,E10,Q4 2018 selloff,high,CUSUM,True,-60.0,0.0,1.0,True,True,121
+SPY,E10,Q4 2018 selloff,high,Instability score,True,-50.0,3.0,0.14049586776859505,True,True,17
+SPY,E10,Q4 2018 selloff,high,MMD-only confirmation,True,3.0,3.0,0.23140495867768596,False,True,28
+SPY,E10,Q4 2018 selloff,high,Kappa-only confirmation,True,-50.0,-45.0,0.049586776859504134,True,False,6
+SPY,E10,Q4 2018 selloff,high,Hybrid volatility + instability confirmation,True,4.0,4.0,0.12396694214876033,False,True,15
+SPY,E11,COVID crash,critical,Volatility percentile,True,-8.0,0.0,0.4049586776859504,True,True,49
+SPY,E11,COVID crash,critical,CUSUM,True,-60.0,0.0,1.0,True,True,121
+SPY,E11,COVID crash,critical,Instability score,True,-35.0,2.0,0.38016528925619836,True,True,46
+SPY,E11,COVID crash,critical,MMD-only confirmation,True,-33.0,2.0,0.36363636363636365,True,True,44
+SPY,E11,COVID crash,critical,Kappa-only confirmation,True,-11.0,-8.0,0.1487603305785124,True,True,18
+SPY,E11,COVID crash,critical,Hybrid volatility + instability confirmation,True,-8.0,0.0,0.4049586776859504,True,True,49
+SPY,E12,Inflation selloff,high,Volatility percentile,True,-24.0,1.0,0.3305785123966942,True,True,40
+SPY,E12,Inflation selloff,high,CUSUM,True,-60.0,0.0,1.0,True,True,121
+SPY,E12,Inflation selloff,high,Instability score,True,48.0,48.0,0.01652892561983471,False,True,2
+SPY,E12,Inflation selloff,high,MMD-only confirmation,True,46.0,46.0,0.049586776859504134,False,True,6
+SPY,E12,Inflation selloff,high,Kappa-only confirmation,True,23.0,23.0,0.008264462809917356,False,True,1
+SPY,E12,Inflation selloff,high,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+SPY,E13,Bank stress,medium,Volatility percentile,False,,,0.0,False,False,0
+SPY,E13,Bank stress,medium,CUSUM,True,-60.0,0.0,1.0,True,True,121
+SPY,E13,Bank stress,medium,Instability score,False,,,0.0,False,False,0
+SPY,E13,Bank stress,medium,MMD-only confirmation,False,,,0.0,False,False,0
+SPY,E13,Bank stress,medium,Kappa-only confirmation,False,,,0.0,False,False,0
+SPY,E13,Bank stress,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+QQQ,E01,Dot-com selloff,high,Volatility percentile,True,-21.0,0.0,0.891566265060241,True,True,74
+QQQ,E01,Dot-com selloff,high,CUSUM,False,,,0.0,False,False,0
+QQQ,E01,Dot-com selloff,high,Instability score,True,-22.0,-11.0,0.10843373493975904,True,True,9
+QQQ,E01,Dot-com selloff,high,MMD-only confirmation,True,36.0,36.0,0.04819277108433735,False,True,4
+QQQ,E01,Dot-com selloff,high,Kappa-only confirmation,True,-22.0,-13.0,0.12048192771084337,True,False,10
+QQQ,E01,Dot-com selloff,high,Hybrid volatility + instability confirmation,True,-21.0,-1.0,0.4939759036144578,True,True,41
+QQQ,E02,September 11 reopening,critical,Volatility percentile,True,-60.0,2.0,0.38016528925619836,True,True,46
+QQQ,E02,September 11 reopening,critical,CUSUM,False,,,0.0,False,False,0
+QQQ,E02,September 11 reopening,critical,Instability score,True,6.0,6.0,0.1322314049586777,False,True,16
+QQQ,E02,September 11 reopening,critical,MMD-only confirmation,True,7.0,7.0,0.08264462809917356,False,True,10
+QQQ,E02,September 11 reopening,critical,Kappa-only confirmation,True,-3.0,-3.0,0.03305785123966942,True,True,4
+QQQ,E02,September 11 reopening,critical,Hybrid volatility + instability confirmation,True,2.0,2.0,0.2892561983471074,False,True,35
+QQQ,E03,WorldCom selloff,critical,Volatility percentile,True,-50.0,0.0,0.5041322314049587,True,True,61
+QQQ,E03,WorldCom selloff,critical,CUSUM,True,-1.0,0.0,0.4462809917355372,True,True,54
+QQQ,E03,WorldCom selloff,critical,Instability score,True,54.0,54.0,0.049586776859504134,False,True,6
+QQQ,E03,WorldCom selloff,critical,MMD-only confirmation,True,54.0,54.0,0.05785123966942149,False,True,7
+QQQ,E03,WorldCom selloff,critical,Kappa-only confirmation,False,,,0.0,False,False,0
+QQQ,E03,WorldCom selloff,critical,Hybrid volatility + instability confirmation,True,60.0,60.0,0.008264462809917356,False,True,1
+QQQ,E04,Quant crisis,medium,Volatility percentile,False,,,0.0,False,False,0
+QQQ,E04,Quant crisis,medium,CUSUM,False,,,0.0,False,False,0
+QQQ,E04,Quant crisis,medium,Instability score,True,17.0,17.0,0.11570247933884298,False,True,14
+QQQ,E04,Quant crisis,medium,MMD-only confirmation,True,-60.0,16.0,0.17355371900826447,True,True,21
+QQQ,E04,Quant crisis,medium,Kappa-only confirmation,False,,,0.0,False,False,0
+QQQ,E04,Quant crisis,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+QQQ,E05,Lehman crisis,critical,Volatility percentile,True,4.0,4.0,0.47107438016528924,False,True,57
+QQQ,E05,Lehman crisis,critical,CUSUM,False,,,0.0,False,False,0
+QQQ,E05,Lehman crisis,critical,Instability score,False,,,0.0,False,False,0
+QQQ,E05,Lehman crisis,critical,MMD-only confirmation,True,-17.0,-12.0,0.049586776859504134,True,False,6
+QQQ,E05,Lehman crisis,critical,Kappa-only confirmation,True,-42.0,-29.0,0.11570247933884298,True,False,14
+QQQ,E05,Lehman crisis,critical,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+QQQ,E06,Flash crash,high,Volatility percentile,False,,,0.0,False,False,0
+QQQ,E06,Flash crash,high,CUSUM,False,,,0.0,False,False,0
+QQQ,E06,Flash crash,high,Instability score,True,-58.0,0.0,0.4380165289256198,True,True,53
+QQQ,E06,Flash crash,high,MMD-only confirmation,True,-60.0,0.0,0.5206611570247934,True,True,63
+QQQ,E06,Flash crash,high,Kappa-only confirmation,True,-6.0,-5.0,0.01652892561983471,True,False,2
+QQQ,E06,Flash crash,high,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+QQQ,E07,U.S. downgrade selloff,critical,Volatility percentile,True,13.0,13.0,0.06611570247933884,False,True,8
+QQQ,E07,U.S. downgrade selloff,critical,CUSUM,False,,,0.0,False,False,0
+QQQ,E07,U.S. downgrade selloff,critical,Instability score,True,-60.0,17.0,0.1322314049586777,True,True,16
+QQQ,E07,U.S. downgrade selloff,critical,MMD-only confirmation,True,-60.0,-54.0,0.05785123966942149,True,False,7
+QQQ,E07,U.S. downgrade selloff,critical,Kappa-only confirmation,True,-60.0,5.0,0.3305785123966942,True,True,40
+QQQ,E07,U.S. downgrade selloff,critical,Hybrid volatility + instability confirmation,True,13.0,13.0,0.06611570247933884,False,True,8
+QQQ,E08,China devaluation selloff,medium,Volatility percentile,False,,,0.0,False,False,0
+QQQ,E08,China devaluation selloff,medium,CUSUM,True,-60.0,-1.0,0.7520661157024794,True,True,91
+QQQ,E08,China devaluation selloff,medium,Instability score,True,3.0,3.0,0.35537190082644626,False,True,43
+QQQ,E08,China devaluation selloff,medium,MMD-only confirmation,True,15.0,15.0,0.09090909090909091,False,True,11
+QQQ,E08,China devaluation selloff,medium,Kappa-only confirmation,True,-22.0,0.0,0.5289256198347108,True,True,64
+QQQ,E08,China devaluation selloff,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+QQQ,E09,Volmageddon,medium,Volatility percentile,False,,,0.0,False,False,0
+QQQ,E09,Volmageddon,medium,CUSUM,True,-60.0,0.0,1.0,True,True,121
+QQQ,E09,Volmageddon,medium,Instability score,True,55.0,55.0,0.049586776859504134,False,True,6
+QQQ,E09,Volmageddon,medium,MMD-only confirmation,True,55.0,55.0,0.049586776859504134,False,True,6
+QQQ,E09,Volmageddon,medium,Kappa-only confirmation,False,,,0.0,False,False,0
+QQQ,E09,Volmageddon,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+QQQ,E10,Q4 2018 selloff,high,Volatility percentile,False,,,0.0,False,False,0
+QQQ,E10,Q4 2018 selloff,high,CUSUM,True,-60.0,0.0,1.0,True,True,121
+QQQ,E10,Q4 2018 selloff,high,Instability score,True,19.0,19.0,0.03305785123966942,False,True,4
+QQQ,E10,Q4 2018 selloff,high,MMD-only confirmation,True,-54.0,11.0,0.1652892561983471,True,True,20
+QQQ,E10,Q4 2018 selloff,high,Kappa-only confirmation,False,,,0.0,False,False,0
+QQQ,E10,Q4 2018 selloff,high,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+QQQ,E11,COVID crash,critical,Volatility percentile,True,-2.0,0.0,0.2644628099173554,True,True,32
+QQQ,E11,COVID crash,critical,CUSUM,True,-60.0,0.0,1.0,True,True,121
+QQQ,E11,COVID crash,critical,Instability score,True,-35.0,2.0,0.5041322314049587,True,True,61
+QQQ,E11,COVID crash,critical,MMD-only confirmation,True,-34.0,2.0,0.4297520661157025,True,True,52
+QQQ,E11,COVID crash,critical,Kappa-only confirmation,True,-38.0,20.0,0.18181818181818182,True,True,22
+QQQ,E11,COVID crash,critical,Hybrid volatility + instability confirmation,True,-2.0,0.0,0.2644628099173554,True,True,32
+QQQ,E12,Inflation selloff,high,Volatility percentile,False,,,0.0,False,False,0
+QQQ,E12,Inflation selloff,high,CUSUM,True,-60.0,0.0,1.0,True,True,121
+QQQ,E12,Inflation selloff,high,Instability score,False,,,0.0,False,False,0
+QQQ,E12,Inflation selloff,high,MMD-only confirmation,False,,,0.0,False,False,0
+QQQ,E12,Inflation selloff,high,Kappa-only confirmation,True,-22.0,0.0,0.19834710743801653,True,True,24
+QQQ,E12,Inflation selloff,high,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+QQQ,E13,Bank stress,medium,Volatility percentile,False,,,0.0,False,False,0
+QQQ,E13,Bank stress,medium,CUSUM,True,-60.0,0.0,1.0,True,True,121
+QQQ,E13,Bank stress,medium,Instability score,False,,,0.0,False,False,0
+QQQ,E13,Bank stress,medium,MMD-only confirmation,False,,,0.0,False,False,0
+QQQ,E13,Bank stress,medium,Kappa-only confirmation,False,,,0.0,False,False,0
+QQQ,E13,Bank stress,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+IWM,E01,Dot-com selloff,high,Volatility percentile,False,,,0.0,False,False,0
+IWM,E01,Dot-com selloff,high,CUSUM,False,,,0.0,False,False,0
+IWM,E01,Dot-com selloff,high,Instability score,True,0.0,0.0,0.3442622950819672,False,True,21
+IWM,E01,Dot-com selloff,high,MMD-only confirmation,True,17.0,17.0,0.2786885245901639,False,True,17
+IWM,E01,Dot-com selloff,high,Kappa-only confirmation,True,0.0,0.0,0.11475409836065574,False,True,7
+IWM,E01,Dot-com selloff,high,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+IWM,E02,September 11 reopening,critical,Volatility percentile,True,19.0,19.0,0.008264462809917356,False,True,1
+IWM,E02,September 11 reopening,critical,CUSUM,False,,,0.0,False,False,0
+IWM,E02,September 11 reopening,critical,Instability score,True,-60.0,-3.0,0.256198347107438,True,True,31
+IWM,E02,September 11 reopening,critical,MMD-only confirmation,True,-60.0,6.0,0.18181818181818182,True,True,22
+IWM,E02,September 11 reopening,critical,Kappa-only confirmation,True,-60.0,0.0,0.3305785123966942,True,True,40
+IWM,E02,September 11 reopening,critical,Hybrid volatility + instability confirmation,True,19.0,19.0,0.008264462809917356,False,True,1
+IWM,E03,WorldCom selloff,critical,Volatility percentile,True,2.0,2.0,0.21487603305785125,False,True,26
+IWM,E03,WorldCom selloff,critical,CUSUM,False,,,0.0,False,False,0
+IWM,E03,WorldCom selloff,critical,Instability score,True,-60.0,57.0,0.03305785123966942,True,True,4
+IWM,E03,WorldCom selloff,critical,MMD-only confirmation,True,11.0,11.0,0.03305785123966942,False,True,4
+IWM,E03,WorldCom selloff,critical,Kappa-only confirmation,True,-60.0,-49.0,0.09917355371900827,True,False,12
+IWM,E03,WorldCom selloff,critical,Hybrid volatility + instability confirmation,True,57.0,57.0,0.03305785123966942,False,True,4
+IWM,E04,Quant crisis,medium,Volatility percentile,False,,,0.0,False,False,0
+IWM,E04,Quant crisis,medium,CUSUM,False,,,0.0,False,False,0
+IWM,E04,Quant crisis,medium,Instability score,True,-60.0,-59.0,0.01652892561983471,True,False,2
+IWM,E04,Quant crisis,medium,MMD-only confirmation,True,-60.0,18.0,0.06611570247933884,True,True,8
+IWM,E04,Quant crisis,medium,Kappa-only confirmation,False,,,0.0,False,False,0
+IWM,E04,Quant crisis,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+IWM,E05,Lehman crisis,critical,Volatility percentile,True,-6.0,0.0,0.5537190082644629,True,True,67
+IWM,E05,Lehman crisis,critical,CUSUM,False,,,0.0,False,False,0
+IWM,E05,Lehman crisis,critical,Instability score,True,-16.0,-3.0,0.18181818181818182,True,True,22
+IWM,E05,Lehman crisis,critical,MMD-only confirmation,True,-18.0,-5.0,0.33884297520661155,True,True,41
+IWM,E05,Lehman crisis,critical,Kappa-only confirmation,True,-7.0,0.0,0.12396694214876033,True,True,15
+IWM,E05,Lehman crisis,critical,Hybrid volatility + instability confirmation,True,-6.0,0.0,0.47107438016528924,True,True,57
+IWM,E06,Flash crash,high,Volatility percentile,True,5.0,5.0,0.2727272727272727,False,True,33
+IWM,E06,Flash crash,high,CUSUM,False,,,0.0,False,False,0
+IWM,E06,Flash crash,high,Instability score,True,-24.0,-2.0,0.24793388429752067,True,True,30
+IWM,E06,Flash crash,high,MMD-only confirmation,True,-58.0,-2.0,0.3140495867768595,True,True,38
+IWM,E06,Flash crash,high,Kappa-only confirmation,False,,,0.0,False,False,0
+IWM,E06,Flash crash,high,Hybrid volatility + instability confirmation,True,5.0,5.0,0.24793388429752067,False,True,30
+IWM,E07,U.S. downgrade selloff,critical,Volatility percentile,True,1.0,1.0,0.49586776859504134,False,True,60
+IWM,E07,U.S. downgrade selloff,critical,CUSUM,False,,,0.0,False,False,0
+IWM,E07,U.S. downgrade selloff,critical,Instability score,True,-60.0,-60.0,0.008264462809917356,True,False,1
+IWM,E07,U.S. downgrade selloff,critical,MMD-only confirmation,False,,,0.0,False,False,0
+IWM,E07,U.S. downgrade selloff,critical,Kappa-only confirmation,True,-60.0,-48.0,0.03305785123966942,True,False,4
+IWM,E07,U.S. downgrade selloff,critical,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+IWM,E08,China devaluation selloff,medium,Volatility percentile,False,,,0.0,False,False,0
+IWM,E08,China devaluation selloff,medium,CUSUM,True,-60.0,-9.0,0.4297520661157025,True,False,52
+IWM,E08,China devaluation selloff,medium,Instability score,True,4.0,4.0,0.04132231404958678,False,True,5
+IWM,E08,China devaluation selloff,medium,MMD-only confirmation,False,,,0.0,False,False,0
+IWM,E08,China devaluation selloff,medium,Kappa-only confirmation,True,1.0,1.0,0.15702479338842976,False,True,19
+IWM,E08,China devaluation selloff,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+IWM,E09,Volmageddon,medium,Volatility percentile,False,,,0.0,False,False,0
+IWM,E09,Volmageddon,medium,CUSUM,True,-60.0,0.0,1.0,True,True,121
+IWM,E09,Volmageddon,medium,Instability score,True,47.0,47.0,0.04132231404958678,False,True,5
+IWM,E09,Volmageddon,medium,MMD-only confirmation,True,45.0,45.0,0.08264462809917356,False,True,10
+IWM,E09,Volmageddon,medium,Kappa-only confirmation,False,,,0.0,False,False,0
+IWM,E09,Volmageddon,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+IWM,E10,Q4 2018 selloff,high,Volatility percentile,False,,,0.0,False,False,0
+IWM,E10,Q4 2018 selloff,high,CUSUM,True,-60.0,-11.0,0.6942148760330579,True,True,84
+IWM,E10,Q4 2018 selloff,high,Instability score,True,-60.0,2.0,0.371900826446281,True,True,45
+IWM,E10,Q4 2018 selloff,high,MMD-only confirmation,True,-60.0,2.0,0.33884297520661155,True,True,41
+IWM,E10,Q4 2018 selloff,high,Kappa-only confirmation,True,-60.0,40.0,0.19008264462809918,True,True,23
+IWM,E10,Q4 2018 selloff,high,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+IWM,E11,COVID crash,critical,Volatility percentile,True,-4.0,0.0,0.5371900826446281,True,True,65
+IWM,E11,COVID crash,critical,CUSUM,True,-60.0,-13.0,0.39669421487603307,True,False,48
+IWM,E11,COVID crash,critical,Instability score,True,-41.0,2.0,0.5537190082644629,True,True,67
+IWM,E11,COVID crash,critical,MMD-only confirmation,True,-43.0,1.0,0.512396694214876,True,True,62
+IWM,E11,COVID crash,critical,Kappa-only confirmation,True,-13.0,-5.0,0.1322314049586777,True,True,16
+IWM,E11,COVID crash,critical,Hybrid volatility + instability confirmation,True,-4.0,0.0,0.4049586776859504,True,True,49
+IWM,E12,Inflation selloff,high,Volatility percentile,True,-19.0,-4.0,0.2066115702479339,True,True,25
+IWM,E12,Inflation selloff,high,CUSUM,True,-60.0,-1.0,0.5702479338842975,True,True,69
+IWM,E12,Inflation selloff,high,Instability score,True,42.0,42.0,0.12396694214876033,False,True,15
+IWM,E12,Inflation selloff,high,MMD-only confirmation,True,42.0,42.0,0.1322314049586777,False,True,16
+IWM,E12,Inflation selloff,high,Kappa-only confirmation,True,-58.0,-56.0,0.024793388429752067,True,False,3
+IWM,E12,Inflation selloff,high,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+IWM,E13,Bank stress,medium,Volatility percentile,False,,,0.0,False,False,0
+IWM,E13,Bank stress,medium,CUSUM,True,-27.0,-12.0,0.1322314049586777,True,False,16
+IWM,E13,Bank stress,medium,Instability score,False,,,0.0,False,False,0
+IWM,E13,Bank stress,medium,MMD-only confirmation,False,,,0.0,False,False,0
+IWM,E13,Bank stress,medium,Kappa-only confirmation,False,,,0.0,False,False,0
+IWM,E13,Bank stress,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+HYG,E01,Dot-com selloff,high,Volatility percentile,False,,,0.0,False,False,0
+HYG,E01,Dot-com selloff,high,CUSUM,False,,,0.0,False,False,0
+HYG,E01,Dot-com selloff,high,Instability score,True,0.0,0.0,0.09836065573770492,False,True,6
+HYG,E01,Dot-com selloff,high,MMD-only confirmation,True,29.0,29.0,0.04918032786885246,False,True,3
+HYG,E01,Dot-com selloff,high,Kappa-only confirmation,True,0.0,0.0,0.16393442622950818,False,True,10
+HYG,E01,Dot-com selloff,high,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+HYG,E02,September 11 reopening,critical,Volatility percentile,False,,,0.0,False,False,0
+HYG,E02,September 11 reopening,critical,CUSUM,False,,,0.0,False,False,0
+HYG,E02,September 11 reopening,critical,Instability score,True,0.0,0.0,0.09836065573770492,False,True,6
+HYG,E02,September 11 reopening,critical,MMD-only confirmation,True,29.0,29.0,0.04918032786885246,False,True,3
+HYG,E02,September 11 reopening,critical,Kappa-only confirmation,True,0.0,0.0,0.16393442622950818,False,True,10
+HYG,E02,September 11 reopening,critical,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+HYG,E03,WorldCom selloff,critical,Volatility percentile,False,,,0.0,False,False,0
+HYG,E03,WorldCom selloff,critical,CUSUM,False,,,0.0,False,False,0
+HYG,E03,WorldCom selloff,critical,Instability score,True,0.0,0.0,0.09836065573770492,False,True,6
+HYG,E03,WorldCom selloff,critical,MMD-only confirmation,True,29.0,29.0,0.04918032786885246,False,True,3
+HYG,E03,WorldCom selloff,critical,Kappa-only confirmation,True,0.0,0.0,0.16393442622950818,False,True,10
+HYG,E03,WorldCom selloff,critical,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+HYG,E04,Quant crisis,medium,Volatility percentile,False,,,0.0,False,False,0
+HYG,E04,Quant crisis,medium,CUSUM,False,,,0.0,False,False,0
+HYG,E04,Quant crisis,medium,Instability score,True,-34.0,-29.0,0.18947368421052632,True,True,18
+HYG,E04,Quant crisis,medium,MMD-only confirmation,True,-5.0,-3.0,0.17894736842105263,True,True,17
+HYG,E04,Quant crisis,medium,Kappa-only confirmation,True,-34.0,-23.0,0.10526315789473684,True,False,10
+HYG,E04,Quant crisis,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+HYG,E05,Lehman crisis,critical,Volatility percentile,True,-7.0,0.0,0.5619834710743802,True,True,68
+HYG,E05,Lehman crisis,critical,CUSUM,False,,,0.0,False,False,0
+HYG,E05,Lehman crisis,critical,Instability score,True,-14.0,-6.0,0.24793388429752067,True,True,30
+HYG,E05,Lehman crisis,critical,MMD-only confirmation,True,-15.0,-7.0,0.2231404958677686,True,True,27
+HYG,E05,Lehman crisis,critical,Kappa-only confirmation,True,-11.0,-7.0,0.1322314049586777,True,True,16
+HYG,E05,Lehman crisis,critical,Hybrid volatility + instability confirmation,True,-7.0,0.0,0.5206611570247934,True,True,63
+HYG,E06,Flash crash,high,Volatility percentile,True,7.0,7.0,0.18181818181818182,False,True,22
+HYG,E06,Flash crash,high,CUSUM,False,,,0.0,False,False,0
+HYG,E06,Flash crash,high,Instability score,True,-53.0,-7.0,0.35537190082644626,True,True,43
+HYG,E06,Flash crash,high,MMD-only confirmation,True,-50.0,-7.0,0.34710743801652894,True,True,42
+HYG,E06,Flash crash,high,Kappa-only confirmation,True,-60.0,3.0,0.04132231404958678,True,True,5
+HYG,E06,Flash crash,high,Hybrid volatility + instability confirmation,True,7.0,7.0,0.18181818181818182,False,True,22
+HYG,E07,U.S. downgrade selloff,critical,Volatility percentile,True,2.0,2.0,0.3140495867768595,False,True,38
+HYG,E07,U.S. downgrade selloff,critical,CUSUM,False,,,0.0,False,False,0
+HYG,E07,U.S. downgrade selloff,critical,Instability score,True,-60.0,-45.0,0.1322314049586777,True,False,16
+HYG,E07,U.S. downgrade selloff,critical,MMD-only confirmation,False,,,0.0,False,False,0
+HYG,E07,U.S. downgrade selloff,critical,Kappa-only confirmation,True,-60.0,9.0,0.33884297520661155,True,True,41
+HYG,E07,U.S. downgrade selloff,critical,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+HYG,E08,China devaluation selloff,medium,Volatility percentile,False,,,0.0,False,False,0
+HYG,E08,China devaluation selloff,medium,CUSUM,False,,,0.0,False,False,0
+HYG,E08,China devaluation selloff,medium,Instability score,False,,,0.0,False,False,0
+HYG,E08,China devaluation selloff,medium,MMD-only confirmation,False,,,0.0,False,False,0
+HYG,E08,China devaluation selloff,medium,Kappa-only confirmation,True,-59.0,6.0,0.2231404958677686,True,True,27
+HYG,E08,China devaluation selloff,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+HYG,E09,Volmageddon,medium,Volatility percentile,False,,,0.0,False,False,0
+HYG,E09,Volmageddon,medium,CUSUM,False,,,0.0,False,False,0
+HYG,E09,Volmageddon,medium,Instability score,True,-20.0,-3.0,0.1652892561983471,True,True,20
+HYG,E09,Volmageddon,medium,MMD-only confirmation,True,-21.0,-2.0,0.23140495867768596,True,True,28
+HYG,E09,Volmageddon,medium,Kappa-only confirmation,True,-55.0,-54.0,0.01652892561983471,True,False,2
+HYG,E09,Volmageddon,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+HYG,E10,Q4 2018 selloff,high,Volatility percentile,False,,,0.0,False,False,0
+HYG,E10,Q4 2018 selloff,high,CUSUM,False,,,0.0,False,False,0
+HYG,E10,Q4 2018 selloff,high,Instability score,True,3.0,3.0,0.2231404958677686,False,True,27
+HYG,E10,Q4 2018 selloff,high,MMD-only confirmation,True,2.0,2.0,0.256198347107438,False,True,31
+HYG,E10,Q4 2018 selloff,high,Kappa-only confirmation,True,-51.0,40.0,0.04132231404958678,True,True,5
+HYG,E10,Q4 2018 selloff,high,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+HYG,E11,COVID crash,critical,Volatility percentile,True,-3.0,0.0,0.371900826446281,True,True,45
+HYG,E11,COVID crash,critical,CUSUM,False,,,0.0,False,False,0
+HYG,E11,COVID crash,critical,Instability score,True,-34.0,6.0,0.2809917355371901,True,True,34
+HYG,E11,COVID crash,critical,MMD-only confirmation,True,6.0,6.0,0.2644628099173554,False,True,32
+HYG,E11,COVID crash,critical,Kappa-only confirmation,True,-54.0,-41.0,0.10743801652892562,True,False,13
+HYG,E11,COVID crash,critical,Hybrid volatility + instability confirmation,True,-3.0,0.0,0.371900826446281,True,True,45
+HYG,E12,Inflation selloff,high,Volatility percentile,True,2.0,2.0,0.1652892561983471,False,True,20
+HYG,E12,Inflation selloff,high,CUSUM,False,,,0.0,False,False,0
+HYG,E12,Inflation selloff,high,Instability score,False,,,0.0,False,False,0
+HYG,E12,Inflation selloff,high,MMD-only confirmation,False,,,0.0,False,False,0
+HYG,E12,Inflation selloff,high,Kappa-only confirmation,False,,,0.0,False,False,0
+HYG,E12,Inflation selloff,high,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+HYG,E13,Bank stress,medium,Volatility percentile,False,,,0.0,False,False,0
+HYG,E13,Bank stress,medium,CUSUM,False,,,0.0,False,False,0
+HYG,E13,Bank stress,medium,Instability score,False,,,0.0,False,False,0
+HYG,E13,Bank stress,medium,MMD-only confirmation,False,,,0.0,False,False,0
+HYG,E13,Bank stress,medium,Kappa-only confirmation,False,,,0.0,False,False,0
+HYG,E13,Bank stress,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+TLT,E01,Dot-com selloff,high,Volatility percentile,False,,,0.0,False,False,0
+TLT,E01,Dot-com selloff,high,CUSUM,False,,,0.0,False,False,0
+TLT,E01,Dot-com selloff,high,Instability score,True,0.0,0.0,0.36065573770491804,False,True,22
+TLT,E01,Dot-com selloff,high,MMD-only confirmation,True,6.0,6.0,0.19672131147540983,False,True,12
+TLT,E01,Dot-com selloff,high,Kappa-only confirmation,True,0.0,0.0,0.18032786885245902,False,True,11
+TLT,E01,Dot-com selloff,high,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+TLT,E02,September 11 reopening,critical,Volatility percentile,False,,,0.0,False,False,0
+TLT,E02,September 11 reopening,critical,CUSUM,False,,,0.0,False,False,0
+TLT,E02,September 11 reopening,critical,Instability score,True,0.0,0.0,0.36065573770491804,False,True,22
+TLT,E02,September 11 reopening,critical,MMD-only confirmation,True,6.0,6.0,0.19672131147540983,False,True,12
+TLT,E02,September 11 reopening,critical,Kappa-only confirmation,True,0.0,0.0,0.18032786885245902,False,True,11
+TLT,E02,September 11 reopening,critical,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+TLT,E03,WorldCom selloff,critical,Volatility percentile,False,,,0.0,False,False,0
+TLT,E03,WorldCom selloff,critical,CUSUM,False,,,0.0,False,False,0
+TLT,E03,WorldCom selloff,critical,Instability score,True,0.0,0.0,0.36065573770491804,False,True,22
+TLT,E03,WorldCom selloff,critical,MMD-only confirmation,True,6.0,6.0,0.19672131147540983,False,True,12
+TLT,E03,WorldCom selloff,critical,Kappa-only confirmation,True,0.0,0.0,0.18032786885245902,False,True,11
+TLT,E03,WorldCom selloff,critical,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+TLT,E04,Quant crisis,medium,Volatility percentile,False,,,0.0,False,False,0
+TLT,E04,Quant crisis,medium,CUSUM,False,,,0.0,False,False,0
+TLT,E04,Quant crisis,medium,Instability score,True,-38.0,-11.0,0.1322314049586777,True,False,16
+TLT,E04,Quant crisis,medium,MMD-only confirmation,True,-45.0,-8.0,0.2231404958677686,True,False,27
+TLT,E04,Quant crisis,medium,Kappa-only confirmation,False,,,0.0,False,False,0
+TLT,E04,Quant crisis,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+TLT,E05,Lehman crisis,critical,Volatility percentile,True,-2.0,0.0,0.4049586776859504,True,True,49
+TLT,E05,Lehman crisis,critical,CUSUM,True,56.0,56.0,0.04132231404958678,False,True,5
+TLT,E05,Lehman crisis,critical,Instability score,True,56.0,56.0,0.04132231404958678,False,True,5
+TLT,E05,Lehman crisis,critical,MMD-only confirmation,True,56.0,56.0,0.04132231404958678,False,True,5
+TLT,E05,Lehman crisis,critical,Kappa-only confirmation,True,-10.0,-9.0,0.04132231404958678,True,True,5
+TLT,E05,Lehman crisis,critical,Hybrid volatility + instability confirmation,True,46.0,46.0,0.12396694214876033,False,True,15
+TLT,E06,Flash crash,high,Volatility percentile,True,10.0,10.0,0.1652892561983471,False,True,20
+TLT,E06,Flash crash,high,CUSUM,True,-60.0,-1.0,0.49586776859504134,True,False,60
+TLT,E06,Flash crash,high,Instability score,False,,,0.0,False,False,0
+TLT,E06,Flash crash,high,MMD-only confirmation,True,24.0,24.0,0.04132231404958678,False,True,5
+TLT,E06,Flash crash,high,Kappa-only confirmation,True,-55.0,-47.0,0.0743801652892562,True,False,9
+TLT,E06,Flash crash,high,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+TLT,E07,U.S. downgrade selloff,critical,Volatility percentile,True,-1.0,0.0,0.512396694214876,True,True,62
+TLT,E07,U.S. downgrade selloff,critical,CUSUM,True,-60.0,-8.0,0.11570247933884298,True,True,14
+TLT,E07,U.S. downgrade selloff,critical,Instability score,True,-42.0,-4.0,0.3884297520661157,True,True,47
+TLT,E07,U.S. downgrade selloff,critical,MMD-only confirmation,True,-21.0,-3.0,0.2231404958677686,True,True,27
+TLT,E07,U.S. downgrade selloff,critical,Kappa-only confirmation,True,-44.0,10.0,0.2892561983471074,True,True,35
+TLT,E07,U.S. downgrade selloff,critical,Hybrid volatility + instability confirmation,True,-1.0,0.0,0.47107438016528924,True,True,57
+TLT,E08,China devaluation selloff,medium,Volatility percentile,True,-60.0,-22.0,0.19008264462809918,True,False,23
+TLT,E08,China devaluation selloff,medium,CUSUM,False,,,0.0,False,False,0
+TLT,E08,China devaluation selloff,medium,Instability score,True,41.0,41.0,0.008264462809917356,False,True,1
+TLT,E08,China devaluation selloff,medium,MMD-only confirmation,True,-28.0,-26.0,0.024793388429752067,True,False,3
+TLT,E08,China devaluation selloff,medium,Kappa-only confirmation,True,39.0,39.0,0.1487603305785124,False,True,18
+TLT,E08,China devaluation selloff,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+TLT,E09,Volmageddon,medium,Volatility percentile,False,,,0.0,False,False,0
+TLT,E09,Volmageddon,medium,CUSUM,True,5.0,5.0,0.256198347107438,False,True,31
+TLT,E09,Volmageddon,medium,Instability score,False,,,0.0,False,False,0
+TLT,E09,Volmageddon,medium,MMD-only confirmation,True,8.0,8.0,0.05785123966942149,False,True,7
+TLT,E09,Volmageddon,medium,Kappa-only confirmation,True,-59.0,-54.0,0.049586776859504134,True,False,6
+TLT,E09,Volmageddon,medium,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+TLT,E10,Q4 2018 selloff,high,Volatility percentile,False,,,0.0,False,False,0
+TLT,E10,Q4 2018 selloff,high,CUSUM,True,-60.0,0.0,1.0,True,True,121
+TLT,E10,Q4 2018 selloff,high,Instability score,True,-48.0,0.0,0.36363636363636365,True,True,44
+TLT,E10,Q4 2018 selloff,high,MMD-only confirmation,True,-50.0,0.0,0.3884297520661157,True,True,47
+TLT,E10,Q4 2018 selloff,high,Kappa-only confirmation,True,-7.0,0.0,0.14049586776859505,True,True,17
+TLT,E10,Q4 2018 selloff,high,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+TLT,E11,COVID crash,critical,Volatility percentile,True,-4.0,0.0,0.30578512396694213,True,True,37
+TLT,E11,COVID crash,critical,CUSUM,True,-5.0,-1.0,0.45454545454545453,True,True,55
+TLT,E11,COVID crash,critical,Instability score,True,-43.0,3.0,0.5537190082644629,True,True,67
+TLT,E11,COVID crash,critical,MMD-only confirmation,True,-41.0,2.0,0.5206611570247934,True,True,63
+TLT,E11,COVID crash,critical,Kappa-only confirmation,True,-53.0,-35.0,0.15702479338842976,True,False,19
+TLT,E11,COVID crash,critical,Hybrid volatility + instability confirmation,True,-4.0,0.0,0.2892561983471074,True,True,35
+TLT,E12,Inflation selloff,high,Volatility percentile,True,-60.0,0.0,0.7520661157024794,True,True,91
+TLT,E12,Inflation selloff,high,CUSUM,True,-60.0,0.0,1.0,True,True,121
+TLT,E12,Inflation selloff,high,Instability score,False,,,0.0,False,False,0
+TLT,E12,Inflation selloff,high,MMD-only confirmation,False,,,0.0,False,False,0
+TLT,E12,Inflation selloff,high,Kappa-only confirmation,True,52.0,52.0,0.0743801652892562,False,True,9
+TLT,E12,Inflation selloff,high,Hybrid volatility + instability confirmation,False,,,0.0,False,False,0
+TLT,E13,Bank stress,medium,Volatility percentile,True,-60.0,1.0,0.6198347107438017,True,True,75
+TLT,E13,Bank stress,medium,CUSUM,True,-60.0,0.0,1.0,True,True,121
+TLT,E13,Bank stress,medium,Instability score,True,-60.0,-58.0,0.024793388429752067,True,False,3
+TLT,E13,Bank stress,medium,MMD-only confirmation,False,,,0.0,False,False,0
+TLT,E13,Bank stress,medium,Kappa-only confirmation,True,-60.0,12.0,0.2644628099173554,True,True,32
+TLT,E13,Bank stress,medium,Hybrid volatility + instability confirmation,True,-60.0,-48.0,0.10743801652892562,True,False,13

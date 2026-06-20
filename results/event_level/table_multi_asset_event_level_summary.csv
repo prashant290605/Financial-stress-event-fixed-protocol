@@ -1,0 +1,11 @@
+ticker,method,event_detection_rate,median_first_delay,mean_event_coverage
+SPY,Volatility percentile,0.7692307692307693,3.0,0.22578297934267264
+SPY,Hybrid volatility + instability confirmation,0.6153846153846154,5.0,0.12120956808799087
+QQQ,Volatility percentile,0.46153846153846156,-11.5,0.19827051371410628
+QQQ,Hybrid volatility + instability confirmation,0.38461538461538464,2.0,0.08631346747447514
+IWM,Volatility percentile,0.5384615384615384,1.0,0.1760966306420852
+IWM,Hybrid volatility + instability confirmation,0.38461538461538464,5.0,0.08963763509218053
+HYG,Volatility percentile,0.38461538461538464,2.0,0.12269548633184996
+HYG,Hybrid volatility + instability confirmation,0.23076923076923078,-3.0,0.08264462809917356
+TLT,Volatility percentile,0.5384615384615384,-4.0,0.22695486331849965
+TLT,Hybrid volatility + instability confirmation,0.3076923076923077,-2.5,0.07628734901462174
