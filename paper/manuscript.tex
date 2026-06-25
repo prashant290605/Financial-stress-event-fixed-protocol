@@ -16,11 +16,13 @@
 
 \title[A Reproducible Event-Fixed Protocol for Evaluating Financial Stress Detectors]{A Reproducible Event-Fixed Protocol for Evaluating Financial Stress Detectors}
 
-\author*[1]{\fnm{Prashant} \sur{Singh}}\email{prashants18488@gmail.com}
-\author[2]{\fnm{Pranav} \sur{Singh}}
+\author*[1]{\fnm{Prashant} \sur{Singh}}\email{2023mcb1309@iitrpr.ac.in}
 
-\affil[1]{\orgdiv{Department of Mathematics and Computing}, \orgname{Indian Institute of Technology Ropar}, \orgaddress{\city{Rupnagar}, \state{Punjab}, \country{India}}}
-\affil[2]{\orgdiv{Department of Mathematics and Computing}, \orgname{Indian Institute of Technology Ropar}, \orgaddress{\city{Rupnagar}, \state{Punjab}, \country{India}}}
+
+\author[1]{\fnm{Pranav} \sur{Singh}}\email{2023mcb1308@iitrpr.ac.in}
+
+
+\affil*[1]{\orgdiv{Department of Mathematics and Computing}, \orgname{Indian Institute of Technology Ropar}, \orgaddress{\city{Rupnagar}, \postcode{140001}, \state{Punjab}, \country{India}}}
 
 \abstract{Financial stress detection is important for risk monitoring, market surveillance, and decision support, but consistent evaluation is difficult because stress events are rare, event boundaries are ambiguous, and detector outputs are often compared under incompatible labeling rules. This paper presents a reproducible event-fixed evaluation protocol for daily financial stress detectors. The protocol fixes documented stress events before detector inspection, applies deterministic preprocessing, assigns rule-based drawdown severity categories, and reports pointwise, event-level, delay, uncertainty, multi-asset, and cost-sensitive metrics. As an illustrative use case, we compare a volatility percentile trigger with a hybrid retrospective confirmation rule that requires local instability evidence. On SPY, the hybrid reduces false positive rate (FPR) from 0.044 to 0.005 and increases precision from 0.640 to 0.886, but recall falls from 0.225 to 0.122 and F1 falls from 0.333 to 0.214. The same qualitative pattern appears across SPY, QQQ, IWM, HYG, and TLT: confirmation reduces false alarms but lowers recall and F1 and often delays first detection. The results show that event-fixed evaluation changes detector interpretation: the same confirmation rule can appear attractive under false-alarm-sensitive metrics while remaining weaker for recall, event coverage, and timeliness.}
 
