@@ -7,6 +7,8 @@
 \usepackage{booktabs}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{microtype}
+% Disable font expansion for compatibility with bitmap fonts in minimal TeX installs.
+\microtypesetup{expansion=false}
 \usepackage{array}
 \usepackage{url}
 \setlength{\emergencystretch}{3em}
@@ -22,7 +24,7 @@
 \author[1]{\fnm{Pranav} \sur{Singh}}\email{2023mcb1308@iitrpr.ac.in}
 
 
-\affil*[1]{\orgdiv{Department of Mathematics and Computing}, \orgname{Indian Institute of Technology Ropar}, \orgaddress{\city{Rupnagar}, \postcode{140001}, \state{Punjab}, \country{India}}}
+\affil*[1]{\orgdiv{Department of Mathematics}, \orgname{Indian Institute of Technology Ropar}, \orgaddress{\city{Rupnagar}, \postcode{140001}, \state{Punjab}, \country{India}}}
 
 \abstract{Financial stress detection is important for risk monitoring, market surveillance, and decision support, but consistent evaluation is difficult because stress events are rare, event boundaries are ambiguous, and detector outputs are often compared under incompatible labeling rules. This paper presents a reproducible event-fixed evaluation protocol for daily financial stress detectors. The protocol fixes documented stress events before detector inspection, applies deterministic preprocessing, assigns rule-based drawdown severity categories, and reports pointwise, event-level, delay, uncertainty, multi-asset, and cost-sensitive metrics. As an illustrative use case, we compare a volatility percentile trigger with a hybrid retrospective confirmation rule that requires local instability evidence. On SPY, the hybrid reduces false positive rate (FPR) from 0.044 to 0.005 and increases precision from 0.640 to 0.886, but recall falls from 0.225 to 0.122 and F1 falls from 0.333 to 0.214. The same qualitative pattern appears across SPY, QQQ, IWM, HYG, and TLT: confirmation reduces false alarms but lowers recall and F1 and often delays first detection. The results show that event-fixed evaluation changes detector interpretation: the same confirmation rule can appear attractive under false-alarm-sensitive metrics while remaining weaker for recall, event coverage, and timeliness.}
 
@@ -87,17 +89,20 @@ Critical-transition, change-point, and kernel methods motivate the detector fami
 
 Together, these literatures motivate the protocol developed below. Event studies motivate fixed dates, anomaly benchmarks motivate careful label and scoring design, financial stress research motivates volatility and drawdown-based measures, and critical-transition/change-point/kernel methods motivate the detector families. What remains unresolved is the integration of these ideas into a transparent financial-stress evaluation standard. The gap addressed here is therefore not the absence of detectors, but the absence of a compact, reproducible framework that makes stress-event definitions, event windows, severity organization, delay, and operating costs explicit before detector performance is interpreted.
 
+Recent work confirms that financial-stress monitoring remains an active methodological and policy concern. Gu et al.\ combine stochastic-process, hidden-Markov, and machine-learning components for early warning across multi-country financial-stress indicators \cite{gu2024}; Aldasoro et al.\ study machine-learning prediction of stress in major U.S. financial markets \cite{aldasoro2025}; and the IMF's latest global stability assessment emphasizes that market volatility and amplification channels continue to require close monitoring \cite{imf2026}. These contributions motivate transparent evaluation of stress signals, while the present study focuses on a reproducible event-fixed comparison rather than on forecasting a broad financial-conditions index.
+
 \section{Methodology}
 The methodology is organized around the evaluation protocol rather than around a particular detector. The protocol first fixes the financial stress events and trading-calendar mapping, then defines descriptive severity categories, detector outputs, event-window and event-level metrics, operating costs, and uncertainty summaries. The volatility and hybrid rules illustrate how the protocol separates false-alarm reduction from event coverage and timeliness.
 
 \subsection{Data and preprocessing}
-The primary analysis uses SPY, and the multi-asset validation uses SPY, QQQ (Invesco QQQ Trust), IWM (iShares Russell 2000 ETF), HYG (iShares iBoxx \$ High Yield Corporate Bond ETF), and TLT (iShares 20+ Year Treasury Bond ETF). For every asset, the adjusted close column is used. Let $P_t$ denote the adjusted close. The deterministic preprocessing is
+The primary analysis uses SPY, and the multi-asset validation uses SPY, QQQ (Invesco QQQ Trust), IWM (iShares Russell 2000 ETF), HYG (iShares iBoxx \$ High Yield Corporate Bond ETF), and TLT (iShares 20+ Year Treasury Bond ETF). For every asset, the adjusted close column is used. Let $P_t$ denote the adjusted close. Daily log returns capture immediate price movement, rolling volatility measures the level of market uncertainty, and standardized returns identify unusually large deviations relative to recent market behaviour. To provide a single input representation for the distribution-comparison and persistence-based detector components, we combine these complementary quantities into the composite financial-stress signal $x_t$. The deterministic preprocessing is
 \begin{align}
 r_t &= \log(P_t/P_{t-1}),\\
 \sigma_t &= \mathrm{sd}(r_{t-19:t}),\\
 z_t &= (r_t-\mu_{t,50})/\sigma_{t,50},\\
 x_t &= 0.5r_t + 0.3\sigma_t + 0.2z_t.
 \end{align}
+The coefficients $(0.5,0.3,0.2)$ are fixed heuristic weights chosen to emphasize immediate price movement while retaining complementary information about market uncertainty and standardized anomalies. Daily returns receive the largest weight because they directly reflect market movement, rolling volatility captures changes in market variability, and standardized returns contribute anomaly information without dominating the composite signal. The coefficients remain fixed throughout all experiments and are not optimized or tuned on the evaluation data, thereby avoiding dataset-specific parameter fitting.
 Fixed calendar events are mapped separately for each asset to the nearest valid trading day in that asset's calendar. The processed sample lengths after rolling-window preprocessing are reported in Appendix~\ref{app:implementation_details}.
 
 \subsection{Inclusion rule for fixed events}
@@ -133,11 +138,11 @@ E13 & Bank stress & 2023-03-13 & 2023-03-13 & banking & Fed SVB review; Fed FSR 
 \end{table*}
 
 \subsection{Severity organization}
-All 13 events receive descriptive severity categories based on realized SPY drawdown. These categories organize interpretation within the fixed event panel; they are not used as statistical tests and do not imply population-level inference. For mapped event index $e$, severity is
+All 13 events receive descriptive severity categories based on realized SPY drawdown. These categories organize interpretation within the fixed event panel; they are not used as statistical tests and do not imply population-level inference. To organize the fixed event panel according to realized market impact, we define an event-local severity measure based on realized maximum drawdown. Unlike the conventional maximum drawdown computed over an entire historical series, the proposed measure restricts the calculation to a local window centred on each mapped event. This provides a consistent descriptive measure of the realized impact associated with each documented stress event. For mapped event index $e$, severity is
 \begin{equation}
 \mathrm{severity}(e)=\left|\min_{t\in[e-20,\,e+20]}\left(\frac{P_t}{\max_{u\in[e-20,\,t]}P_u}-1\right)\right|.
 \end{equation}
-Critical, high, and medium categories are assigned by terciles of this severity score across the 13 events. No manual severity adjustment is applied. These SPY-derived categories remain the primary event-panel organization throughout the paper. For multi-asset robustness checks, asset-specific drawdown severity scores are also computed after mapping each event to the asset's own trading calendar, but those asset-specific categories do not replace the primary SPY event-panel categories.
+For example, for E01 (Dot-com selloff), the minimum peak-to-trough price ratio in its local window is $P_t/\max_{u\in[e-20,t]}P_u=0.886$. Hence, $\mathrm{severity}(\mathrm{E01})=|0.886-1|=0.114$, or an 11.4\% realized drawdown, which gives the first value in Table~\ref{tab:events}. The proposed severity score is an event-local adaptation of the standard maximum drawdown measure \cite{magdon2004}, computed within a $\pm20$ trading-day window around each mapped event. A $\pm20$ trading-day window, corresponding approximately to one trading month before and after each mapped event, was selected to capture the primary realized market impact associated with the documented stress episode while limiting contamination from unrelated longer-term market movements. Restricting the calculation to this local window captures realized impact while reducing the influence of unrelated market movements outside the event period. The resulting values are used solely for descriptive categorization of the fixed event panel and are not intended as inferential or predictive measures. Critical, high, and medium categories are assigned by terciles of this severity score across the 13 events. No manual severity adjustment is applied. These SPY-derived categories remain the primary event-panel organization throughout the paper. For multi-asset robustness checks, asset-specific drawdown severity scores are also computed after mapping each event to the asset's own trading calendar, but those asset-specific categories do not replace the primary SPY event-panel categories.
 
 \subsection{Event-window evaluation}
 The main positive mask uses $[e-60,e+60]$ trading days. A $\pm60$-day window is used because financial stress often develops over weeks rather than on a single trading day, and stress can persist after the named calendar event. The event window is therefore an evaluation region for stress identification, not a claim about exact crisis boundaries or a one-day prediction target. This wide window can blur distinctions among advance warning, retrospective confirmation, and post-event detection, so delay and alignment metrics are reported separately. To check dependence on this choice, we also evaluate $\pm20$, $\pm30$, and $\pm45$ trading-day windows.
@@ -146,10 +151,10 @@ The main positive mask uses $[e-60,e+60]$ trading days. A $\pm60$-day window is 
 Pointwise masks summarize alarm days but do not directly answer whether a fixed stress event was detected at all. We therefore compute event-level metrics for each ticker, event, and method using the same $[e-60,e+60]$ trading-day window. The indicator \texttt{detected\_event} equals one if at least one alarm occurs inside the window. The variable \texttt{first\_detection\_delay} is the first in-window alarm date minus the mapped event date, measured in trading days; it is missing if the event is not detected. The variable \texttt{closest\_detection\_delay} is the in-window alarm closest to the mapped event date minus the mapped event date. The variable \texttt{event\_coverage} is the fraction of event-window trading days flagged by the method. The indicators \texttt{pre\_event\_detection} and \texttt{post\_event\_detection} record whether any alarm occurs in $[e-60,e-1]$ and $[e,e+60]$, respectively. These quantities complement precision, recall, F1, and FPR by separating event coverage, missed events, and timeliness.
 
 \subsection{Detector definitions}
-All thresholds are calibrated on the first 70\% of each series and reused unchanged. For any scalar score $q_t$, training standardization uses $z_q(t)=(q_t-\mu_{q,\mathrm{train}})/\sigma_{q,\mathrm{train}}$. Unless otherwise stated, smoothing is a trailing five-point rolling mean, $\bar q_t=|\{j:0\leq j\leq4,t-j\geq0\}|^{-1}\sum_{j=0}^{4}q_{t-j}$.
+All thresholds are calibrated on the first 70\% of each series and reused unchanged. For any scalar score $q_t$, training standardization uses $z_q(t)=(q_t-\mu_{q,\mathrm{train}})/\sigma_{q,\mathrm{train}}$. Unless otherwise stated, smoothing is a trailing five-point rolling mean, $\bar q_t=|\{j:0\leq j\leq4,t-j\geq0\}|^{-1}\sum_{j=0}^{4}q_{t-j}$. The volatility, CUSUM, and MMD components below are operational detector definitions for this study, grounded respectively in established volatility modelling \cite{andersen2003,bollerslev1986}, sequential change detection \cite{page1954}, and kernel two-sample testing \cite{gretton2012}; the percentile threshold and smoothing window are fixed design choices rather than claimed standard definitions.
 \begin{itemize}
-\item \textbf{Volatility percentile trigger:} compute $\sigma_t=\mathrm{sd}(r_{t-19:t})$, standardize it on the calibration period, smooth it with the five-point trailing mean, and set $v_t=1$ when the smoothed score exceeds its 90th calibration percentile.
-\item \textbf{CUSUM:} use standardized returns $z_r(t)$ and a two-sided zero-reference cumulative sum, $C_t^+=\max(0,C_{t-1}^+ + z_r(t))$, $C_t^-=\min(0,C_{t-1}^- + z_r(t))$, and $C_t=\max(C_t^+,-C_t^-)$. The smoothed $C_t$ is thresholded at its 90th calibration percentile.
+\item \textbf{Volatility percentile trigger:} compute $\sigma_t=\mathrm{sd}(r_{t-19:t})$, standardize it on the calibration period, smooth it with the five-point trailing mean, and set $v_t=1$ when the smoothed score exceeds its 90th calibration percentile. This is a study-specific threshold rule built on the established use of return volatility as a market-variation measure \cite{andersen2003,bollerslev1986}.
+\item \textbf{CUSUM:} use standardized returns $z_r(t)$ and a two-sided zero-reference cumulative sum, $C_t^+=\max(0,C_{t-1}^+ + z_r(t))$, $C_t^-=\min(0,C_{t-1}^- + z_r(t))$, and $C_t=\max(C_t^+,-C_t^-)$. The smoothed $C_t$ is thresholded at its 90th calibration percentile, following the sequential accumulation principle introduced by Page \cite{page1954}.
 \item \textbf{MMD:} for each $t$, compare pre-window $x_{t-30:t-1}$ and post-window $x_{t:t+29}$ with an RBF kernel \cite{gretton2012}. The bandwidth is the median absolute pairwise pre/post distance, lower bounded by $10^{-4}$. Let $K(x_i,x_j)=\exp[-\|x_i-x_j\|^2/(2\gamma^2)]$, where $\gamma$ is the bandwidth; $\bar K_{aa}$, $\bar K_{bb}$, and $\bar K_{ab}$ denote the mean within-pre, within-post, and cross-window kernel values, respectively. The biased estimate $\widehat{\mathrm{MMD}}^2=\bar K_{aa}+\bar K_{bb}-2\bar K_{ab}$ is clipped at zero, smoothed with a trailing three-point mean, standardized on the calibration period, and then used in the instability score.
 \item \textbf{AR(1) persistence statistic ($\kappa$):} over a trailing 36-day autoregressive window, estimate $\widehat\phi_t=(\sum a_i b_i)/(\sum a_i^2+10^{-10})$ using adjacent observations $a_i=x_i$, $b_i=x_{i+1}$. Define $\kappa_t=1-\widehat\phi_t$ and standardize $\kappa_t$ on the calibration period.
 \item \textbf{Instability score:} $s(t)=0.5z_{\mathrm{MMD}}(t)+0.5|z_\kappa(t)|$. The smoothed score is thresholded at its 90th calibration percentile. MMD-only and $|\kappa|$-only confirmations use the same standardization and threshold rule for the corresponding component.
@@ -536,10 +541,12 @@ The financial market series used in this study are publicly available adjusted-c
 \bmhead{Code Availability}
 Code and reproducibility materials are publicly available at \url{https://github.com/prashant290605/Financial-stress-event-fixed-protocol}.
 
+\bmhead{Use of Artificial Intelligence}
+The authors used generative artificial intelligence for assistance with manuscript formatting and language presentation. The authors reviewed and edited the resulting text and remain responsible for the study design, analyses, results, interpretations, and final manuscript.
+
 \bmhead{Competing Interests}
 The authors declare no competing interests.
 
-\clearpage
 \begin{appendices}
 \renewcommand{\theHtable}{A.\arabic{table}}
 \renewcommand{\theHfigure}{A.\arabic{figure}}
@@ -619,26 +626,5 @@ For the NAB auxiliary validation, all 58 series in the official \texttt{combined
 
 \end{appendices}
 
-\begin{thebibliography}{20}
-\bibitem{brown1985} S.~J. Brown and J.~B. Warner, ``Using daily stock returns: The case of event studies,'' \emph{Journal of Financial Economics}, vol. 14, no. 1, pp. 3--31, 1985.
-\bibitem{mackinlay1997} A.~C. MacKinlay, ``Event studies in economics and finance,'' \emph{Journal of Economic Literature}, vol. 35, no. 1, pp. 13--39, 1997.
-\bibitem{lavin2015} A. Lavin and S. Ahmad, ``Evaluating real-time anomaly detection algorithms---the Numenta Anomaly Benchmark,'' in \emph{IEEE International Conference on Machine Learning and Applications}, 2015.
-\bibitem{wu2022} R. Wu and E. Keogh, ``Current time series anomaly detection benchmarks are flawed and are creating the illusion of progress,'' in \emph{IEEE International Conference on Big Data}, 2022.
-\bibitem{nber2023} National Bureau of Economic Research, ``U.S. business cycle expansions and contractions,'' 2023.
-\bibitem{fcic2011} Financial Crisis Inquiry Commission, \emph{The Financial Crisis Inquiry Report}. U.S. Government Printing Office, 2011.
-\bibitem{cftcsec2010} Commodity Futures Trading Commission and Securities and Exchange Commission, \emph{Findings Regarding the Market Events of May 6, 2010}, 2010.
-\bibitem{magdon2004} M. Magdon-Ismail, A.~F. Atiya, A. Pratap, and Y.~S. Abu-Mostafa, ``On the maximum drawdown of a Brownian motion,'' \emph{Journal of Applied Probability}, vol. 41, no. 1, pp. 147--161, 2004.
-\bibitem{andersen2003} T.~G. Andersen, T. Bollerslev, F.~X. Diebold, and P. Labys, ``Modeling and forecasting realized volatility,'' \emph{Econometrica}, vol. 71, no. 2, pp. 579--625, 2003.
-\bibitem{scheffer2009} M. Scheffer et al., ``Early-warning signals for critical transitions,'' \emph{Nature}, vol. 461, pp. 53--59, 2009.
-\bibitem{dakos2012} V. Dakos et al., ``Methods for detecting early warnings of critical transitions in time series illustrated using simulated ecological data,'' \emph{PLoS ONE}, vol. 7, no. 7, e41010, 2012.
-\bibitem{boettiger2012} C. Boettiger and A. Hastings, ``Quantifying limits to detection of early warning for critical transitions,'' \emph{Journal of the Royal Society Interface}, vol. 9, pp. 2527--2539, 2012.
-\bibitem{page1954} E.~S. Page, ``Continuous inspection schemes,'' \emph{Biometrika}, vol. 41, no. 1/2, pp. 100--115, 1954.
-\bibitem{gretton2012} A. Gretton et al., ``A kernel two-sample test,'' \emph{Journal of Machine Learning Research}, vol. 13, pp. 723--773, 2012.
-\bibitem{mandelbrot1963} B. Mandelbrot, ``The variation of certain speculative prices,'' \emph{Journal of Business}, vol. 36, no. 4, pp. 394--419, 1963.
-\bibitem{cont2001} R. Cont, ``Empirical properties of asset returns: Stylized facts and statistical issues,'' \emph{Quantitative Finance}, vol. 1, no. 2, pp. 223--236, 2001.
-\bibitem{engle1982} R.~F. Engle, ``Autoregressive conditional heteroscedasticity with estimates of the variance of United Kingdom inflation,'' \emph{Econometrica}, vol. 50, no. 4, pp. 987--1007, 1982.
-\bibitem{bollerslev1986} T. Bollerslev, ``Generalized autoregressive conditional heteroskedasticity,'' \emph{Journal of Econometrics}, vol. 31, no. 3, pp. 307--327, 1986.
-\bibitem{ahmad2017} S. Ahmad, A. Lavin, S. Purdy, and Z. Agha, ``Unsupervised real-time anomaly detection for streaming data,'' \emph{Neurocomputing}, vol. 262, pp. 134--147, 2017.
-\bibitem{khandani2007} A.~E. Khandani and A.~W. Lo, ``What happened to the quants in August 2007?'' \emph{Journal of Investment Management}, vol. 5, no. 4, pp. 5--54, 2007.
-\end{thebibliography}
+\bibliography{sn-bibliography}
 \end{document}
