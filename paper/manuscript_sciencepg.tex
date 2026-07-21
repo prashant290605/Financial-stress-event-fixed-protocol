@@ -191,7 +191,9 @@ This paper contributes the following.
 \item \textbf{Evidence that the design choices are not load-bearing.} The heuristic composite weights, the confirmation-window width, the event-window width, the sign convention on the persistence statistic, and the retrospective confirmation window are each varied. The reversal survives all of them, including a deployable trailing-only variant.
 \end{enumerate}
 
-Section 2 places the protocol in the event-study, anomaly-benchmark, and risk-management backtesting traditions. Section 3 defines the data, the fixed event panel, the detectors, the metrics, and the implementation details needed to reproduce every number. Section 4 reports the results, from the headline SPY evaluation through the causal-confirmation ablation. Section 5 discusses operational interpretation and limitations, and Section 6 concludes.
+Table~\ref{tab:protocol_comparison} summarizes how the protocol assembles established evaluation elements, from fixed event panels to cost-sensitive interpretation, into one design.
+
+Section 1.1 places the protocol in the event-study, anomaly-benchmark, and risk-management backtesting traditions. Section 2 defines the data, the fixed event panel, the detectors, the metrics, and the implementation details needed to reproduce every number. Section 3 reports the results, from the headline SPY evaluation through the causal-confirmation ablation. Section 4 discusses operational interpretation and limitations, and Section 5 concludes.
 \end{multicols}
 
 \begin{table*}[H]
@@ -216,7 +218,7 @@ Reproducibility package & Provides event definitions, source strings, mapped eve
 \end{table*}
 
 \begin{multicols}{2}
-\section{Related Work}
+\subsection{Related Work}
 Event studies provide the finance precedent for evaluating market behavior around fixed dates. Brown and Warner's daily return design [1] and MacKinlay's survey [2] both rest on one discipline: the event definition is fixed before outcomes are interpreted. Stress episodes are separately documented through institutional chronologies and post-event reports, including the NBER recession chronology [5], the Financial Crisis Inquiry Commission report [6], and the CFTC--SEC account of the May 2010 Flash Crash [7]. Those sources make event selection auditable. They were never designed to score continuous detector output, and they say nothing about false alarms outside event windows, missed episodes, or detection delay.
 
 Anomaly-detection benchmarks approach the scoring problem from the opposite side. NAB introduced labeled windows for streaming evaluation [3], and Ahmad et al.\ apply that setting to real-time unsupervised detection [8]. Wu and Keogh then showed how benchmark labels and artifacts can create an illusion of progress [4]. The lesson carries over directly. What these benchmarks lack is any tie to documented financial stress events, and any separation between the operational roles of surveillance, confirmation, and escalation.

@@ -27,8 +27,13 @@ COLORS = {
 
 
 def setup_style() -> None:
+    # Journal figure requirements: serif (Times-like) lettering at 8-12 pt,
+    # no overall titles inside the figures (captions live in the manuscript).
     plt.rcParams.update(
         {
+            "font.family": "serif",
+            "font.serif": ["Times New Roman", "Times", "Nimbus Roman", "DejaVu Serif"],
+            "mathtext.fontset": "stix",
             "font.size": 10,
             "axes.titlesize": 11,
             "axes.labelsize": 10,
@@ -84,7 +89,6 @@ def fig_timeline(config: dict) -> None:
         ax.axvline(d, color=COLORS["Event"], alpha=0.35, lw=0.7)
     ax.set_xlabel("Date")
     ax.set_ylabel("Composite signal")
-    ax.set_title("SPY fixed-event timeline", pad=30)
     ax.legend(
         frameon=False,
         ncol=3,
@@ -110,8 +114,7 @@ def fig_event_window() -> None:
         ax.set_xlabel("Event half-window (trading days)")
         ax.grid(alpha=0.22)
     axes[0].legend(frameon=False)
-    fig.suptitle("Event-window sensitivity")
-    fig.tight_layout(rect=(0, 0, 1, 0.92), w_pad=2.0)
+    fig.tight_layout(w_pad=2.0)
     save(fig, "event_window_sensitivity")
 
 
@@ -123,7 +126,6 @@ def fig_confirmation_window() -> None:
     ax.plot(data["window"], data["fpr"], marker="^", color="#333333", label="FPR")
     ax.set_xlabel("Confirmation window W (trading days)")
     ax.set_ylabel("Metric value")
-    ax.set_title("Hybrid confirmation-window sensitivity")
     ax.legend(frameon=False, ncol=3)
     ax.grid(alpha=0.22)
     fig.tight_layout()
@@ -145,7 +147,7 @@ def fig_bootstrap() -> None:
         ax.set_title(title)
         ax.grid(axis="y", alpha=0.22)
     axes[0].set_ylabel("Hybrid - Volatility")
-    fig.suptitle("Bootstrap uncertainty")
+    fig.tight_layout()
     save(fig, "bootstrap_delta")
 
 
@@ -164,7 +166,6 @@ def fig_synthetic() -> None:
     ax.scatter(ex.loc[pred, "t"], ex.loc[pred, "signal"], s=9, color=COLORS["Volatility"], label="Volatility alarms", zorder=4)
     ax.set_xlabel("Synthetic time step")
     ax.set_ylabel("Signal")
-    ax.set_title("Synthetic sanity check")
     ax.legend(frameon=False, ncol=3)
     ax.grid(axis="y", alpha=0.18)
     fig.tight_layout()
@@ -187,8 +188,7 @@ def fig_nab() -> None:
         axes[i].grid(axis="y", alpha=0.22)
     axes[0].legend(frameon=False, ncol=2)
     axes[-1].set_xticks(x, subsets, rotation=30, ha="right")
-    fig.suptitle("NAB qualitative sanity check")
-    fig.tight_layout(rect=(0, 0, 1, 0.94), h_pad=1.0)
+    fig.tight_layout(h_pad=1.0)
     save(fig, "nab_subset_results")
 
 
@@ -211,8 +211,7 @@ def fig_multi_asset() -> None:
     handles, labels = axes[0].get_legend_handles_labels()
     unique = dict(zip(labels, handles))
     fig.legend(unique.values(), unique.keys(), loc="lower center", ncol=4, frameon=False)
-    fig.suptitle("Multi-asset tradeoff without asset-specific tuning")
-    fig.tight_layout(rect=(0, 0.18, 1, 0.94))
+    fig.tight_layout(rect=(0, 0.18, 1, 1))
     save(fig, "multi_asset_tradeoff")
 
 
@@ -239,7 +238,6 @@ def fig_event_level() -> None:
     ax.set_ylim(-74, 66)
     ax.set_xticks(x, events["event_name"], rotation=35, ha="right")
     ax.set_ylabel("First detection delay (trading days)")
-    ax.set_title("SPY event-level delay and coverage")
     ax.text(-0.35, -68, "x = missed", ha="left", va="center", fontsize=9)
     ax.legend(frameon=False, ncol=2, loc="upper left", bbox_to_anchor=(0, 1.01))
     ax.grid(axis="y", alpha=0.22)
@@ -273,8 +271,7 @@ def fig_cost() -> None:
     for ax in axes:
         ax.grid(alpha=0.22)
     axes[1].legend(frameon=False, loc="upper left")
-    fig.suptitle("SPY cost-sensitive operating regimes")
-    fig.tight_layout(rect=(0, 0, 1, 0.92), w_pad=2.0)
+    fig.tight_layout(w_pad=2.0)
     save(fig, "cost_comparison")
 
 
