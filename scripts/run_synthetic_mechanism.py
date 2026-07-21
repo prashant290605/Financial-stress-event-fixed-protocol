@@ -173,12 +173,18 @@ def main() -> None:
         }
     )
     t = np.arange(len(df)) + offset
+    # Plot from day 150 onward: the first weeks hold rolling-window burn-in
+    # artifacts in the standardized scores that would collide with the legend
+    # and carry no information about the engineered episodes.
+    show = t >= 150
     fig, axes = plt.subplots(2, 1, figsize=(7.6, 4.6), sharex=True)
-    axes[0].plot(t, df["log_return"], color="#222222", lw=0.5)
+    axes[0].plot(t[show], df["log_return"].to_numpy()[show], color="#222222", lw=0.5)
     axes[0].set_ylabel("Synthetic return")
-    axes[1].plot(t, vol, color="#1f77b4", lw=0.9, label="Volatility score")
-    axes[1].plot(t, score, color="#d95f02", lw=0.9, label="Instability score")
-    hy = hybrid.astype(bool)
+    axes[1].plot(t[show], vol[show], color="#1f77b4", lw=0.9, label="Volatility score")
+    axes[1].plot(t[show], score[show], color="#d95f02", lw=0.9, label="Instability score")
+    top = float(max(np.nanmax(vol[show]), np.nanmax(score[show])))
+    axes[1].set_ylim(None, top + 1.6)
+    hy = hybrid.astype(bool) & show
     axes[1].scatter(t[hy], np.full(hy.sum(), axes[1].get_ylim()[0]), s=8, marker="|", color="#d62728", label="Hybrid alarms")
     axes[1].set_ylabel("Standardized score")
     axes[1].set_xlabel("Synthetic day")
