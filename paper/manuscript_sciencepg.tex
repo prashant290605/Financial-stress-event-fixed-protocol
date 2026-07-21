@@ -95,12 +95,18 @@
 \usepackage{float}
 \usepackage{dsfont}
 \usepackage{multirow}
-% [hyphens] lets long URLs break at hyphens inside narrow columns; hyperref
-% (loaded last, as it must be) makes every \url a real link that stays
-% clickable across line breaks instead of relying on the PDF viewer's
-% per-line text detection.
+% [hyphens] lets long URLs break at hyphens in narrow columns; hyperref
+% (loaded last) makes every \url a single clickable link across line
+% breaks. The float parameters keep [!tbp] floats from collecting on
+% sparse float-only pages.
 \usepackage[hyphens]{url}
 \usepackage[hidelinks]{hyperref}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.6}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.8}
+\setcounter{topnumber}{3}
+\setcounter{totalnumber}{5}
 
 \usepackage[hang]{footmisc}
 \renewcommand{\footnoterule}{\vspace*{1pt}\hrule width 0.4pt\columnwidth height 0.4pt \vspace*{3pt}}
@@ -443,6 +449,7 @@ Volatility fires close to the mapped center, mean delay $-1.2$ trading days. The
 
 CUSUM is the cautionary case. Its F1 of 0.364 edges out volatility, but with FPR 0.344 and mean delay near $-60$ days it is firing broadly near the leading edge of wide windows rather than localizing events. A ranking by F1 alone would place CUSUM first. That would be the wrong unit of evaluation for crisis monitoring. To be clear about its role, the CUSUM here is a deliberately plain zero-reference baseline with no drift parameter and no tuned threshold, included to make this scoring point rather than to represent sequential change detection at its best; a tuned CUSUM would behave differently. The instability-score, MMD-only, and $|\kappa|$-only rows are the confirmation components run standalone; none is competitive on its own, and they are reported so the hybrid's inputs are visible in isolation before they reappear in the component ablation. Although the featured contrast is one pair, Table~\ref{tab:spy} scores four detector families side by side under the same protocol: threshold rules on raw volatility, sequential accumulation, kernel two-sample contrast, and autoregressive persistence.
 
+
 \end{multicols}
 
 \begin{table}[!tbp]
@@ -471,10 +478,10 @@ Hybrid ($W=10$) & 0.886 & 0.122 & 0.214 & 0.005 & 0.615 & 6.8 & 8.3\\
 \label{fig:spy_timeline}
 \end{figure}
 
-
 \begin{multicols}{2}
 \subsection{Multi-Asset Validation}
 Table~\ref{tab:multiasset_pointwise} and Figure~\ref{fig:multiasset_tradeoff} apply the protocol to all five assets. The same tradeoff appears everywhere: lower FPR for the hybrid, lower recall and F1. Magnitudes differ. QQQ shows FPR falling from 0.039 to 0.006 while F1 falls from 0.280 to 0.139. IWM shows a smaller FPR reduction, 0.056 to 0.028, with F1 falling from 0.272 to 0.159. HYG and TLT repeat the pattern with different delay behavior, the hybrid signalling slightly earlier than volatility on HYG and later on TLT. Across the five assets this is a recurring tradeoff, not a general improvement.
+
 
 \end{multicols}
 
@@ -507,7 +514,6 @@ TLT & Hybrid & 0.367 & 0.094 & 0.150 & 0.051 & -4.8 & 23.5\\
 \caption{Multi-asset FPR--F1 tradeoff under the common event-fixed protocol without asset-specific detector tuning.}
 \label{fig:multiasset_tradeoff}
 \end{figure}
-
 
 \begin{multicols}{2}
 \subsection{Event-Level Analysis}
@@ -594,67 +600,14 @@ Bank stress & 0 & 0 & 0 & 0 & 0.14\\
 \end{tabular}
 \end{table}
 
-
-\subsection{Composite Signal Weights}
-\label{sec:weights}
-The weights $(0.5,0.3,0.2)$ are heuristic, so their influence should be measured rather than asserted. Table~\ref{tab:weights} re-runs the full pipeline under ten weightings, recomputing the composite, MMD, $\kappa$, the instability score, and the hybrid each time. The volatility trigger is untouched, since it reads $\sigma_t$ directly.
-
-Hybrid F1 spans $[0.210,0.235]$ and FPR spans $[0.005,0.009]$ across all ten. Event detection is 8 of 13 in nine cases and 7 in the tenth. Every configuration stays far from the volatility trigger's F1 of 0.333, FPR of 0.044, and 10 of 13 events, so the ranking reversal is a property of the confirmation structure and not of the weighting.
-
-Four rows are numerically identical, including the default, the equal weighting, the reversed weighting, and the $z$-score-only case. That is the scale argument from the preprocessing section showing up in the output: once $z_t$ carries a standard deviation two orders of magnitude above the other terms, redistributing weight among them changes nothing the kernel can detect. The two rows that do move are the ones that remove $z_t$ entirely. Dropping to volatility alone costs an event and lifts FPR to 0.009; returns alone pulls mean delay down to $+0.8$ days, the earliest confirmation in the table, at the cost of precision. Reporting the composite as a weighted blend of three inputs overstates what the weights do, and we prefer to say so plainly.
-
-\subsection{Sign Convention for $\kappa$}
-\label{sec:kappasign}
-Table~\ref{tab:kappasign} compares the two-sided statistic against both one-sided alternatives. Restricting to the theory-consistent low-$\kappa$ direction detects 7 events rather than 8 and lowers F1 to 0.202. The opposite restriction raises F1 to 0.242 but also detects 7, and it confirms much earlier at $+1.6$ days. All three variants stay well inside the band the weight ablation traces out, so the conclusions do not turn on this convention either. We keep the two-sided form, and the sign-convention discussion in the detector definitions states plainly that it is an abnormal-dependence criterion rather than a test of critical slowing down.
-\end{multicols}
-
-\begin{table}[H]
-\centering
-\caption{Composite weight ablation. Each row recomputes $x_t$, the MMD and $\kappa$ components, and the hybrid. Events are counted out of 13.}
-\label{tab:weights}
-\scriptsize
-\begin{tabular}{lrrrrrr}
-\toprule
-$(w_r,w_\sigma,w_z)$ & Prec. & Recall & F1 & FPR & Delay & Events\\
-\midrule
-$(0.5,0.3,0.2)$ default & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
-$(1/3,1/3,1/3)$ equal & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
-$(0.2,0.3,0.5)$ reversed & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
-$(0.6,0.2,0.2)$ & 0.882 & 0.122 & 0.214 & 0.006 & 6.8 & 8\\
-$(0.4,0.4,0.2)$ & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
-$(0.5,0.2,0.3)$ & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
-$(0.2,0.6,0.2)$ & 0.900 & 0.135 & 0.235 & 0.005 & 4.4 & 8\\
-$(1,0,0)$ returns only & 0.845 & 0.131 & 0.227 & 0.008 & 0.8 & 8\\
-$(0,1,0)$ volatility only & 0.815 & 0.121 & 0.210 & 0.009 & 1.4 & 7\\
-$(0,0,1)$ z-score only & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[H]
-\centering
-\caption{Confirmation-term ablation for the persistence statistic. The low-$\kappa$ variant is the direction predicted by critical-slowing-down theory.}
-\label{tab:kappasign}
-\scriptsize
-\begin{tabular}{lrrrrrr}
-\toprule
-Confirmation term & Prec. & Recall & F1 & FPR & Delay & Events\\
-\midrule
-$|z_\kappa|$ two-sided (default) & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
-$\max(-z_\kappa,0)$ low $\kappa$ & 0.875 & 0.114 & 0.202 & 0.006 & 6.7 & 7\\
-$\max(+z_\kappa,0)$ high $\kappa$ & 0.874 & 0.141 & 0.242 & 0.007 & 1.6 & 7\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{figure}[H]
+\begin{figure}[!tbp]
 \centering
 \includegraphics[width=0.95\textwidth]{event_level_delay_coverage.png}
 \caption{SPY event-level FDD and event-window coverage, with missed events marked explicitly.}
 \label{fig:event_level_delay}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!tbp]
 \centering
 \includegraphics[width=0.9\textwidth]{synthetic_mechanism.png}
 \caption{Controlled synthetic test of the scale-adaptation mechanism. Top: a Gaussian return series with an abrupt volatility break (A) and an absorbed triangle ramp (B) of identical peak volatility, plus the abrupt calibration episode. Bottom: standardized volatility and instability scores with hybrid alarms. The volatility score rises through both episodes; the instability score responds only to the abrupt break.}
@@ -668,7 +621,7 @@ One accounting choice in these rates needs to be stated plainly. Every rate in T
 
 To be explicit about propagation: every computation in the paper uses all 13 mapped windows, degenerate ones included. The cost and crossover comparisons are insensitive to this choice, because both detectors miss every degenerate window, so the missed-event differences entering Equation~\eqref{eq:crossover} are identical either way (2 for HYG and 3 for TLT, with or without the degenerate events) and no delay terms arise from undetected events. Pointwise metrics do include the degenerate windows in the positive mask, which adds a stretch of positive-class days at the start of the affected series; this affects both detectors identically and merges with the earliest observable event's window where the two overlap, as they do for HYG.
 
-\begin{table}[!tbp]
+\begin{table}[H]
 \centering
 \caption{Multi-asset event-level detection rate, median delay, and mean event-window coverage. All rates use the full 13-event panel as denominator; rates restated over each asset's observable events are given in the text.}
 \label{tab:multiasset_event_level}
@@ -693,7 +646,7 @@ TLT & Hybrid & 0.308 & -2.5 & 0.076\\
 
 Severity-stratified results in Table~\ref{tab:event_level_severity} line up with the mechanism. Hybrid detection falls from 0.680 on critical events to 0.300 on high and 0.100 on medium, a steeper gradient than volatility's 0.840, 0.550, 0.150. The confirmation gate behaves as an implicit severity filter, which is what a rule keyed to scale contrast should do. With 13 events split into terciles these are descriptive summaries, not severity effects estimated with any precision.
 
-\begin{table}[!tbp]
+\begin{table}[H]
 \centering
 \caption{Severity-stratified event-level summary using descriptive realized-drawdown terciles from the SPY event panel.}
 \label{tab:event_level_severity}
@@ -716,7 +669,7 @@ Medium & Hybrid & 0.100 & -26.0 & 0.011\\
 \label{sec:cost}
 A pointwise cost model shows why the precision and FPR gap matters operationally. With $c_{\mathrm{FN}}=1$ and $c_{\mathrm{FP}}/c_{\mathrm{FN}}\in\{1,2,5,10,20,50\}$, Table~\ref{tab:cost} and Figure~\ref{fig:cost} put the hybrid ahead at every tested ratio on SPY. Its margin is slim under equal weighting and widens as false positives get expensive. The pointwise mask is mostly non-event days, so cutting false positives dominates this objective even when recall, event detection, and timeliness are all worse. That is the measurement artifact the event-aware cost is designed to expose.
 
-\begin{table}[!tbp]
+\begin{table}[H]
 \centering
 \caption{Pointwise cost-sensitive comparison with $c_{\mathrm{FN}}=1$.}
 \label{tab:cost}
@@ -737,7 +690,7 @@ $c_{\mathrm{FP}}/c_{\mathrm{FN}}$ & Vol. cost & Hybrid cost & Preferred\\
 
 The event-aware results in Table~\ref{tab:event_cost} reverse the verdict at the low end. With $c_{\mathrm{ME}}=1$ and $c_{\mathrm{D}}=0.05$, volatility costs 6.70 against 8.54 for the hybrid when false-alarm days are nearly free at $c_{\mathrm{FA}}/c_{\mathrm{ME}}=0.01$. Volatility misses 3 events rather than 5 and carries a smaller cumulative delay penalty, $D_+=35$ against 66. From 0.05 upward the hybrid wins, on the strength of 24 out-of-window alarm days against 195.
 
-\begin{table}[!tbp]
+\begin{table}[H]
 \centering
 \caption{SPY event-aware cost comparison with $c_{\mathrm{ME}}=1$ and $c_{\mathrm{D}}=0.05$.}
 \label{tab:event_cost}
@@ -771,7 +724,7 @@ So the volatility trigger is the cheaper choice on SPY only when one out-of-wind
 
 Table~\ref{tab:crossover} gives $r^{*}$ for all five assets and all three delay penalties. Every value falls between 0.007 and 0.059, so the region favouring volatility is narrow throughout: out-of-window alarms have to be very cheap relative to missed episodes before broad coverage pays. Raising $c_{\mathrm{D}}$ widens that region on four assets, because the hybrid confirms later and absorbs more delay penalty. HYG moves the other way, from 0.016 to 0.013, and the reason is visible in Table~\ref{tab:multiasset_event_level}: HYG is the one asset where the hybrid detects earlier than volatility, so penalizing delay works in its favour.
 
-\begin{table}[!tbp]
+\begin{table}[H]
 \centering
 \caption{Event-aware cost crossover ratio $r^{*}=c_{\mathrm{FA}}/c_{\mathrm{ME}}$ from Equation~\eqref{eq:crossover}. Below $r^{*}$ the volatility trigger has lower cost; above it the hybrid does.}
 \label{tab:crossover}
@@ -792,7 +745,7 @@ TLT & 0.021 & 0.034 & 0.047\\
 Across assets, the same cost-regime dependence appears: under event-aware cost with $c_{\mathrm{D}}=0.05$, volatility is preferred in at least one tested false-alarm/missed-event regime for every processed asset. This is consistent with the event-level findings: when missed events and delayed confirmation are penalized, a broader volatility trigger can be preferable despite its higher false-alarm rate.
 \end{multicols}
 
-\begin{figure}[H]
+\begin{figure}[!tbp]
 \centering
 \includegraphics[width=0.95\textwidth]{cost_comparison.png}
 \caption{SPY cost comparison under pointwise and event-aware operating objectives.}
@@ -803,7 +756,7 @@ Across assets, the same cost-regime dependence appears: under event-aware cost w
 \subsection{Event-Window Sensitivity}
 Table~\ref{tab:eventwindow} and Figure~\ref{fig:eventwindow} show the tradeoff holding across window widths. The hybrid keeps lower FPR and higher precision, with lower recall and F1, at every width tested. The gap widens as windows lengthen, since wider windows admit more of the volatility trigger's in-window alarms.
 
-\begin{table}[!tbp]
+\begin{table}[H]
 \centering
 \caption{Event-window sensitivity for pointwise precision, recall, F1, and FPR.}
 \label{tab:eventwindow}
@@ -824,13 +777,66 @@ $\pm60$ & Hybrid & 0.886 & 0.122 & 0.214 & 0.005\\
 \end{tabular}
 \end{table}
 
+
+
+\subsection{Composite Signal Weights}
+\label{sec:weights}
+The weights $(0.5,0.3,0.2)$ are heuristic, so their influence should be measured rather than asserted. Table~\ref{tab:weights} re-runs the full pipeline under ten weightings, recomputing the composite, MMD, $\kappa$, the instability score, and the hybrid each time. The volatility trigger is untouched, since it reads $\sigma_t$ directly.
+
+Hybrid F1 spans $[0.210,0.235]$ and FPR spans $[0.005,0.009]$ across all ten. Event detection is 8 of 13 in nine cases and 7 in the tenth. Every configuration stays far from the volatility trigger's F1 of 0.333, FPR of 0.044, and 10 of 13 events, so the ranking reversal is a property of the confirmation structure and not of the weighting.
+
+Four rows are numerically identical, including the default, the equal weighting, the reversed weighting, and the $z$-score-only case. That is the scale argument from the preprocessing section showing up in the output: once $z_t$ carries a standard deviation two orders of magnitude above the other terms, redistributing weight among them changes nothing the kernel can detect. The two rows that do move are the ones that remove $z_t$ entirely. Dropping to volatility alone costs an event and lifts FPR to 0.009; returns alone pulls mean delay down to $+0.8$ days, the earliest confirmation in the table, at the cost of precision. Reporting the composite as a weighted blend of three inputs overstates what the weights do, and we prefer to say so plainly.
+
+\subsection{Sign Convention for $\kappa$}
+\label{sec:kappasign}
+Table~\ref{tab:kappasign} compares the two-sided statistic against both one-sided alternatives. Restricting to the theory-consistent low-$\kappa$ direction detects 7 events rather than 8 and lowers F1 to 0.202. The opposite restriction raises F1 to 0.242 but also detects 7, and it confirms much earlier at $+1.6$ days. All three variants stay well inside the band the weight ablation traces out, so the conclusions do not turn on this convention either. We keep the two-sided form, and the sign-convention discussion in the detector definitions states plainly that it is an abnormal-dependence criterion rather than a test of critical slowing down.
+\end{multicols}
+
+\begin{table}[!tbp]
+\centering
+\caption{Composite weight ablation. Each row recomputes $x_t$, the MMD and $\kappa$ components, and the hybrid. Events are counted out of 13.}
+\label{tab:weights}
+\scriptsize
+\begin{tabular}{lrrrrrr}
+\toprule
+$(w_r,w_\sigma,w_z)$ & Prec. & Recall & F1 & FPR & Delay & Events\\
+\midrule
+$(0.5,0.3,0.2)$ default & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
+$(1/3,1/3,1/3)$ equal & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
+$(0.2,0.3,0.5)$ reversed & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
+$(0.6,0.2,0.2)$ & 0.882 & 0.122 & 0.214 & 0.006 & 6.8 & 8\\
+$(0.4,0.4,0.2)$ & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
+$(0.5,0.2,0.3)$ & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
+$(0.2,0.6,0.2)$ & 0.900 & 0.135 & 0.235 & 0.005 & 4.4 & 8\\
+$(1,0,0)$ returns only & 0.845 & 0.131 & 0.227 & 0.008 & 0.8 & 8\\
+$(0,1,0)$ volatility only & 0.815 & 0.121 & 0.210 & 0.009 & 1.4 & 7\\
+$(0,0,1)$ z-score only & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!tbp]
+\centering
+\caption{Confirmation-term ablation for the persistence statistic. The low-$\kappa$ variant is the direction predicted by critical-slowing-down theory.}
+\label{tab:kappasign}
+\scriptsize
+\begin{tabular}{lrrrrrr}
+\toprule
+Confirmation term & Prec. & Recall & F1 & FPR & Delay & Events\\
+\midrule
+$|z_\kappa|$ two-sided (default) & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
+$\max(-z_\kappa,0)$ low $\kappa$ & 0.875 & 0.114 & 0.202 & 0.006 & 6.7 & 7\\
+$\max(+z_\kappa,0)$ high $\kappa$ & 0.874 & 0.141 & 0.242 & 0.007 & 1.6 & 7\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \begin{figure}[!tbp]
 \centering
-\includegraphics[width=\linewidth]{event_window_sensitivity.png}
+\includegraphics[width=0.95\textwidth]{event_window_sensitivity.png}
 \caption{Event-window sensitivity across $\pm20$, $\pm30$, $\pm45$, and $\pm60$ trading-day windows.}
 \label{fig:eventwindow}
 \end{figure}
-
 
 \begin{multicols}{2}
 \subsection{From Retrospective to Causal Confirmation}
@@ -847,9 +853,11 @@ Within this panel, events in the highest realized-drawdown tercile give F1 0.412
 The MMD-only row in Table~\ref{tab:spy} is the standalone thresholded MMD component. The component ablation instead uses MMD-only as the confirmation signal inside the hybrid, which gives F1 0.219 against 0.214 for the default no-CIS hybrid. The no-CIS score is the more conservative of the two, FPR 0.005 against 0.011. Figure~\ref{fig:window_sensitivity} shows $W=10$ is not F1-optimal: F1 climbs to 0.291 at $W=60$ while FPR rises to 0.031. Since these use symmetric confirmation windows, read them as retrospective sensitivity analysis.
 
 
+
 \subsection{Bootstrap Uncertainty}
 \label{sec:bootstrap}
 The event bootstrap gives hybrid-minus-volatility $\Delta$F1 $=-0.091$ with 95\% CI $[-0.166,0.005]$, and $\Delta$FPR $=-0.045$ with CI $[-0.058,-0.035]$. The block bootstrap gives $\Delta$F1 $=-0.120$ with CI $[-0.203,-0.047]$ and $\Delta$FPR $=-0.039$ with CI $[-0.062,-0.019]$. The FPR reduction is negative in essentially every resample under both schemes. The F1 reduction is negative or near zero, and the event-bootstrap interval includes zero, so the size of the F1 penalty is the less firmly established of the two. Figure~\ref{fig:bootstrap_violin} shows the distributions. With 13 fixed events, resampling cannot manufacture precision the panel does not contain, and the multi-asset results are directional evidence rather than a pooled estimate.
+
 
 \end{multicols}
 
@@ -885,7 +893,6 @@ Volatility (reference) & 0.640 & 0.225 & 0.333 & 0.044 & 10/13 & -1.2 & 195 & \\
 \caption{Bootstrap distributions of hybrid-minus-volatility differences under the fixed-event protocol.}
 \label{fig:bootstrap_violin}
 \end{figure}
-
 
 \begin{multicols}{2}
 \subsection{Auxiliary Diagnostic Validation: Synthetic and NAB Analyses}

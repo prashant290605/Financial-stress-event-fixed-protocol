@@ -192,9 +192,12 @@ def main() -> None:
         for (a, b), color in [(EPISODE_A, "#d95f02"), (EPISODE_B, "#1f77b4"), (CALIB_EPISODE, "#7f7f7f")]:
             ax.axvspan(a, b, color=color, alpha=0.10, lw=0)
         ax.grid(axis="y", alpha=0.18)
-    axes[0].text(np.mean(EPISODE_A), axes[0].get_ylim()[1] * 0.86, "A", ha="center", fontsize=10)
-    axes[0].text(np.mean(EPISODE_B), axes[0].get_ylim()[1] * 0.86, "B", ha="center", fontsize=10)
-    axes[0].text(np.mean(CALIB_EPISODE), axes[0].get_ylim()[1] * 0.86, "calib.", ha="center", fontsize=9, color="#555555")
+    # Episode labels sit above the axes frame (x in data coordinates, y in
+    # axes coordinates) so they can never collide with the return series.
+    label_tf = axes[0].get_xaxis_transform()
+    axes[0].text(np.mean(EPISODE_A), 1.04, "A", ha="center", va="bottom", fontsize=10, transform=label_tf)
+    axes[0].text(np.mean(EPISODE_B), 1.04, "B", ha="center", va="bottom", fontsize=10, transform=label_tf)
+    axes[0].text(np.mean(CALIB_EPISODE), 1.04, "calibration", ha="center", va="bottom", fontsize=9, color="#555555", transform=label_tf)
     axes[1].legend(frameon=False, ncol=3, loc="upper left")
     fig.tight_layout()
     FIGDIR.mkdir(parents=True, exist_ok=True)
