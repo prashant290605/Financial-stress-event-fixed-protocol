@@ -45,7 +45,7 @@
 \usepackage{makeidx}
 \usepackage{graphicx}
 % Figures resolve both in a flat submission folder and from paper/ in the repository.
-\graphicspath{{./}{../figures/final/}}
+\graphicspath{{./}}
 \usepackage{subcaption}
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{setspace}
@@ -93,7 +93,6 @@
 \let\enddescription\endcompactdesc
 \usepackage{titletoc}
 \usepackage{float}
-\usepackage{dsfont}
 \usepackage{multirow}
 % [hyphens] lets long URLs break at hyphens in narrow columns; hyperref
 % (loaded last) makes every \url a single clickable link across line
@@ -133,7 +132,7 @@
 \vspace{-4.65cm}
 \noindent
 \begin{tabular}[H]{lr}\toprule [1pt] \vspace{-0.33cm}\\
-\hspace{-2mm}\Journal{International Journal of Data Science and Analysis} & \hspace{20mm}\multirow{5}*{\includegraphics[height=22mm,width=58mm]{SciencePGLOGO.pdf}}\\
+\hspace{-2mm}\Journal{International Journal of Data Science and Analysis} & \hspace{20mm}\multirow{5}*{\includegraphics[height=20mm,width=55mm]{SciencePGLOGO.pdf}}\\
 \hspace{-2mm}\Address{2026; 12(X): XX-XX} &\\
 \hspace{-2mm}\Address{https://www.sciencepublishinggroup.com/journal/367} &\\
 \hspace{-2mm}\Address{doi: 10.11648/j.ijdsa.202612XX.XX} &\\
@@ -154,6 +153,10 @@
 \parskip=4pt
 \noindent \Emailaddress{Email address:}\\
 \noindent \Emailaddresscontent{2023mcb1309@iitrpr.ac.in (Prashant Singh), 2023mcb1308@iitrpr.ac.in (Pranav Singh)\\$^*$Corresponding author}
+
+\parskip=4pt
+\noindent \Emailaddress{ORCID:}\\
+\noindent \Emailaddresscontent{0000-0000-0000-0000 (Prashant Singh), 0000-0000-0000-0000 (Pranav Singh)}
 
 \parskip=8pt
 \noindent \Citation{To cite this article:}
@@ -196,10 +199,10 @@ Detection methods for financial series are plentiful. The evaluation layer benea
 
 This paper contributes the following.
 \begin{enumerate}
-\item \textbf{A protocol under which the detector ranking reverses.} Fixing 13 documented stress events before inspection, and scoring pointwise and event-level performance side by side, shows the hybrid dominating on false-alarm measures while detecting 8 of 13 events against 10. Neither view is wrong. Reporting only one is.
-\item \textbf{A mechanism for the reversal, not just a description of it.} The confirmation gate runs on a composite signal that is numerically dominated by a standardized return, and standardization divides by a trailing 50-day volatility. Any volatility increase the trailing window has time to incorporate is therefore absorbed into the denominator. Across the events the hybrid confirms, the dispersion of raw volatility rises by a factor of 3.03 while the dispersion of the composite rises by 1.29. The gate reads scale contrast, not level.
-\item \textbf{A crossover ratio a risk desk can apply.} The volatility trigger is preferred on SPY only when an out-of-window false alarm is worth less than 0.021 of a missed episode, equivalently one missed episode per 48 false alarm days. We report this crossover for five assets and three delay penalties.
-\item \textbf{Evidence that the design choices are not load-bearing.} The heuristic composite weights, the confirmation-window width, the event-window width, the sign convention on the persistence statistic, and the retrospective confirmation window are each varied. The reversal survives all of them, including a trailing-only confirmation window; the one variant that does not retain the selectivity is the end-to-end causal one, which locates the hybrid's power in the kernel statistic's post-window rather than in the confirmation rule.
+\item \textit{A protocol under which the detector ranking reverses.} Fixing 13 documented stress events before inspection, and scoring pointwise and event-level performance side by side, shows the hybrid dominating on false-alarm measures while detecting 8 of 13 events against 10. Neither view is wrong. Reporting only one is.
+\item \textit{A mechanism for the reversal, not just a description of it.} The confirmation gate runs on a composite signal that is numerically dominated by a standardized return, and standardization divides by a trailing 50-day volatility. Any volatility increase the trailing window has time to incorporate is therefore absorbed into the denominator. Across the events the hybrid confirms, the dispersion of raw volatility rises by a factor of 3.03 while the dispersion of the composite rises by 1.29. The gate reads scale contrast, not level.
+\item \textit{A crossover ratio a risk desk can apply.} The volatility trigger is preferred on SPY only when an out-of-window false alarm is worth less than 0.021 of a missed episode, equivalently one missed episode per 48 false alarm days. We report this crossover for five assets and three delay penalties.
+\item \textit{Evidence that the design choices are not load-bearing.} The heuristic composite weights, the confirmation-window width, the event-window width, the sign convention on the persistence statistic, and the retrospective confirmation window are each varied. The reversal survives all of them, including a trailing-only confirmation window; the one variant that does not retain the selectivity is the end-to-end causal one, which locates the hybrid's power in the kernel statistic's post-window rather than in the confirmation rule.
 \end{enumerate}
 
 Table~\ref{tab:protocol_comparison} summarizes how the protocol assembles established evaluation elements, from fixed event panels to cost-sensitive interpretation, into one design.
@@ -314,12 +317,12 @@ Pointwise masks summarize alarm days. They do not say whether a fixed stress eve
 \subsection{Detector Definitions}
 All thresholds are calibrated on the first 70\% of each series and reused unchanged. For any scalar score $q_t$, training standardization uses $z_q(t)=(q_t-\mu_{q,\mathrm{train}})/\sigma_{q,\mathrm{train}}$. Unless stated otherwise, smoothing is a trailing five-point rolling mean, $\bar q_t=|\{j:0\leq j\leq4,t-j\geq0\}|^{-1}\sum_{j=0}^{4}q_{t-j}$. The volatility, CUSUM, and MMD components are operational definitions for this study, grounded respectively in volatility modelling [16, 20], sequential change detection [24], and kernel two-sample testing [25]. The percentile threshold and smoothing window are design choices, not standard definitions.
 \begin{itemize}
-\item \textbf{Volatility percentile trigger:} compute $\sigma_t=\mathrm{sd}(r_{t-19:t})$, standardize on the calibration period, smooth with the five-point trailing mean, and set $v_t=1$ when the smoothed score exceeds its 90th calibration percentile. Note that this operates on raw volatility, which is not scale-normalized.
-\item \textbf{CUSUM:} use standardized returns $z_r(t)$ and a two-sided zero-reference cumulative sum, $C_t^+=\max(0,C_{t-1}^+ + z_r(t))$, $C_t^-=\min(0,C_{t-1}^- + z_r(t))$, $C_t=\max(C_t^+,-C_t^-)$. Smoothed $C_t$ is thresholded at its 90th calibration percentile, following Page [24].
-\item \textbf{MMD:} for each $t$, compare pre-window $x_{t-30:t-1}$ and post-window $x_{t:t+29}$ with an RBF kernel [25]. Bandwidth is the median absolute pairwise pre/post distance, floored at $10^{-4}$. With $K(x_i,x_j)=\exp[-\|x_i-x_j\|^2/(2\gamma^2)]$ and $\bar K_{aa}$, $\bar K_{bb}$, $\bar K_{ab}$ the mean within-pre, within-post, and cross-window kernel values, the biased estimate $\widehat{\mathrm{MMD}}^2=\bar K_{aa}+\bar K_{bb}-2\bar K_{ab}$ is clipped at zero, smoothed with a trailing three-point mean, standardized on the calibration period, and passed to the instability score. Because its input $x_t$ is self-normalizing, this statistic measures distributional contrast between adjacent 30-day windows rather than the level of volatility.
-\item \textbf{AR(1) persistence statistic ($\kappa$):} over a trailing 36-day window, estimate $\widehat\phi_t=(\sum a_i b_i)/(\sum a_i^2+10^{-10})$ from adjacent observations $a_i=x_i$, $b_i=x_{i+1}$. Define $\kappa_t=1-\widehat\phi_t$ and standardize on the calibration period.
-\item \textbf{Instability score:} $s(t)=0.5z_{\mathrm{MMD}}(t)+0.5|z_\kappa(t)|$, smoothed and thresholded at its 90th calibration percentile. MMD-only and $|\kappa|$-only confirmations use the same standardization and threshold for the corresponding component.
-\item \textbf{Hybrid $W=10$:} let $v(t)$ be the binary volatility alarm and $i(t)$ the binary instability alarm. The hybrid fires only when volatility is active and instability appears within $\pm W$ trading days:
+\item \textit{Volatility percentile trigger:} compute $\sigma_t=\mathrm{sd}(r_{t-19:t})$, standardize on the calibration period, smooth with the five-point trailing mean, and set $v_t=1$ when the smoothed score exceeds its 90th calibration percentile. Note that this operates on raw volatility, which is not scale-normalized.
+\item \textit{CUSUM:} use standardized returns $z_r(t)$ and a two-sided zero-reference cumulative sum, $C_t^+=\max(0,C_{t-1}^+ + z_r(t))$, $C_t^-=\min(0,C_{t-1}^- + z_r(t))$, $C_t=\max(C_t^+,-C_t^-)$. Smoothed $C_t$ is thresholded at its 90th calibration percentile, following Page [24].
+\item \textit{MMD:} for each $t$, compare pre-window $x_{t-30:t-1}$ and post-window $x_{t:t+29}$ with an RBF kernel [25]. Bandwidth is the median absolute pairwise pre/post distance, floored at $10^{-4}$. With $K(x_i,x_j)=\exp[-\|x_i-x_j\|^2/(2\gamma^2)]$ and $\bar K_{aa}$, $\bar K_{bb}$, $\bar K_{ab}$ the mean within-pre, within-post, and cross-window kernel values, the biased estimate $\widehat{\mathrm{MMD}}^2=\bar K_{aa}+\bar K_{bb}-2\bar K_{ab}$ is clipped at zero, smoothed with a trailing three-point mean, standardized on the calibration period, and passed to the instability score. Because its input $x_t$ is self-normalizing, this statistic measures distributional contrast between adjacent 30-day windows rather than the level of volatility.
+\item \textit{AR(1) persistence statistic ($\kappa$):} over a trailing 36-day window, estimate $\widehat\phi_t=(\sum a_i b_i)/(\sum a_i^2+10^{-10})$ from adjacent observations $a_i=x_i$, $b_i=x_{i+1}$. Define $\kappa_t=1-\widehat\phi_t$ and standardize on the calibration period.
+\item \textit{Instability score:} $s(t)=0.5z_{\mathrm{MMD}}(t)+0.5|z_\kappa(t)|$, smoothed and thresholded at its 90th calibration percentile. MMD-only and $|\kappa|$-only confirmations use the same standardization and threshold for the corresponding component.
+\item \textit{Hybrid $W=10$:} let $v(t)$ be the binary volatility alarm and $i(t)$ the binary instability alarm. The hybrid fires only when volatility is active and instability appears within $\pm W$ trading days:
 \begin{equation}
 h_W(t)=v(t)\wedge \max_{\tau\in[t-W,t+W]}i(\tau).
 \end{equation}
@@ -360,7 +363,7 @@ We use 2000 bootstrap resamples and percentile 95\% confidence intervals. The ev
 
 \subsection{Implementation Details and Auxiliary Settings}
 \label{sec:implementation}
-This subsection collects implementation details that support reproducibility and auditing. The fixed event panel is in \texttt{data/events\_spy.csv} and the per-asset mapped event table is in \texttt{data/events\_multi\_asset.csv}. Full event-source strings are retained with the event panel. Detector settings, preprocessing windows, bootstrap settings, and the random seed are in \texttt{config/paper\_experiment.json}. The primary reproduction procedure is \texttt{scripts/reproduce\_paper.py}, with additional procedures described in the repository's supplementary README. Table~\ref{tab:asset_availability} reports processed sample lengths and Table~\ref{tab:hyperparams} the hyperparameters.
+\sloppy This subsection collects implementation details that support reproducibility and auditing. The fixed event panel is in \path{data/events_spy.csv} and the per-asset mapped event table is in \path{data/events_multi_asset.csv}. Full event-source strings are retained with the event panel. Detector settings, preprocessing windows, bootstrap settings, and the random seed are in \path{config/paper_experiment.json}. The primary reproduction procedure is \path{scripts/reproduce_paper.py}, with additional procedures described in the repository's supplementary README. Table~\ref{tab:asset_availability} reports processed sample lengths and Table~\ref{tab:hyperparams} the hyperparameters.
 
 \begin{table}[H]
 \centering
@@ -408,10 +411,10 @@ Nonlinear $\beta$ & [0.01, 0.08]\\
 \end{tabular}
 \end{table}
 
-For the NAB auxiliary validation, all 58 series in the official \texttt{combined\_windows.json} are evaluated. Anomaly windows are converted to binary masks, parameters are reused without tuning, and results are not used for leaderboard comparison. For runtime tractability across all 58 series, the NAB path uses a deterministic rolling mean-difference proxy for MMD rather than the quadratic exact-MMD implementation used for SPY. Because the proxy differs from exact MMD, NAB results are interpreted qualitatively and not as a strict detector-equivalence benchmark.
+For the NAB auxiliary validation, all 58 series in the official \path{combined_windows.json} are evaluated. Anomaly windows are converted to binary masks, parameters are reused without tuning, and results are not used for leaderboard comparison. For runtime tractability across all 58 series, the NAB path uses a deterministic rolling mean-difference proxy for MMD rather than the quadratic exact-MMD implementation used for SPY. Because the proxy differs from exact MMD, NAB results are interpreted qualitatively and not as a strict detector-equivalence benchmark.
 
 \subsection{Reproducibility and Code Availability}
-The reproducibility package supports independent inspection and regeneration of every reported analysis. It contains the fixed event panel, the per-asset mapped event table, full event-source strings, detector settings, preprocessing windows, bootstrap settings, and the random seed. Reported experiments use seed 42 and calibrate thresholds on the first 70\% of each processed series. The weight ablation in Table~\ref{tab:weights}, the sign ablation in Table~\ref{tab:kappasign}, the component diagnosis in Table~\ref{tab:mechanism}, the causal-confirmation variants in Table~\ref{tab:causal}, and the crossover ratios in Table~\ref{tab:crossover} are all regenerated by one script (\texttt{scripts/run\_ablations.py}) from the same configuration; the controlled mechanism test of Section~\ref{sec:mechtest} is regenerated by \texttt{scripts/run\_synthetic\_mechanism.py}; and the archived market-data snapshots pin the inputs. The package is available at \url{https://github.com/prashant290605/Financial-stress-event-fixed-protocol}, including requirements, data-download instructions, expected runtimes, output locations, and known reproduction limitations.
+\sloppy The reproducibility package supports independent inspection and regeneration of every reported analysis. It contains the fixed event panel, the per-asset mapped event table, full event-source strings, detector settings, preprocessing windows, bootstrap settings, and the random seed. Reported experiments use seed 42 and calibrate thresholds on the first 70\% of each processed series. The weight ablation in Table~S2, the sign ablation in Table~S3, the component diagnosis in Table~\ref{tab:mechanism}, the causal-confirmation variants in Table~\ref{tab:causal}, and the crossover ratios in Table~\ref{tab:crossover} are all regenerated by one script (\path{scripts/run_ablations.py}) from the same configuration; the controlled mechanism test of Section~\ref{sec:mechtest} is regenerated by \path{scripts/run_synthetic_mechanism.py}; and the archived market-data snapshots pin the inputs. The package is available at \url{https://github.com/prashant290605/Financial-stress-event-fixed-protocol}, including requirements, data-download instructions, expected runtimes, output locations, and known reproduction limitations.
 \end{multicols}
 
 \begin{table}[!tbp]
@@ -754,34 +757,15 @@ Across assets, the same cost-regime dependence appears: under event-aware cost w
 
 \begin{multicols}{2}
 \subsection{Event-Window Sensitivity}
-Table~\ref{tab:eventwindow} and Figure~\ref{fig:eventwindow} show the tradeoff holding across window widths. The hybrid keeps lower FPR and higher precision, with lower recall and F1, at every width tested. The gap widens as windows lengthen, since wider windows admit more of the volatility trigger's in-window alarms.
+Table~S1 and Figure~S1 in the Supporting Information show the tradeoff holding across window widths. The hybrid keeps lower FPR and higher precision, with lower recall and F1, at every width tested. The gap widens as windows lengthen, since wider windows admit more of the volatility trigger's in-window alarms.
 
-\begin{table}[H]
-\centering
-\caption{Event-window sensitivity for pointwise precision, recall, F1, and FPR.}
-\label{tab:eventwindow}
-\scriptsize
-\begin{tabular}{llrrrr}
-\toprule
-Window & Method & Prec. & Recall & F1 & FPR\\
-\midrule
-$\pm20$ & Vol. & 0.390 & 0.396 & 0.393 & 0.061\\
-$\pm20$ & Hybrid & 0.545 & 0.216 & 0.309 & 0.018\\
-$\pm30$ & Vol. & 0.499 & 0.344 & 0.407 & 0.052\\
-$\pm30$ & Hybrid & 0.692 & 0.186 & 0.293 & 0.012\\
-$\pm45$ & Vol. & 0.571 & 0.266 & 0.363 & 0.048\\
-$\pm45$ & Hybrid & 0.815 & 0.148 & 0.251 & 0.008\\
-$\pm60$ & Vol. & 0.640 & 0.225 & 0.333 & 0.044\\
-$\pm60$ & Hybrid & 0.886 & 0.122 & 0.214 & 0.005\\
-\bottomrule
-\end{tabular}
-\end{table}
+
 
 
 
 \subsection{Composite Signal Weights}
 \label{sec:weights}
-The weights $(0.5,0.3,0.2)$ are heuristic, so their influence should be measured rather than asserted. Table~\ref{tab:weights} re-runs the full pipeline under ten weightings, recomputing the composite, MMD, $\kappa$, the instability score, and the hybrid each time. The volatility trigger is untouched, since it reads $\sigma_t$ directly.
+The weights $(0.5,0.3,0.2)$ are heuristic, so their influence should be measured rather than asserted. Table~S2 in the Supporting Information re-runs the full pipeline under ten weightings, recomputing the composite, MMD, $\kappa$, the instability score, and the hybrid each time. The volatility trigger is untouched, since it reads $\sigma_t$ directly.
 
 Hybrid F1 spans $[0.210,0.235]$ and FPR spans $[0.005,0.009]$ across all ten. Event detection is 8 of 13 in nine cases and 7 in the tenth. Every configuration stays far from the volatility trigger's F1 of 0.333, FPR of 0.044, and 10 of 13 events, so the ranking reversal is a property of the confirmation structure and not of the weighting.
 
@@ -789,54 +773,14 @@ Four rows are numerically identical, including the default, the equal weighting,
 
 \subsection{Sign Convention for $\kappa$}
 \label{sec:kappasign}
-Table~\ref{tab:kappasign} compares the two-sided statistic against both one-sided alternatives. Restricting to the theory-consistent low-$\kappa$ direction detects 7 events rather than 8 and lowers F1 to 0.202. The opposite restriction raises F1 to 0.242 but also detects 7, and it confirms much earlier at $+1.6$ days. All three variants stay well inside the band the weight ablation traces out, so the conclusions do not turn on this convention either. We keep the two-sided form, and the sign-convention discussion in the detector definitions states plainly that it is an abnormal-dependence criterion rather than a test of critical slowing down.
+Table~S3 in the Supporting Information compares the two-sided statistic against both one-sided alternatives. Restricting to the theory-consistent low-$\kappa$ direction detects 7 events rather than 8 and lowers F1 to 0.202. The opposite restriction raises F1 to 0.242 but also detects 7, and it confirms much earlier at $+1.6$ days. All three variants stay well inside the band the weight ablation traces out, so the conclusions do not turn on this convention either. We keep the two-sided form, and the sign-convention discussion in the detector definitions states plainly that it is an abnormal-dependence criterion rather than a test of critical slowing down.
 \end{multicols}
 
-\begin{table}[!tbp]
-\centering
-\caption{Composite weight ablation. Each row recomputes $x_t$, the MMD and $\kappa$ components, and the hybrid. Events are counted out of 13.}
-\label{tab:weights}
-\scriptsize
-\begin{tabular}{lrrrrrr}
-\toprule
-$(w_r,w_\sigma,w_z)$ & Prec. & Recall & F1 & FPR & Delay & Events\\
-\midrule
-$(0.5,0.3,0.2)$ default & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
-$(1/3,1/3,1/3)$ equal & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
-$(0.2,0.3,0.5)$ reversed & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
-$(0.6,0.2,0.2)$ & 0.882 & 0.122 & 0.214 & 0.006 & 6.8 & 8\\
-$(0.4,0.4,0.2)$ & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
-$(0.5,0.2,0.3)$ & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
-$(0.2,0.6,0.2)$ & 0.900 & 0.135 & 0.235 & 0.005 & 4.4 & 8\\
-$(1,0,0)$ returns only & 0.845 & 0.131 & 0.227 & 0.008 & 0.8 & 8\\
-$(0,1,0)$ volatility only & 0.815 & 0.121 & 0.210 & 0.009 & 1.4 & 7\\
-$(0,0,1)$ z-score only & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
-\bottomrule
-\end{tabular}
-\end{table}
 
-\begin{table}[!tbp]
-\centering
-\caption{Confirmation-term ablation for the persistence statistic. The low-$\kappa$ variant is the direction predicted by critical-slowing-down theory.}
-\label{tab:kappasign}
-\scriptsize
-\begin{tabular}{lrrrrrr}
-\toprule
-Confirmation term & Prec. & Recall & F1 & FPR & Delay & Events\\
-\midrule
-$|z_\kappa|$ two-sided (default) & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
-$\max(-z_\kappa,0)$ low $\kappa$ & 0.875 & 0.114 & 0.202 & 0.006 & 6.7 & 7\\
-$\max(+z_\kappa,0)$ high $\kappa$ & 0.874 & 0.141 & 0.242 & 0.007 & 1.6 & 7\\
-\bottomrule
-\end{tabular}
-\end{table}
 
-\begin{figure}[!tbp]
-\centering
-\includegraphics[width=0.95\textwidth]{event_window_sensitivity.png}
-\caption{Event-window sensitivity across $\pm20$, $\pm30$, $\pm45$, and $\pm60$ trading-day windows.}
-\label{fig:eventwindow}
-\end{figure}
+
+
+
 
 \begin{multicols}{2}
 \subsection{From Retrospective to Causal Confirmation}
@@ -850,7 +794,7 @@ The second stage is more revealing. Lagging the MMD component by its own 30-day 
 \subsection{Severity, Component, and Confirmation-Window Analyses}
 Within this panel, events in the highest realized-drawdown tercile give F1 0.412 for volatility and 0.316 for the hybrid, with FPR falling from 0.057 to 0.015. The middle tercile gives F1 0.195 against 0.134 and FPR 0.080 against 0.030. The lowest tercile gives very low F1 for both.
 
-The MMD-only row in Table~\ref{tab:spy} is the standalone thresholded MMD component. The component ablation instead uses MMD-only as the confirmation signal inside the hybrid, which gives F1 0.219 against 0.214 for the default no-CIS hybrid. The no-CIS score is the more conservative of the two, FPR 0.005 against 0.011. Figure~\ref{fig:window_sensitivity} shows $W=10$ is not F1-optimal: F1 climbs to 0.291 at $W=60$ while FPR rises to 0.031. Since these use symmetric confirmation windows, read them as retrospective sensitivity analysis.
+The MMD-only row in Table~\ref{tab:spy} is the standalone thresholded MMD component. The component ablation instead uses MMD-only as the confirmation signal inside the hybrid, which gives F1 0.219 against 0.214 for the default no-CIS hybrid. The no-CIS score is the more conservative of the two, FPR 0.005 against 0.011. Figure~S2 in the Supporting Information shows $W=10$ is not F1-optimal: F1 climbs to 0.291 at $W=60$ while FPR rises to 0.031. Since these use symmetric confirmation windows, read them as retrospective sensitivity analysis.
 
 
 
@@ -880,12 +824,7 @@ Volatility (reference) & 0.640 & 0.225 & 0.333 & 0.044 & 10/13 & -1.2 & 195 & \\
 \end{tabular}
 \end{table}
 
-\begin{figure}[!tbp]
-\centering
-\includegraphics[width=0.75\textwidth]{confirmation_window_sensitivity.png}
-\caption{Hybrid confirmation-window sensitivity showing how the retrospective confirmation window changes F1 and FPR.}
-\label{fig:window_sensitivity}
-\end{figure}
+
 
 \begin{figure}[!tbp]
 \centering
@@ -976,6 +915,12 @@ The reversal is not a quirk of thresholds. The confirmation gate runs on a self-
 
 For practitioners the operative number is the crossover. The volatility trigger is preferred on SPY only below $c_{\mathrm{FA}}/c_{\mathrm{ME}}=0.021$, roughly one missed episode per 48 false alarm days, with the crossover between 0.007 and 0.059 across five assets. A desk can locate itself against that threshold and choose. That is a more useful output than a ranking, and it is the kind of output an evaluation protocol should be expected to produce.
 
+\section*{Supplementary Materials}
+The Supporting Information file accompanying this article contains Table S1 (event-window sensitivity), Table S2 (composite weight ablation), Table S3 (persistence sign-convention ablation), Figure S1 (event-window sensitivity curves), and Figure S2 (confirmation-window sensitivity).
+
+\section*{Acknowledgments}
+The authors thank the Department of Mathematics, Indian Institute of Technology Ropar, for institutional support.
+
 \section*{Abbreviations}
 \begin{tabular}{@{}ll@{}}
 AR(1) & First-Order Autoregressive Model\\
@@ -1015,35 +960,35 @@ The authors declare that they have no conflicts of interest.
 \leftmargin=2em%%%%%%
 \labelsep=0em%%%%%
 \renewcommand{\makelabel}[1]{#1 \hfil}}%%
-\bibitem{1} Brown, S. J., Warner, J. B. Using daily stock returns: The case of event studies. Journal of Financial Economics. 1985, 14(1), 3-31.
-\bibitem{2} MacKinlay, A. C. Event studies in economics and finance. Journal of Economic Literature. 1997, 35(1), 13-39.
-\bibitem{3} Lavin, A., Ahmad, S. Evaluating real-time anomaly detection algorithms--the Numenta Anomaly Benchmark. In Proceedings of the IEEE International Conference on Machine Learning and Applications, 2015.
-\bibitem{4} Wu, R., Keogh, E. Current time series anomaly detection benchmarks are flawed and are creating the illusion of progress. In Proceedings of the IEEE International Conference on Big Data, 2022.
+\bibitem{1} Brown, S. J., Warner, J. B. Using daily stock returns: The case of event studies. {\it Journal of Financial Economics}. 1985, 14(1), 3-31. doi: 10.1016/0304-405X(85)90042-X
+\bibitem{2} MacKinlay, A. C. Event studies in economics and finance. {\it Journal of Economic Literature}. 1997, 35(1), 13-39.
+\bibitem{3} Lavin, A., Ahmad, S. Evaluating real-time anomaly detection algorithms--the Numenta Anomaly Benchmark. In Proceedings of the IEEE International Conference on Machine Learning and Applications, 2015. doi: 10.1109/ICMLA.2015.141
+\bibitem{4} Wu, R., Keogh, E. Current time series anomaly detection benchmarks are flawed and are creating the illusion of progress. {\it IEEE Transactions on Knowledge and Data Engineering}. 2023, 35(3), 2421-2429. doi: 10.1109/TKDE.2021.3112126
 \bibitem{5} National Bureau of Economic Research. U.S. business cycle expansions and contractions. 2023. Available from: \url{https://www.nber.org/research/data/us-business-cycle-expansions-and-contractions}
-\bibitem{6} Financial Crisis Inquiry Commission. The Financial Crisis Inquiry Report. U.S. Government Printing Office; 2011.
-\bibitem{7} Commodity Futures Trading Commission, Securities and Exchange Commission. Findings Regarding the Market Events of May 6, 2010. 2010.
-\bibitem{8} Ahmad, S., Lavin, A., Purdy, S., Agha, Z. Unsupervised real-time anomaly detection for streaming data. Neurocomputing. 2017, 262, 134-147.
-\bibitem{9} Kupiec, P. H. Techniques for verifying the accuracy of risk measurement models. The Journal of Derivatives. 1995, 3(2), 73-84.
-\bibitem{10} Christoffersen, P. F. Evaluating interval forecasts. International Economic Review. 1998, 39(4), 841-862.
-\bibitem{11} Basel Committee on Banking Supervision. Supervisory Framework for the Use of `Backtesting' in Conjunction with the Internal Models Approach to Market Risk Capital Requirements. Bank for International Settlements; 1996. Available from: \url{https://www.bis.org/publ/bcbs22.htm}
-\bibitem{12} Kaminsky, G. L., Lizondo, S., Reinhart, C. M. Leading indicators of currency crises. IMF Staff Papers. 1998, 45(1), 1-48.
-\bibitem{13} Berg, A., Pattillo, C. Predicting currency crises: The indicators approach and an alternative. Journal of International Money and Finance. 1999, 18(4), 561-586.
-\bibitem{14} Bussi{\`e}re, M., Fratzscher, M. Towards a new early warning system of financial crises. Journal of International Money and Finance. 2006, 25(6), 953-973.
-\bibitem{15} Magdon-Ismail, M., Atiya, A. F., Pratap, A., Abu-Mostafa, Y. S. On the maximum drawdown of a Brownian motion. Journal of Applied Probability. 2004, 41(1), 147-161.
-\bibitem{16} Andersen, T. G., Bollerslev, T., Diebold, F. X., Labys, P. Modeling and forecasting realized volatility. Econometrica. 2003, 71(2), 579-625.
-\bibitem{17} Mandelbrot, B. The variation of certain speculative prices. Journal of Business. 1963, 36(4), 394-419.
-\bibitem{18} Cont, R. Empirical properties of asset returns: Stylized facts and statistical issues. Quantitative Finance. 2001, 1(2), 223-236.
-\bibitem{19} Engle, R. F. Autoregressive conditional heteroscedasticity with estimates of the variance of United Kingdom inflation. Econometrica. 1982, 50(4), 987-1007.
-\bibitem{20} Bollerslev, T. Generalized autoregressive conditional heteroskedasticity. Journal of Econometrics. 1986, 31(3), 307-327.
-\bibitem{21} Scheffer, M., et al. Early-warning signals for critical transitions. Nature. 2009, 461, 53-59.
-\bibitem{22} Dakos, V., et al. Methods for detecting early warnings of critical transitions in time series illustrated using simulated ecological data. PLoS ONE. 2012, 7(7), e41010.
-\bibitem{23} Boettiger, C., Hastings, A. Quantifying limits to detection of early warning for critical transitions. Journal of the Royal Society Interface. 2012, 9, 2527-2539.
-\bibitem{24} Page, E. S. Continuous inspection schemes. Biometrika. 1954, 41(1/2), 100-115.
-\bibitem{25} Gretton, A., et al. A kernel two-sample test. Journal of Machine Learning Research. 2012, 13, 723-773.
-\bibitem{26} Gu, X., Mamon, R., Duprey, T. Interfacing learning methods for anomaly detection in multi-country financial stress indicators. Knowledge-Based Systems. 2024, 294, 111712. doi: 10.1016/j.knosys.2024.111712
+\bibitem{6} Financial Crisis Inquiry Commission. {\it The Financial Crisis Inquiry Report}. U.S. Government Printing Office; 2011.
+\bibitem{7} Commodity Futures Trading Commission, Securities and Exchange Commission. {\it Findings Regarding the Market Events of May 6, 2010}. 2010.
+\bibitem{8} Ahmad, S., Lavin, A., Purdy, S., Agha, Z. Unsupervised real-time anomaly detection for streaming data. {\it Neurocomputing}. 2017, 262, 134-147. doi: 10.1016/j.neucom.2017.04.070
+\bibitem{9} Kupiec, P. H. Techniques for verifying the accuracy of risk measurement models. {\it The Journal of Derivatives}. 1995, 3(2), 73-84. doi: 10.3905/jod.1995.407942
+\bibitem{10} Christoffersen, P. F. Evaluating interval forecasts. {\it International Economic Review}. 1998, 39(4), 841-862. doi: 10.2307/2527341
+\bibitem{11} Basel Committee on Banking Supervision. {\it Supervisory Framework for the Use of `Backtesting' in Conjunction with the Internal Models Approach to Market Risk Capital Requirements}. Bank for International Settlements; 1996. Available from: \url{https://www.bis.org/publ/bcbs22.htm}
+\bibitem{12} Kaminsky, G. L., Lizondo, S., Reinhart, C. M. Leading indicators of currency crises. {\it IMF Staff Papers}. 1998, 45(1), 1-48. doi: 10.2307/3867328
+\bibitem{13} Berg, A., Pattillo, C. Predicting currency crises: The indicators approach and an alternative. {\it Journal of International Money and Finance}. 1999, 18(4), 561-586. doi: 10.1016/S0261-5606(99)00024-8
+\bibitem{14} Bussi{\`e}re, M., Fratzscher, M. Towards a new early warning system of financial crises. {\it Journal of International Money and Finance}. 2006, 25(6), 953-973. doi: 10.1016/j.jimonfin.2006.07.007
+\bibitem{15} Magdon-Ismail, M., Atiya, A. F., Pratap, A., Abu-Mostafa, Y. S. On the maximum drawdown of a Brownian motion. {\it Journal of Applied Probability}. 2004, 41(1), 147-161. doi: 10.1239/jap/1077134674
+\bibitem{16} Andersen, T. G., Bollerslev, T., Diebold, F. X., Labys, P. Modeling and forecasting realized volatility. {\it Econometrica}. 2003, 71(2), 579-625. doi: 10.1111/1468-0262.00418
+\bibitem{17} Mandelbrot, B. The variation of certain speculative prices. {\it Journal of Business}. 1963, 36(4), 394-419. doi: 10.1086/294632
+\bibitem{18} Cont, R. Empirical properties of asset returns: Stylized facts and statistical issues. {\it Quantitative Finance}. 2001, 1(2), 223-236. doi: 10.1080/713665670
+\bibitem{19} Engle, R. F. Autoregressive conditional heteroscedasticity with estimates of the variance of United Kingdom inflation. {\it Econometrica}. 1982, 50(4), 987-1007. doi: 10.2307/1912773
+\bibitem{20} Bollerslev, T. Generalized autoregressive conditional heteroskedasticity. {\it Journal of Econometrics}. 1986, 31(3), 307-327. doi: 10.1016/0304-4076(86)90063-1
+\bibitem{21} Scheffer, M., Bascompte, J., Brock, W. A., Brovkin, V., Carpenter, S. R., Dakos, V., Held, H., van Nes, E. H., Rietkerk, M., Sugihara, G. Early-warning signals for critical transitions. {\it Nature}. 2009, 461, 53-59. doi: 10.1038/nature08227
+\bibitem{22} Dakos, V., Carpenter, S. R., Brock, W. A., Ellison, A. M., Guttal, V., Ives, A. R., K{\'e}fi, S., Livina, V., Seekell, D. A., van Nes, E. H., Scheffer, M. Methods for detecting early warnings of critical transitions in time series illustrated using simulated ecological data. {\it PLoS ONE}. 2012, 7(7), e41010. doi: 10.1371/journal.pone.0041010
+\bibitem{23} Boettiger, C., Hastings, A. Quantifying limits to detection of early warning for critical transitions. {\it Journal of the Royal Society Interface}. 2012, 9, 2527-2539. doi: 10.1098/rsif.2012.0125
+\bibitem{24} Page, E. S. Continuous inspection schemes. {\it Biometrika}. 1954, 41(1/2), 100-115. doi: 10.1093/biomet/41.1-2.100
+\bibitem{25} Gretton, A., Borgwardt, K. M., Rasch, M. J., Sch{\"o}lkopf, B., Smola, A. A kernel two-sample test. {\it Journal of Machine Learning Research}. 2012, 13, 723-773.
+\bibitem{26} Gu, X., Mamon, R., Duprey, T. Interfacing learning methods for anomaly detection in multi-country financial stress indicators. {\it Knowledge-Based Systems}. 2024, 294, 111712. doi: 10.1016/j.knosys.2024.111712
 \bibitem{27} Aldasoro, I., H{\"o}rdahl, P., Schrimpf, A., Zhu, X. S. Predicting financial market stress with machine learning. BIS Working Papers No. 1250, Bank for International Settlements; 2025. Available from: \url{https://www.bis.org/publ/work1250.htm}
-\bibitem{28} International Monetary Fund. Global Financial Stability Report: Global Financial Markets Confront the War in the Middle East and Amplification Risks. International Monetary Fund; 2026. Available from: \url{https://www.imf.org/en/Publications/GFSR/Issues/2026/04/14/global-financial-stability-report-april-2026}
-\bibitem{29} Khandani, A. E., Lo, A. W. What happened to the quants in August 2007? Journal of Investment Management. 2007, 5(4), 5-54.
+\bibitem{28} International Monetary Fund. {\it Global Financial Stability Report: Global Financial Markets Confront the War in the Middle East and Amplification Risks}. International Monetary Fund; 2026. Available from: \url{https://www.imf.org/en/Publications/GFSR/Issues/2026/04/14/global-financial-stability-report-april-2026}
+\bibitem{29} Khandani, A. E., Lo, A. W. What happened to the quants in August 2007? {\it Journal of Investment Management}. 2007, 5(4), 5-54.
 \end{list}
 
 \end{multicols}
