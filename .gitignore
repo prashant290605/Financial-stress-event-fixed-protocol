@@ -31,7 +31,9 @@ Thumbs.db
 *.toc
 
 # Local data caches
-data/raw_market/*.csv
+# Raw adjusted-close snapshots are intentionally tracked: providers revise
+# adjustment factors over time, so reproducing the paper's exact numbers
+# requires the archived CSVs rather than a fresh download.
 data/raw_market/.yfinance_cache/
 
 # Large or legacy generated artifacts
@@ -43,3 +45,6 @@ external/NAB/
 # Node/dashboard artifacts from archived legacy app
 node_modules/
 .next/
+
+# Local working copy of the manuscript folder; canonical sources live in paper/
+A_Reproducible_Event_Fixed_Protocol_for_Evaluating_Financial_Stress_Detectors__2_/
