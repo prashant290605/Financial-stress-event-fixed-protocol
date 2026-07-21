@@ -360,7 +360,7 @@ We use 2000 bootstrap resamples and percentile 95\% confidence intervals. The ev
 
 \subsection{Implementation Details and Auxiliary Settings}
 \label{sec:implementation}
-This subsection collects implementation details that support reproducibility and auditing. The fixed event panel is in \texttt{data/events\_spy.csv} and the per-asset mapped event table is in \texttt{data/events\_multi\_asset.csv}. Full event-source strings are retained with the event panel. Detector settings, preprocessing windows, bootstrap settings, and the random seed are in \texttt{config/paper\_experiment.json}. The primary reproduction procedure is \texttt{scripts/reproduce\_paper.py}, with additional procedures described in \texttt{SUPPLEMENTARY\_README.md}. Table~\ref{tab:asset_availability} reports processed sample lengths and Table~\ref{tab:hyperparams} the hyperparameters.
+This subsection collects implementation details that support reproducibility and auditing. The fixed event panel is in \texttt{data/events\_spy.csv} and the per-asset mapped event table is in \texttt{data/events\_multi\_asset.csv}. Full event-source strings are retained with the event panel. Detector settings, preprocessing windows, bootstrap settings, and the random seed are in \texttt{config/paper\_experiment.json}. The primary reproduction procedure is \texttt{scripts/reproduce\_paper.py}, with additional procedures described in the repository's supplementary README. Table~\ref{tab:asset_availability} reports processed sample lengths and Table~\ref{tab:hyperparams} the hyperparameters.
 
 \begin{table}[H]
 \centering
