@@ -43,13 +43,15 @@ python -m pip install -r requirements.txt
 
 ## Data Requirements
 
-The paper uses daily adjusted-close prices for SPY, QQQ, IWM, HYG, and TLT. Local CSV files are expected in `data/raw_market/` with at least `Date` and `Adj Close` columns.
+The paper uses daily adjusted-close prices for SPY, QQQ, IWM, HYG, and TLT. The exact CSV snapshots used for every number in the paper are archived in `data/raw_market/` (SPY retrieved from Yahoo Finance via `yfinance` on 30 March 2026; QQQ, IWM, HYG, and TLT on 22 May 2026). Providers revise adjusted-close series over time, so reproducing the reported numbers requires these archived snapshots, not a fresh download.
 
-To download fresh public market data with `yfinance`, run:
+To download fresh market data instead (results will differ from the paper), run:
 
 ```bash
 python scripts/download_data.py
 ```
+
+Note that this overwrites the archived snapshots; restore them with `git checkout -- data/raw_market/` afterwards if you want the paper's exact inputs back.
 
 The fixed event panel is provided in `data/events_spy_seed.csv` and regenerated into `data/events_spy.csv`. Multi-asset event mappings are stored in `data/events_multi_asset.csv`.
 
@@ -66,16 +68,16 @@ Follow the setup guide before running the full workflow if you want to regenerat
 Run the commands below from the repository root.
 
 ```bash
-python scripts/download_data.py
 python scripts/prepare_multi_asset_data.py
 python scripts/reproduce_paper.py
 python scripts/evaluate_multi_asset.py
 python scripts/evaluate_event_level.py
 python scripts/run_cost_analysis.py
+python scripts/run_ablations.py
 python scripts/generate_final_figures.py
 ```
 
-The full workflow regenerates the main result tables, intermediate outputs, and final publication figures.
+The full workflow starts from the archived market-data snapshots in `data/raw_market/` and regenerates the main result tables, the ablation and diagnostic tables in `results/ablations/`, intermediate outputs, and final publication figures. Do not run `scripts/download_data.py` first unless you deliberately want fresh (non-identical) market data.
 
 ## Expected Outputs
 
