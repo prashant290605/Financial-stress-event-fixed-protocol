@@ -1,0 +1,4 @@
+episode,days,volatility_alarm_days,instability_alarm_days,instability_rate,mmd_only_alarm_days,mmd_only_rate,hybrid_alarm_days,peak_smoothed_z_mmd
+A abrupt break,60,54,34,0.5666666666666667,36,0.6,49,4.952175366984575
+B absorbed ramp,300,254,21,0.07,9,0.03,46,1.7872055507381686
+calm background (eval),105,0,16,0.1523809523809524,13,0.12380952380952381,0,3.75861288163375
