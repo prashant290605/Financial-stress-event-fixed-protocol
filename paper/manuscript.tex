@@ -1,9 +1,9 @@
 % Springer Nature manuscript prepared for the International Journal of
 % Data Science and Analytics using the supplied sn-jnl class.
-\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+\documentclass[pdflatex,sn-mathphys-num,iicol]{sn-jnl}
 
 \usepackage{graphicx}
-\graphicspath{{../figures/final/}}
+\graphicspath{{./}}
 \usepackage{booktabs}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{microtype}
@@ -26,7 +26,7 @@
 
 \affil*[1]{\orgdiv{Department of Mathematics}, \orgname{Indian Institute of Technology Ropar}, \orgaddress{\city{Rupnagar}, \postcode{140001}, \state{Punjab}, \country{India}}}
 
-\abstract{Financial stress detectors are usually compared with pointwise scores computed over alarm days. That choice is made before any data is scored, and we show it can decide the ranking. We propose an event-fixed evaluation protocol that makes the choice explicit: it fixes a panel of 13 documented U.S. equity stress episodes before any detector output is inspected, maps them to trading calendars, and reports pointwise, event-level, delay, and cost-sensitive metrics side by side. Applied to a volatility percentile trigger and a volatility-plus-instability confirmation rule on SPY, the two detectors trade places. Confirmation cuts the false positive rate from 0.044 to 0.005 and raises precision from 0.640 to 0.886, yet detects 8 of 13 episodes against 10 and confirms the Lehman episode 40 trading days later. The same reversal appears when the broad trigger is the Cboe Volatility Index rather than a study-specific rule, so it is a property of the evaluation rather than of one hand-built detector. A per-event component diagnosis and a controlled synthetic experiment trace the reversal to a self-normalizing input: the confirmation gate responds to repricing that outruns the trailing volatility scale and is blind to elevation that scale has absorbed. We convert the tradeoff into a crossover cost ratio, 0.021 on SPY, above which each detector is the cheaper choice. A reproducibility package regenerates every table and figure from archived data snapshots.}
+\abstract{Financial stress detectors are usually compared with pointwise scores computed over alarm days. That choice is made before any data is scored, and we show it can decide the ranking. We propose an event-fixed evaluation protocol that makes the choice explicit: it fixes a panel of 13 documented U.S. equity stress episodes before any detector output is inspected, maps them to trading calendars, and reports pointwise, event-level, delay, and cost-sensitive metrics side by side. Applied to a volatility percentile trigger and a volatility-plus-instability confirmation rule on SPY, the two detectors trade places. Confirmation cuts the false positive rate from 0.044 to 0.005 and raises precision from 0.640 to 0.886, yet detects 8 of 13 episodes against 10 and confirms the Lehman episode 40 trading days later. The same reversal appears when the broad trigger is the Cboe Volatility Index rather than a study-specific rule, so it is a property of the evaluation rather than of one hand-built detector. A per-event component diagnosis and a controlled synthetic experiment trace the reversal to a self-normalizing input: the confirmation gate responds to repricing that outruns the trailing volatility scale and is blind to elevation that scale has absorbed. Because that gate also reads a thirty-day post-window, the hybrid's advantage is a property of retrospective confirmation; run fully causally it forfeits most of its selectivity. We convert the tradeoff into a crossover cost ratio, 0.021 on SPY, on either side of which a different detector is the cheaper choice. A reproducibility package regenerates every table and figure from archived data snapshots.}
 
 \keywords{financial stress detection; event-fixed evaluation; time-series anomaly detection; financial risk monitoring; detection delay; cost-sensitive evaluation}
 
@@ -98,7 +98,7 @@ Stress monitoring remains active on the applied side. Gu et al.\ combine stochas
 The protocol comes first and the detectors second. We fix the stress events and the trading-calendar mapping, define descriptive severity categories, then specify detector outputs, event-window and event-level metrics, operating costs, and uncertainty summaries. The volatility and hybrid rules exist to show what the protocol separates.
 
 \subsection{Data and preprocessing}
-The primary analysis uses SPY. Multi-asset validation adds QQQ (Invesco QQQ Trust), IWM (iShares Russell 2000 ETF), HYG (iShares iBoxx \$ High Yield Corporate Bond ETF), and TLT (iShares 20+ Year Treasury Bond ETF). All series are daily adjusted-close prices retrieved from Yahoo Finance through the \texttt{yfinance} interface with auto-adjustment disabled, spanning 2000-01-03 through 2023-12-29. Adjusted-close values are not stable over time, since providers revise adjustment factors as dividends and splits accrue, so the exact CSV snapshots used in every reported experiment (SPY retrieved 30 March 2026; QQQ, IWM, HYG, and TLT retrieved 22 May 2026) are archived in the reproducibility package and the results are tied to those snapshots rather than to a fresh download. Let $P_t$ denote that price. Daily log returns capture immediate movement, rolling volatility measures the level of market uncertainty, and standardized returns flag deviations that are large relative to recent behavior. The distribution-comparison and persistence components need a single scalar input, so we combine the three into a composite signal $x_t$:
+The primary analysis uses SPY. Multi-asset validation adds QQQ (Invesco QQQ Trust), IWM (iShares Russell 2000 ETF), HYG (iShares iBoxx \$ High Yield Corporate Bond ETF), and TLT (iShares 20+ Year Treasury Bond ETF). All series are daily adjusted-close prices retrieved from Yahoo Finance through the \texttt{yfinance} interface with auto-adjustment disabled, spanning 2000-01-03 through 2023-12-29. Adjusted-close values are not stable over time, since providers revise adjustment factors as dividends and splits accrue, so the exact CSV snapshots used in every reported experiment (SPY retrieved 30 March 2026; QQQ, IWM, HYG, and TLT retrieved 22 May 2026) are archived in the reproducibility package and the results are tied to those snapshots rather than to a fresh download. The deployed-benchmark comparison of Section~\ref{sec:vix} additionally uses the Cboe Volatility Index (VIX, ticker \texttt{\textasciicircum VIX}), retrieved as daily closing levels from the same Yahoo Finance interface over the identical 2000-01-03 through 2023-12-29 span (retrieved 22 July 2026) and archived alongside the equity snapshots. VIX is a published index level rather than a tradable price, so no split or dividend adjustment applies and the raw close is used; its processed availability appears in Table~\ref{tab:asset_availability}. Let $P_t$ denote that price. Daily log returns capture immediate movement, rolling volatility measures the level of market uncertainty, and standardized returns flag deviations that are large relative to recent behavior. The distribution-comparison and persistence components need a single scalar input, so we combine the three into a composite signal $x_t$:
 \begin{align}
 r_t &= \log(P_t/P_{t-1}),\\
 \sigma_t &= \mathrm{sd}(r_{t-19:t}),\\
@@ -119,27 +119,27 @@ The list is a fixed stress-event panel, not an exhaustive chronology. Events are
 
 \begin{table*}[t]
 \centering
-\caption{Fixed SPY stress-event panel with mapped trading dates, source labels, and realized-drawdown severity categories.}
+\caption{Fixed SPY stress-event panel with mapped trading dates, source labels, and realized-drawdown severity categories. DD is the event-local realized drawdown defined in Section~\ref{sec:method}; Severity is its tercile class within the panel.}
 \label{tab:events}
 \scriptsize
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.045\linewidth}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.09\linewidth}>{\raggedright\arraybackslash}p{0.09\linewidth}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.305\linewidth}>{\raggedright\arraybackslash}p{0.11\linewidth}}
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.028\linewidth}>{\raggedright\arraybackslash}p{0.115\linewidth}>{\raggedright\arraybackslash}p{0.095\linewidth}>{\raggedright\arraybackslash}p{0.095\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.245\linewidth}>{\raggedright\arraybackslash}p{0.048\linewidth}>{\raggedright\arraybackslash}p{0.058\linewidth}}
 \toprule
-ID & Event & Calendar & Trading & Type & Source label & Severity \\
+ID & Event & Calendar & Trading & Type & Source label & DD & Severity \\
 \midrule
-E01 & Dot-com selloff & 2000-04-14 & 2000-04-14 & bear market & Fed History; NBER chronology & 0.114 high\\
-E02 & Sep. 11 reopening & 2001-09-17 & 2001-09-17 & exogenous shock & SEC/NYSE reopening documentation & 0.182 critical\\
-E03 & WorldCom selloff & 2002-07-24 & 2002-07-24 & accounting & SEC WorldCom litigation; Fed History & 0.196 critical\\
-E04 & Quant crisis & 2007-08-09 & 2007-08-09 & liquidity & Khandani--Lo (2007); Fed accounts & 0.090 medium\\
-E05 & Lehman crisis & 2008-09-29 & 2008-09-29 & systemic & FCIC report; NBER chronology & 0.344 critical\\
-E06 & Flash crash & 2010-05-06 & 2010-05-06 & micro\-structure & CFTC--SEC Flash Crash report & 0.123 high\\
-E07 & U.S. downgrade & 2011-08-08 & 2011-08-08 & sovereign credit & S\&P downgrade; Fed commentary & 0.166 critical\\
-E08 & China devaluation & 2015-08-24 & 2015-08-24 & global growth & Fed/BIS market commentary & 0.112 medium\\
-E09 & Volmageddon & 2018-02-05 & 2018-02-05 & volatility & Cboe volatility-product discussion; SEC/CFTC commentary & 0.101 medium\\
-E10 & Q4 2018 selloff & 2018-12-24 & 2018-12-24 & liquidity & Federal Reserve Financial Stability Report & 0.156 high\\
-E11 & COVID crash & 2020-03-16 & 2020-03-16 & pandemic & Fed FSR May 2020; NBER chronology & 0.337 critical\\
-E12 & Inflation selloff & 2022-06-13 & 2022-06-13 & inflation & Federal Reserve Financial Stability Report & 0.122 high\\
-E13 & Bank stress & 2023-03-13 & 2023-03-13 & banking & Fed SVB review; Fed FSR 2023 & 0.069 medium\\
+E01 & Dot-com selloff & 2000-04-14 & 2000-04-14 & bear market & Fed History; NBER chronology & 0.114 & high\\
+E02 & Sep. 11 reopening & 2001-09-17 & 2001-09-17 & exogenous shock & SEC/NYSE reopening documentation & 0.182 & critical\\
+E03 & WorldCom selloff & 2002-07-24 & 2002-07-24 & accounting & SEC WorldCom litigation; Fed History & 0.196 & critical\\
+E04 & Quant crisis & 2007-08-09 & 2007-08-09 & liquidity & Khandani--Lo (2007); Fed accounts & 0.090 & medium\\
+E05 & Lehman crisis & 2008-09-29 & 2008-09-29 & systemic & FCIC report; NBER chronology & 0.344 & critical\\
+E06 & Flash crash & 2010-05-06 & 2010-05-06 & micro\-structure & CFTC--SEC Flash Crash report & 0.123 & high\\
+E07 & U.S. downgrade & 2011-08-08 & 2011-08-08 & sovereign credit & S\&P downgrade; Fed commentary & 0.166 & critical\\
+E08 & China devaluation & 2015-08-24 & 2015-08-24 & global growth & Fed/BIS market commentary & 0.112 & medium\\
+E09 & Volmageddon & 2018-02-05 & 2018-02-05 & volatility & Cboe volatility-product discussion; SEC/CFTC commentary & 0.101 & medium\\
+E10 & Q4 2018 selloff & 2018-12-24 & 2018-12-24 & liquidity & Federal Reserve Financial Stability Report & 0.156 & high\\
+E11 & COVID crash & 2020-03-16 & 2020-03-16 & pandemic & Fed FSR May 2020; NBER chronology & 0.337 & critical\\
+E12 & Inflation selloff & 2022-06-13 & 2022-06-13 & inflation & Federal Reserve Financial Stability Report & 0.122 & high\\
+E13 & Bank stress & 2023-03-13 & 2023-03-13 & banking & Fed SVB review; Fed FSR 2023 & 0.069 & medium\\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -147,8 +147,9 @@ E13 & Bank stress & 2023-03-13 & 2023-03-13 & banking & Fed SVB review; Fed FSR 
 \subsection{Severity organization}
 All 13 events receive descriptive severity categories from realized SPY drawdown. These organize interpretation within the panel and are not statistical tests. Unlike maximum drawdown over an entire series, the measure is restricted to a window centred on each mapped event, which keeps it tied to the documented episode. For mapped event index $e$,
 \begin{equation}
-\mathrm{severity}(e)=\left|\min_{t\in[e-20,\,e+20]}\left(\frac{P_t}{\max_{u\in[e-20,\,t]}P_u}-1\right)\right|.
+\mathrm{severity}(e)=\left|\min_{t\in W_e}\,D_t\right| ,
 \end{equation}
+where $W_e=[e-20,\,e+20]$ is the event-local window and $D_t=P_t/\max_{u\in[e-20,\,t]}P_u-1$ is the running drawdown.
 For E01 the minimum peak-to-trough ratio in its local window is $0.886$, so $\mathrm{severity}(\mathrm{E01})=0.114$, an 11.4\% realized drawdown, giving the first value in Table~\ref{tab:events}. The measure is an event-local adaptation of standard maximum drawdown \cite{magdon2004}. The $\pm20$ trading-day window is about one trading month either side, wide enough to capture realized impact and narrow enough to limit contamination from unrelated movement. Critical, high, and medium categories are terciles of this score across the 13 events, with no manual adjustment. These SPY-derived categories remain the primary organization throughout. Asset-specific drawdown scores are computed for the multi-asset checks but do not replace them.
 
 \subsection{Event-window evaluation}
@@ -170,6 +171,7 @@ All thresholds are calibrated on the first 70\% of each series and reused unchan
 h_W(t)=v(t)\wedge \max_{\tau\in[t-W,t+W]}i(\tau).
 \end{equation}
 Here $i(\tau)$ is the instability indicator from thresholding smoothed $s(\tau)$ at its 90th calibration percentile. The symmetric $[t-W,t+W]$ window uses information after date $t$, so read the default hybrid as retrospective confirmation under this protocol. Section~\ref{sec:causal} evaluates trailing-only and fully causal variants.
+\item \textbf{VIX percentile trigger (deployed benchmark, Section~\ref{sec:vix}):} compute the smoothed, calibration-standardized VIX close and alarm when it exceeds its 90th calibration percentile. This is the same rule shape as the volatility percentile trigger applied to a different instrument. Unlike raw volatility, VIX is a forward-looking, option-implied level and is not self-normalizing, so it is a genuinely different input rather than a reparameterization. Its confirmed variant reuses the identical SPY-derived instability gate $s(t)$ defined above, changing only the broad trigger.
 \end{itemize}
 CIS is a diagnostic trailing 10-day sum of negative $\kappa$ slopes, used only in ablations. Appendix~\ref{app:implementation_details} lists the detector and evaluation settings.
 
@@ -233,17 +235,17 @@ Volatility fires close to the mapped center, mean delay $-1.2$ trading days. The
 
 CUSUM is the cautionary case. Its F1 of 0.364 edges out volatility, but with FPR 0.344 and mean delay near $-60$ days it is firing broadly near the leading edge of wide windows rather than localizing events. A ranking by F1 alone would place CUSUM first. That would be the wrong unit of evaluation for crisis monitoring. To be clear about its role, the CUSUM here is a deliberately plain zero-reference baseline with no drift parameter and no tuned threshold, included to make this scoring point rather than to represent sequential change detection at its best; a tuned CUSUM would behave differently. The instability-score, MMD-only, and $|\kappa|$-only rows are the confirmation components run standalone; none is competitive on its own, and they are reported so the hybrid's inputs are visible in isolation before they reappear in the component ablation. Although the featured contrast is one pair, Table~\ref{tab:spy} scores four detector families side by side under the same protocol: threshold rules on raw volatility, sequential accumulation, kernel two-sample contrast, and autoregressive persistence.
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
-\includegraphics[width=\linewidth]{timeline_spy.png}
+\includegraphics[width=\textwidth]{Fig1.pdf}
 \caption{SPY timeline with fixed event windows and hybrid outputs, showing selective retrospective confirmation within documented stress regions.}
 \label{fig:spy_timeline}
-\end{figure}
+\end{figure*}
 
 
 \subsection{Primary evidence: a deployed benchmark}
 \label{sec:vix}
-Both headline rules are constructed for this study, which invites a fair objection: perhaps the reversal is an artifact of two hand-built detectors rather than a property of the evaluation. We test that directly by running an instrument practitioners actually deploy through the identical pipeline. The Cboe Volatility Index is the market standard gauge of expected near-term equity volatility. We alarm when smoothed, calibration-standardized VIX exceeds its 90th calibration percentile, which is the same rule shape as the volatility trigger applied to a different instrument. VIX is forward looking, being priced from options, and is a level rather than a self-normalizing quantity, so it is a genuinely different signal and not a reparameterization. Table~\ref{tab:vix} reports the comparison on the SPY event panel.
+Both headline rules are constructed for this study, which invites a fair objection: perhaps the reversal is an artifact of two hand-built detectors rather than a property of the evaluation. We test that directly by running an instrument practitioners actually deploy through the identical pipeline. The Cboe Volatility Index is the market standard gauge of expected near-term equity volatility. We alarm when smoothed, calibration-standardized VIX exceeds its 90th calibration percentile, which is the same rule shape as the volatility trigger applied to a different instrument. VIX is forward looking, being priced from options, and is a level rather than a self-normalizing quantity, so it is a genuinely different signal and not a reparameterization. The confirmation gate in the VIX+instability variant is the same SPY-derived instability score $s(t)$ used throughout the paper; only the broad trigger changes, from the study's volatility rule to VIX. This experiment therefore isolates the broad trigger: it shows the reversal is not an artifact of our hand-built volatility rule, but because the confirmation layer is held fixed it does not establish that the reversal is independent of that layer. Table~\ref{tab:vix} reports the comparison on the SPY event panel.
 
 \begin{table*}[t]
 \centering
@@ -292,15 +294,17 @@ TLT & Hybrid & 0.367 & 0.094 & 0.150 & 0.051 & -4.8 & 23.5\\
 \end{tabular}
 \end{table*}
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
-\includegraphics[width=\linewidth]{multi_asset_tradeoff.png}
+\includegraphics[width=\textwidth]{Fig2.pdf}
 \caption{Multi-asset FPR--F1 tradeoff under the common event-fixed protocol without asset-specific detector tuning.}
 \label{fig:multiasset_tradeoff}
-\end{figure}
+\end{figure*}
 
 \subsection{Primary evidence: event-level analysis}
 Pointwise recall and FPR cannot say whether an individual stress episode was caught at all. Table~\ref{tab:spy_event_level} and Figure~\ref{fig:event_level_delay} give the SPY event-level comparison. The hybrid detects 8 of 13 events against 10 of 13 for volatility. It misses the U.S. downgrade and the 2022 inflation selloff, both of which volatility catches. Both methods miss the quant crisis, Volmageddon, and the 2023 bank stress episode under the fixed $\pm60$-day window. Among detected events the hybrid usually covers less of the window, with equal or later first detection. Lehman is the extreme case at $+33$ trading days against $-7$ for volatility, a gap of 40 trading days on the single most severe episode in the panel.
+
+Thresholds are calibrated on the first 70\% of the SPY series, which ends in 2016, so 8 of the 13 panel events (E01--E08) sit inside the calibration segment and 5 (E09--E13) are genuinely held out. Splitting the detection counts along that boundary is reassuring rather than damaging. On the 8 in-calibration events volatility detects 7 and the hybrid 6; on the 5 held-out events volatility detects 3 and the hybrid 2. Both detectors do visibly worse on events their thresholds never saw, as one would expect, but the sign of the gap between them is preserved in each half. The ranking reversal is therefore not an artifact of scoring events inside the window on which the thresholds were fixed: it survives on the events held out of calibration entirely.
 
 \begin{table*}[t]
 \centering
@@ -374,20 +378,15 @@ Two missed events are thin evidence, however consistent. The mechanism makes a p
 
 The prediction holds in both directions. The volatility trigger fires through both episodes, on 54 of 60 days in A and 254 of 300 in B: the raw scale sees both. The kernel gate separates them. MMD-only confirmation fires on 36 of 60 days in A (60\%) against 9 of 300 in B (3\%), and peak smoothed $z_{\mathrm{MMD}}$ reaches 4.95 in A against 1.79 in B. A 90th-percentile threshold fires on 10\% of calibration days by construction, so the absorbed ramp sits below the base rate while the abrupt break sits six times above it. The full instability score shows the same contrast, 57\% against 7\%, and the residual firing inside B traces to the two-sided $\kappa$ noise term rather than to the kernel statistic. An episode the trailing scale can absorb is invisible to the confirmation layer even at three times baseline volatility, exactly as the construction of $x_t$ implies. One scope note: the synthetic operationalizes absorption through the ramp mode, and neither engineered episode replicates the two SPY misses, one a sharp expansion the trailing window caught up to within its 50-day span, the other an episode inside a regime whose elevated scale was already in the denominator. Both are variants of the same scale mechanism, and the test demonstrates that mechanism, not the individual cases.
 
-\begin{figure*}[t]
-\centering
-\includegraphics[width=0.9\textwidth]{synthetic_mechanism.png}
-\caption{Controlled synthetic test of the scale-adaptation mechanism. Top: a Gaussian return series with an abrupt volatility break (A) and an absorbed triangle ramp (B) of identical peak volatility, plus the abrupt calibration episode. Bottom: standardized volatility and instability scores with hybrid alarms. The volatility score rises through both episodes; the instability score responds only to the abrupt break.}
-\label{fig:mechtest}
-\end{figure*}
 
+\subsubsection{Multi-asset event-level detection}
 The multi-asset event-level summary in Table~\ref{tab:multiasset_event_level} repeats the pattern. Hybrid detection rates trail volatility on every asset: 0.615 against 0.769 on SPY, 0.385 against 0.462 on QQQ, 0.385 against 0.538 on IWM, 0.231 against 0.385 on HYG, and 0.308 against 0.538 on TLT. Mean coverage is lower everywhere. Median FDD is later on SPY, QQQ, IWM, and TLT, with HYG again the exception.
 
 One accounting choice in these rates needs to be stated plainly. Every rate in Table~\ref{tab:multiasset_event_level} uses all 13 events as its denominator, but IWM begins trading in August 2000, TLT in October 2002, and HYG in June 2007, so some panel events predate the asset entirely. The calendar-to-trading-day mapping sends a pre-inception event to the asset's earliest available date, which stacks one degenerate window at the start of the IWM series and three each for HYG and TLT. No degenerate window is detected by either method, so the level of the HYG and TLT rates is pulled down by construction. Restated over the events each asset can actually observe, the rates are 7 of 12 against 5 of 12 for IWM, 5 of 10 against 3 of 10 for HYG, and 7 of 10 against 4 of 10 for TLT, volatility first in each pair. The within-asset comparison is unaffected, because both detectors face the same available events, but cross-asset comparisons of detection level should use the restated figures.
 
 To be explicit about propagation: every computation in the paper uses all 13 mapped windows, degenerate ones included. The cost and crossover comparisons are insensitive to this choice, because both detectors miss every degenerate window, so the missed-event differences entering Equation~\eqref{eq:crossover} are identical either way (2 for HYG and 3 for TLT, with or without the degenerate events) and no delay terms arise from undetected events. Pointwise metrics do include the degenerate windows in the positive mask, which adds a stretch of positive-class days at the start of the affected series; this affects both detectors identically and merges with the earliest observable event's window where the two overlap, as they do for HYG.
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering
 \caption{Multi-asset event-level detection rate, median delay, and mean event-window coverage. All rates use the full 13-event panel as denominator; rates restated over each asset's observable events are given in the text.}
 \label{tab:multiasset_event_level}
@@ -408,11 +407,13 @@ TLT & Vol. & 0.538 & -4.0 & 0.227\\
 TLT & Hybrid & 0.308 & -2.5 & 0.076\\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
+\subsubsection{Severity stratification}
+\label{sec:severity_detection}
 Severity-stratified results in Table~\ref{tab:event_level_severity} line up with the mechanism. Hybrid detection falls from 0.680 on critical events to 0.300 on high and 0.100 on medium, a steeper gradient than volatility's 0.840, 0.550, 0.150. The confirmation gate behaves as an implicit severity filter, which is what a rule keyed to scale contrast should do. With 13 events split into terciles these are descriptive summaries, not severity effects estimated with any precision.
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering
 \caption{Severity-stratified event-level summary using descriptive realized-drawdown terciles from the SPY event panel.}
 \label{tab:event_level_severity}
@@ -429,13 +430,20 @@ Medium & Vol. & 0.150 & -26.0 & 0.046\\
 Medium & Hybrid & 0.100 & -26.0 & 0.011\\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.95\textwidth]{event_level_delay_coverage.png}
+\includegraphics[width=0.95\textwidth]{Fig3.pdf}
 \caption{SPY event-level FDD and event-window coverage, with missed events marked explicitly.}
 \label{fig:event_level_delay}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.9\textwidth]{Fig4.pdf}
+\caption{Controlled synthetic test of the scale-adaptation mechanism. Top: a Gaussian return series with an abrupt volatility break (A) and an absorbed triangle ramp (B) of identical peak volatility, plus the abrupt calibration episode. Bottom: standardized volatility and instability scores with hybrid alarms. The volatility score rises through both episodes; the instability score responds only to the abrupt break.}
+\label{fig:mechtest}
 \end{figure*}
 
 \subsection{Primary evidence: cost-sensitive interpretation}
@@ -463,7 +471,7 @@ $c_{\mathrm{FP}}/c_{\mathrm{FN}}$ & Vol. cost & Hybrid cost & Preferred\\
 
 The event-aware results in Table~\ref{tab:event_cost} reverse the verdict at the low end. With $c_{\mathrm{ME}}=1$ and $c_{\mathrm{D}}=0.05$, volatility costs 6.70 against 8.54 for the hybrid when false-alarm days are nearly free at $c_{\mathrm{FA}}/c_{\mathrm{ME}}=0.01$. Volatility misses 3 events rather than 5 and carries a smaller cumulative delay penalty, $D_+=35$ against 66. From 0.05 upward the hybrid wins, on the strength of 24 out-of-window alarm days against 195.
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering
 \caption{SPY event-aware cost comparison with $c_{\mathrm{ME}}=1$ and $c_{\mathrm{D}}=0.05$.}
 \label{tab:event_cost}
@@ -480,7 +488,7 @@ $c_{\mathrm{FA}}/c_{\mathrm{ME}}$ & Vol. cost & Hybrid cost & Vol. missed & Hyb.
 1.00 & 199.75 & 32.30 & 3 & 5\\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 \subsubsection{The crossover ratio}
 Reporting that the answer depends on the cost structure is not useful to anyone who has to choose. The crossover is computable. Equation~\eqref{eq:eventcost} is linear in $c_{\mathrm{FA}}$, so setting $C_{\mathrm{event}}^{\mathrm{vol}}=C_{\mathrm{event}}^{\mathrm{hyb}}$ and solving gives
@@ -517,7 +525,7 @@ TLT & 0.021 & 0.034 & 0.047\\
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.95\textwidth]{cost_comparison.png}
+\includegraphics[width=0.95\textwidth]{Fig5.pdf}
 \caption{SPY cost comparison under pointwise and event-aware operating objectives.}
 \label{fig:cost}
 \end{figure*}
@@ -525,7 +533,7 @@ TLT & 0.021 & 0.034 & 0.047\\
 \subsection{Secondary robustness: event-window sensitivity}
 Table~\ref{tab:eventwindow} and Figure~\ref{fig:eventwindow} show the tradeoff holding across window widths. The hybrid keeps lower FPR and higher precision, with lower recall and F1, at every width tested. The gap widens as windows lengthen, since wider windows admit more of the volatility trigger's in-window alarms.
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering
 \caption{Event-window sensitivity for pointwise precision, recall, F1, and FPR.}
 \label{tab:eventwindow}
@@ -544,20 +552,20 @@ $\pm60$ & Vol. & 0.640 & 0.225 & 0.333 & 0.044\\
 $\pm60$ & Hybrid & 0.886 & 0.122 & 0.214 & 0.005\\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
-\includegraphics[width=\linewidth]{event_window_sensitivity.png}
+\includegraphics[width=\textwidth]{Fig6.pdf}
 \caption{Event-window sensitivity across $\pm20$, $\pm30$, $\pm45$, and $\pm60$ trading-day windows.}
 \label{fig:eventwindow}
-\end{figure}
+\end{figure*}
 
 \subsection{Secondary robustness: composite signal weights}
 \label{sec:weights}
 The weights $(0.5,0.3,0.2)$ are heuristic, so their influence should be measured rather than asserted. Table~\ref{tab:weights} re-runs the full pipeline under ten weightings, recomputing the composite, MMD, $\kappa$, the instability score, and the hybrid each time. The volatility trigger is untouched, since it reads $\sigma_t$ directly.
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering
 \caption{Composite weight ablation. Each row recomputes $x_t$, the MMD and $\kappa$ components, and the hybrid. Events are counted out of 13.}
 \label{tab:weights}
@@ -578,7 +586,7 @@ $(0,1,0)$ volatility only & 0.815 & 0.121 & 0.210 & 0.009 & 1.4 & 7\\
 $(0,0,1)$ z-score only & 0.886 & 0.122 & 0.214 & 0.005 & 6.8 & 8\\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 Hybrid F1 spans $[0.210,0.235]$ and FPR spans $[0.005,0.009]$ across all ten. Event detection is 8 of 13 in nine cases and 7 in the tenth. Every configuration stays far from the volatility trigger's F1 of 0.333, FPR of 0.044, and 10 of 13 events, so the ranking reversal is a property of the confirmation structure and not of the weighting.
 
@@ -588,7 +596,7 @@ Four rows are numerically identical, including the default, the equal weighting,
 \label{sec:kappasign}
 Table~\ref{tab:kappasign} compares the two-sided statistic against both one-sided alternatives.
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering
 \caption{Confirmation-term ablation for the persistence statistic. The low-$\kappa$ variant is the direction predicted by critical-slowing-down theory.}
 \label{tab:kappasign}
@@ -602,7 +610,7 @@ $\max(-z_\kappa,0)$ low $\kappa$ & 0.875 & 0.114 & 0.202 & 0.006 & 6.7 & 7\\
 $\max(+z_\kappa,0)$ high $\kappa$ & 0.874 & 0.141 & 0.242 & 0.007 & 1.6 & 7\\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 Restricting to the theory-consistent low-$\kappa$ direction detects 7 events rather than 8 and lowers F1 to 0.202. The opposite restriction raises F1 to 0.242 but also detects 7, and it confirms much earlier at $+1.6$ days. All three variants stay well inside the band the weight ablation traces out, so the conclusions do not turn on this convention either. We keep the two-sided form, and the sign-convention discussion in the detector definitions states plainly that it is an abnormal-dependence criterion rather than a test of critical slowing down.
 
@@ -634,34 +642,34 @@ The first stage removes the decision-rule look-ahead but not the statistic's, an
 The second stage is more revealing. Lagging the MMD component by its own 30-day post-window makes the whole pipeline causal end to end, and performance drops hard: 4 of 13 events at $W=10$. Recovering coverage requires stretching the trailing window to $W=40$, which restores 7 of 13 but returns 105 out-of-window alarm days, giving back more than half of the false-alarm advantage over the volatility trigger. Most of the confirmation layer's power therefore lives in the MMD post-window, not in the symmetric confirmation window. A deployable confirmation layer of this design either waits roughly the MMD window length after the stress date or cedes much of its selectivity. The crossover ratios move accordingly, from 0.021 to at most 0.058, so the decision rule of Section~\ref{sec:cost} keeps its form in every variant, with a somewhat wider region favouring the volatility trigger as causality constraints tighten.
 
 \subsection{Secondary robustness: severity, component, and confirmation-window analyses}
-Within this panel, events in the highest realized-drawdown tercile give F1 0.412 for volatility and 0.316 for the hybrid, with FPR falling from 0.057 to 0.015. The middle tercile gives F1 0.195 against 0.134 and FPR 0.080 against 0.030. The lowest tercile gives very low F1 for both.
+Complementing the event-level detection rates by severity in Section~\ref{sec:severity_detection} and Table~\ref{tab:event_level_severity}, the pointwise view by tercile is consistent. Events in the highest realized-drawdown tercile give F1 0.412 for volatility and 0.316 for the hybrid, with FPR falling from 0.057 to 0.015. The middle tercile gives F1 0.195 against 0.134 and FPR 0.080 against 0.030. The lowest tercile gives very low F1 for both.
 
 The MMD-only row in Table~\ref{tab:spy} is the standalone thresholded MMD component. The component ablation instead uses MMD-only as the confirmation signal inside the hybrid, which gives F1 0.219 against 0.214 for the default no-CIS hybrid. The no-CIS score is the more conservative of the two, FPR 0.005 against 0.011. Figure~\ref{fig:window_sensitivity} shows $W=10$ is not F1-optimal: F1 climbs to 0.291 at $W=60$ while FPR rises to 0.031. Since these use symmetric confirmation windows, read them as retrospective sensitivity analysis.
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
-\includegraphics[width=\linewidth]{confirmation_window_sensitivity.png}
+\includegraphics[width=\textwidth]{Fig7.pdf}
 \caption{Hybrid confirmation-window sensitivity showing how the retrospective confirmation window changes F1 and FPR.}
 \label{fig:window_sensitivity}
-\end{figure}
+\end{figure*}
 
 \subsection{Secondary robustness: bootstrap uncertainty}
 \label{sec:bootstrap}
 The event bootstrap gives hybrid-minus-volatility $\Delta$F1 $=-0.091$ with 95\% CI $[-0.166,0.005]$, and $\Delta$FPR $=-0.045$ with CI $[-0.058,-0.035]$. The block bootstrap gives $\Delta$F1 $=-0.120$ with CI $[-0.203,-0.047]$ and $\Delta$FPR $=-0.039$ with CI $[-0.062,-0.019]$. The FPR reduction is negative in all 2000 resamples under both schemes. The F1 reduction is negative in all 2000 block resamples but in 97.3\% of event resamples, and the event-bootstrap interval crosses zero, so the size of the F1 penalty is the less firmly established of the two. Figure~\ref{fig:bootstrap_violin} shows the distributions. With 13 fixed events, resampling cannot manufacture precision the panel does not contain, and the multi-asset results are directional evidence rather than a pooled estimate.
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
-\includegraphics[width=\linewidth]{bootstrap_delta.png}
+\includegraphics[width=\textwidth]{Fig8.pdf}
 \caption{Bootstrap distributions of hybrid-minus-volatility differences under the fixed-event protocol.}
 \label{fig:bootstrap_violin}
-\end{figure}
+\end{figure*}
 
 \subsection{Auxiliary diagnostic validation: synthetic and NAB analyses}
 Figure~\ref{fig:synthetic_example} shows one generated sequence with latent labels and detector outputs.
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.95\textwidth]{synthetic_example.png}
+\includegraphics[width=0.95\textwidth]{Fig9.pdf}
 \caption{Synthetic diagnostic validation under controlled regime changes and noisy dynamics.}
 \label{fig:synthetic_example}
 \end{figure*}
@@ -672,12 +680,12 @@ On NAB, mean F1 is nearly identical for the two rules, 0.141 for the hybrid agai
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.95\textwidth]{nab_subset_results.png}
+\includegraphics[width=0.95\textwidth]{Fig10.pdf}
 \caption{NAB external qualitative validation by subset using the same pointwise metrics as the financial-stress protocol.}
 \label{fig:nab_results}
 \end{figure*}
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering
 \caption{NAB subset-level F1 and FPR for volatility and hybrid outputs.}
 \scriptsize
@@ -695,7 +703,7 @@ realTraffic & 0.300 & 0.082 & 0.302 & 0.056\\
 realTweets & 0.106 & 0.092 & 0.097 & 0.068\\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 \section{Discussion}
 \label{sec:discussion}
@@ -749,6 +757,9 @@ For practitioners the operative number is the crossover. The volatility trigger 
 
 \section*{Statements and Declarations}
 
+\bmhead{Acknowledgements}
+The authors thank the Department of Mathematics, Indian Institute of Technology Ropar, for institutional support.
+
 \bmhead{Author Contributions}
 
 Prashant Singh conceived the study, implemented the methodology, performed the experiments, analyzed the results, and prepared the original manuscript draft. Pranav Singh contributed to the conceptual development of the evaluation protocol, methodology refinement, validation of the experimental findings, interpretation of results, and manuscript review and editing. Both authors contributed to discussions throughout the research process and approved the final manuscript.
@@ -758,7 +769,7 @@ Prashant Singh conceived the study, implemented the methodology, performed the e
 The authors received no specific funding for this work.
 
 \bmhead{Data Availability}
-The market series are daily adjusted-close prices for SPY, QQQ, IWM, HYG, and TLT, retrieved from Yahoo Finance via the \texttt{yfinance} interface (SPY on 30 March 2026; the remaining assets on 22 May 2026) and archived as CSV snapshots in the reproducibility repository, since provider adjustment factors are revised over time. The financial-stress event records are documented by the sources summarized in Table~\ref{tab:events} and retained with the event panel in the reproducibility materials. The analysis can be reproduced from the archived snapshots using the accompanying code and event definitions.
+The market series are daily adjusted-close prices for SPY, QQQ, IWM, HYG, and TLT, retrieved from Yahoo Finance via the \texttt{yfinance} interface (SPY on 30 March 2026; the remaining assets on 22 May 2026) and archived as CSV snapshots in the reproducibility repository, since provider adjustment factors are revised over time. The deployed-benchmark analysis additionally uses daily Cboe Volatility Index (VIX) closing levels retrieved from the same interface (retrieved 22 July 2026) and archived alongside the equity snapshots. The financial-stress event records are documented by the sources summarized in Table~\ref{tab:events} and retained with the event panel in the reproducibility materials. The analysis can be reproduced from the archived snapshots using the accompanying code and event definitions.
 
 \bmhead{Code Availability}
 Code and reproducibility materials are publicly available at \url{https://github.com/prashant290605/Financial-stress-event-fixed-protocol}.
@@ -769,6 +780,12 @@ The authors used generative artificial intelligence for assistance with manuscri
 \bmhead{Competing Interests}
 The authors declare no competing interests.
 
+\bmhead{Ethics Approval and Consent to Participate}
+Not applicable. This study did not involve human participants, human data, human tissue, or animals.
+
+\bmhead{Consent for Publication}
+Not applicable.
+
 \begin{appendices}
 \renewcommand{\theHtable}{A.\arabic{table}}
 \renewcommand{\theHfigure}{A.\arabic{figure}}
@@ -777,7 +794,7 @@ The authors declare no competing interests.
 \label{app:implementation_details}
 This appendix reports implementation details supporting reproducibility and auditing. The fixed event panel is in \texttt{data/events\_spy.csv} and the per-asset mapped event table is in \texttt{data/events\_multi\_asset.csv}. Full event-source strings are retained with the event panel. Detector settings, preprocessing windows, bootstrap settings, and the random seed are in \texttt{config/paper\_experiment.json}. The primary reproduction procedure is \texttt{scripts/reproduce\_paper.py}, with additional procedures described in the repository's supplementary README. Table~\ref{tab:asset_availability} reports processed sample lengths for every asset and Table~\ref{tab:hyperparams} the detector and evaluation settings.
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering
 \caption{Multi-asset data availability after deterministic preprocessing.}
 \label{tab:asset_availability}
@@ -791,9 +808,11 @@ QQQ & Nasdaq 100 ETF & 2000-03-15--2023-12-29 & 5987\\
 IWM & Russell 2000 ETF & 2000-08-08--2023-12-29 & 5886\\
 HYG & High-yield bond ETF & 2007-06-21--2023-12-29 & 4161\\
 TLT & Treasury bond ETF & 2002-10-09--2023-12-29 & 5343\\
+VIX & Cboe Volatility Index & 2000-03-15--2023-12-29 & 5987\\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
+\noindent VIX enters only as the deployed benchmark of Section~\ref{sec:vix}. Its raw snapshot spans 2000-01-03--2023-12-29 (6037 trading days); for evaluation it is aligned to the SPY trading calendar and then smoothed, standardized, and thresholded on the same calibration split as the equity series (it is not return-differenced), so the analysis uses SPY's 5987-day processed window.
 
 \begin{table*}[t]
 \centering
