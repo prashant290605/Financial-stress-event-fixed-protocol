@@ -27,13 +27,14 @@ COLORS = {
 
 
 def setup_style() -> None:
-    # Journal figure requirements: serif (Times-like) lettering at 8-12 pt,
-    # no overall titles inside the figures (captions live in the manuscript).
+    # Springer figure requirements: sans-serif lettering (Helvetica or Arial)
+    # at 8-12 pt, consistent sizes, and no titles inside the illustrations
+    # (captions belong in the manuscript text).
     plt.rcParams.update(
         {
-            "font.family": "serif",
-            "font.serif": ["Times New Roman", "Times", "Nimbus Roman", "DejaVu Serif"],
-            "mathtext.fontset": "stix",
+            "font.family": "sans-serif",
+            "font.sans-serif": ["Arial", "Helvetica", "Liberation Sans", "DejaVu Sans"],
+            "mathtext.fontset": "dejavusans",
             "font.size": 10,
             "axes.titlesize": 11,
             "axes.labelsize": 10,

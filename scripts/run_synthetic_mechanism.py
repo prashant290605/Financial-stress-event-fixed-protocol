@@ -160,9 +160,9 @@ def main() -> None:
     # ---- figure ----------------------------------------------------------
     plt.rcParams.update(
         {
-            "font.family": "serif",
-            "font.serif": ["Times New Roman", "Times", "Nimbus Roman", "DejaVu Serif"],
-            "mathtext.fontset": "stix",
+            "font.family": "sans-serif",
+            "font.sans-serif": ["Arial", "Helvetica", "Liberation Sans", "DejaVu Sans"],
+            "mathtext.fontset": "dejavusans",
             "font.size": 10,
             "axes.labelsize": 10,
             "xtick.labelsize": 9,
