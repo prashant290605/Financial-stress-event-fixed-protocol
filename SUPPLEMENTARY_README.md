@@ -66,6 +66,24 @@ Run cost-sensitive analyses:
 python scripts/run_cost_analysis.py
 ```
 
+Run the ablation and diagnostic tables:
+
+```bash
+python scripts/run_ablations.py
+```
+
+Run the published volatility-index comparison:
+
+```bash
+python scripts/run_vix_benchmark.py
+```
+
+Run the controlled synthetic mechanism test:
+
+```bash
+python scripts/run_synthetic_mechanism.py
+```
+
 Generate publication-style final figures:
 
 ```bash
@@ -91,9 +109,12 @@ Approximate runtime on the development machine:
 - `scripts/evaluate_multi_asset.py`: under 30 seconds for cached processed data.
 - `scripts/evaluate_event_level.py`: under 30 seconds for cached processed data.
 - `scripts/run_cost_analysis.py`: under 30 seconds.
+- `scripts/run_ablations.py`: under 30 seconds.
+- `scripts/run_vix_benchmark.py`: a few seconds from the archived VIX snapshot.
+- `scripts/run_synthetic_mechanism.py`: a few seconds.
 - `scripts/generate_final_figures.py`: under 30 seconds.
 
-Network availability can affect `yfinance` downloads.
+The complete workflow runs in about one minute on a current laptop. Network availability can affect `yfinance` downloads.
 
 ## Known Limitations
 

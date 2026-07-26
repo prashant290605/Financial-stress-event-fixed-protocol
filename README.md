@@ -74,10 +74,14 @@ python scripts/evaluate_multi_asset.py
 python scripts/evaluate_event_level.py
 python scripts/run_cost_analysis.py
 python scripts/run_ablations.py
+python scripts/run_vix_benchmark.py
+python scripts/run_synthetic_mechanism.py
 python scripts/generate_final_figures.py
 ```
 
-The full workflow starts from the archived market-data snapshots in `data/raw_market/` and regenerates the main result tables, the ablation and diagnostic tables in `results/ablations/`, intermediate outputs, and final publication figures. Do not run `scripts/download_data.py` first unless you deliberately want fresh (non-identical) market data.
+The full workflow starts from the archived market-data snapshots in `data/raw_market/` and regenerates the main result tables, the ablation and diagnostic tables in `results/ablations/`, intermediate outputs, and final publication figures. It takes roughly one minute end to end. Do not run `scripts/download_data.py` first unless you deliberately want fresh (non-identical) market data.
+
+If NAB has not been installed (see below), `scripts/reproduce_paper.py` prints a skip notice and omits the NAB table and figure; every other output is unaffected.
 
 ## Expected Outputs
 
@@ -100,7 +104,7 @@ Run:
 pytest tests
 ```
 
-The tests check required reproducibility artifacts, key metric values, generated result files, and consistency between result CSVs and manuscript tables.
+The tests check required reproducibility artifacts, key metric values, generated result files, and consistency between result CSVs and the manuscript tables in `paper/manuscript.tex`. All tests are expected to pass on a clean checkout once the reproduction workflow above has been run.
 
 ## Manuscript
 

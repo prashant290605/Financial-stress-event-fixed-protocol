@@ -174,7 +174,15 @@ def fig_synthetic() -> None:
 
 
 def fig_nab() -> None:
-    data = pd.read_csv(ROOT / "results" / "paper" / "table_nab_subset_results.csv")
+    # NAB is fetched separately (docs/NAB_SETUP.md); skip rather than abort when absent.
+    source = ROOT / "results" / "paper" / "table_nab_subset_results.csv"
+    if not source.exists():
+        print(
+            f"Skipping NAB figure: {source} not found. "
+            "Follow docs/NAB_SETUP.md and re-run scripts/reproduce_paper.py."
+        )
+        return
+    data = pd.read_csv(source)
     focus = data[data["method"].isin(["volatility_percentile", "hybrid_windowed_confirmation"])].copy()
     focus["method"] = focus["method"].map(method_label)
     subsets = sorted(focus["subset"].unique())

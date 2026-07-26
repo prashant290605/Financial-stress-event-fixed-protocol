@@ -42,6 +42,33 @@ def _candidate_raw_paths(ticker: str, data_dir: Path) -> list[Path]:
     ]
 
 
+def _resolve_existing(path: Path) -> Path | None:
+    """Return `path` with the on-disk spelling, or None when it does not exist.
+
+    Windows matches file names case-insensitively, so `SPY.csv` resolves to a
+    directory entry named `spy.csv`. Reporting the requested spelling would make
+    the recorded provenance differ between platforms, so the real entry name is
+    looked up explicitly.
+    """
+    if not path.parent.is_dir():
+        return None
+    for entry in path.parent.iterdir():
+        if entry.name == path.name:
+            return entry
+    for entry in path.parent.iterdir():
+        if entry.name.lower() == path.name.lower():
+            return entry
+    return None
+
+
+def _provenance_path(path: Path) -> str:
+    """Render a path for the provenance note without leaking absolute locations."""
+    try:
+        return path.resolve().relative_to(ROOT.resolve()).as_posix()
+    except ValueError:
+        return path.name
+
+
 def _read_price_csv(path: Path, price_column: str) -> pd.DataFrame:
     df = pd.read_csv(path)
     if "Date" not in df.columns:
@@ -100,10 +127,11 @@ def load_asset_prices(
     end: pd.Timestamp,
 ) -> tuple[pd.DataFrame, str]:
     for path in _candidate_raw_paths(ticker, data_dir):
-        if path.exists():
-            return _read_price_csv(path, price_column), f"loaded local CSV {path.as_posix()}"
+        resolved = _resolve_existing(path)
+        if resolved is not None:
+            return _read_price_csv(resolved, price_column), f"loaded local CSV {_provenance_path(resolved)}"
     raw_path = data_dir / f"{ticker}.csv"
-    return _download_yfinance(ticker, start, end, raw_path), f"downloaded with yfinance to {raw_path.as_posix()}"
+    return _download_yfinance(ticker, start, end, raw_path), f"downloaded with yfinance to {_provenance_path(raw_path)}"
 
 
 def preprocess_price_frame(df: pd.DataFrame, config: dict[str, Any]) -> pd.DataFrame:

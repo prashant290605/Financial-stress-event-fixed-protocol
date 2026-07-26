@@ -78,12 +78,22 @@ def main() -> None:
         [{"parameter": key, "value": value} for key, value in config["synthetic"].items()]
     ).to_csv(results / "table_synthetic_config.csv", index=False)
 
-    nab_rows, nab_subset = evaluate_nab(config)
-    nab_rows.to_csv(results / "nab_series_results.csv", index=False)
-    nab_subset.to_csv(results / "table_nab_subset_results.csv", index=False)
-    nab_rows.groupby("method")[["precision", "recall", "f1", "fpr"]].mean().reset_index().to_csv(results / "table_nab_methods.csv", index=False)
-
     save_figures(df, events, pred, windows, event_windows, boot, cost_table, strata, syn_example, summary, figures)
+
+    # NAB is a third-party benchmark fetched separately (see docs/NAB_SETUP.md) and is
+    # not part of the repository, so its absence must not abort the reproduction run.
+    nab_root = ROOT / config["nab"]["root"] / config["nab"]["windows_file"]
+    if nab_root.exists():
+        nab_rows, nab_subset = evaluate_nab(config)
+        nab_rows.to_csv(results / "nab_series_results.csv", index=False)
+        nab_subset.to_csv(results / "table_nab_subset_results.csv", index=False)
+        nab_rows.groupby("method")[["precision", "recall", "f1", "fpr"]].mean().reset_index().to_csv(results / "table_nab_methods.csv", index=False)
+    else:
+        print(
+            f"Skipping NAB auxiliary check: {nab_root} not found. "
+            "Follow docs/NAB_SETUP.md to regenerate Table 17 and Figure 10."
+        )
+
     print(f"Reproduced paper artifacts in {results}")
 
 

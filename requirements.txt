@@ -1,4 +1,11 @@
-numpy>=2.2,<3
+# The reported tables were generated with numpy 1.26.4, pandas 2.2.2 and
+# matplotlib 3.9.2 on Python 3.12. The ranges below are the versions the package
+# is verified against: every result CSV regenerates byte-identically on numpy
+# 1.26 / pandas 2.2, and identically to the reported precision on numpy 2.5 /
+# pandas 2.3 (largest observed difference 8e-16, in an unreported intermediate).
+# Figures are pixel-identical only on matplotlib 3.9; later releases change tick
+# auto-placement, which alters figure rendering but not the underlying data.
+numpy>=1.26,<3
 pandas>=2.2,<3
 matplotlib>=3.9,<4
 yfinance>=0.2.40

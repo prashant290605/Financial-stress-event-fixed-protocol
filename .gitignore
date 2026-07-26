@@ -46,5 +46,6 @@ external/NAB/
 node_modules/
 .next/
 
-# Local working copy of the manuscript folder; canonical sources live in paper/
-A_Reproducible_Event_Fixed_Protocol_for_Evaluating_Financial_Stress_Detectors__2_/
+# Local working copies of the journal submission folder; canonical sources live
+# in paper/. The trailing "__N_" suffix changes with each download, so match any.
+A_Reproducible_Event_Fixed_Protocol_for_Evaluating_Financial_Stress_Detectors*/
