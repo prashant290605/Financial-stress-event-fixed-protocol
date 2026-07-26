@@ -185,7 +185,7 @@ def main() -> None:
     top = float(max(np.nanmax(vol[show]), np.nanmax(score[show])))
     axes[1].set_ylim(None, top + 1.6)
     hy = hybrid.astype(bool) & show
-    axes[1].scatter(t[hy], np.full(hy.sum(), axes[1].get_ylim()[0]), s=8, marker="|", color="#d62728", label="Hybrid alarms")
+    axes[1].scatter(t[hy], np.full(hy.sum(), axes[1].get_ylim()[0]), s=8, marker="|", color="#d62728", label="Confirmation alarms")
     axes[1].set_ylabel("Standardized score")
     axes[1].set_xlabel("Synthetic day")
     for ax in axes:

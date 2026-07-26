@@ -17,7 +17,7 @@ from src.paper_protocol import ROOT, detector_outputs, load_config
 OUT = ROOT / "figures" / "final"
 COLORS = {
     "Volatility": "#1f77b4",
-    "Hybrid": "#d95f02",
+    "Confirmation": "#d95f02",
     "CUSUM": "#2ca02c",
     "MMD": "#7570b3",
     "Instability": "#6a3d9a",
@@ -62,14 +62,14 @@ def save(fig: plt.Figure, name: str) -> None:
 def method_label(value: str) -> str:
     mapping = {
         "Volatility percentile": "Volatility",
-        "Hybrid W=10": "Hybrid",
-        "Hybrid volatility + instability confirmation": "Hybrid",
+        "Hybrid W=10": "Confirmation",
+        "Hybrid volatility + instability confirmation": "Confirmation",
         "CUSUM": "CUSUM",
         "Instability score": "Instability",
         "MMD-only confirmation": "MMD",
         "Kappa-only confirmation": "Kappa",
         "volatility_percentile": "Volatility",
-        "hybrid_windowed_confirmation": "Hybrid",
+        "hybrid_windowed_confirmation": "Confirmation",
         "cusum": "CUSUM",
         "instability_score": "Instability",
     }
@@ -84,7 +84,7 @@ def fig_timeline(config: dict) -> None:
 
     fig, ax = plt.subplots(figsize=(7.2, 3.6))
     ax.plot(df["date"], df["signal"], color="#222222", lw=0.7, label="Signal")
-    ax.scatter(df.loc[hybrid, "date"], df.loc[hybrid, "signal"], s=11, color=COLORS["Hybrid"], label="Hybrid alarms", zorder=4)
+    ax.scatter(df.loc[hybrid, "date"], df.loc[hybrid, "signal"], s=11, color=COLORS["Confirmation"], label="Confirmation alarms", zorder=4)
     for i, d in enumerate(events["mapped_trading_date"]):
         ax.axvspan(d - pd.tseries.offsets.BDay(60), d + pd.tseries.offsets.BDay(60), color=COLORS["Event"], alpha=0.08, lw=0, label="Event window" if i == 0 else None)
         ax.axvline(d, color=COLORS["Event"], alpha=0.35, lw=0.7)
@@ -123,7 +123,7 @@ def fig_confirmation_window() -> None:
     data = pd.read_csv(ROOT / "results" / "paper" / "table_window_sensitivity.csv")
     fig, ax = plt.subplots(figsize=(5.6, 3.3))
     ax.plot(data["window"], data["recall"], marker="o", color="#4c78a8", label="Recall")
-    ax.plot(data["window"], data["f1"], marker="s", color=COLORS["Hybrid"], label="F1")
+    ax.plot(data["window"], data["f1"], marker="s", color=COLORS["Confirmation"], label="F1")
     ax.plot(data["window"], data["fpr"], marker="^", color="#333333", label="FPR")
     ax.set_xlabel("Confirmation window W (trading days)")
     ax.set_ylabel("Metric value")
@@ -140,14 +140,14 @@ def fig_bootstrap() -> None:
         vals = [data.loc[data["bootstrap"] == kind, metric].to_numpy() for kind in ["event", "block"]]
         parts = ax.violinplot(vals, showmeans=True, showextrema=False)
         for body in parts["bodies"]:
-            body.set_facecolor(COLORS["Hybrid"])
-            body.set_edgecolor(COLORS["Hybrid"])
+            body.set_facecolor(COLORS["Confirmation"])
+            body.set_edgecolor(COLORS["Confirmation"])
             body.set_alpha(0.45)
         ax.axhline(0, color="#222222", lw=0.8, ls="--")
         ax.set_xticks([1, 2], ["Event", "Block"])
         ax.set_title(title)
         ax.grid(axis="y", alpha=0.22)
-    axes[0].set_ylabel("Hybrid - Volatility")
+    axes[0].set_ylabel("Confirmation - Volatility")
     fig.tight_layout()
     save(fig, "bootstrap_delta")
 
@@ -190,7 +190,7 @@ def fig_nab() -> None:
     width = 0.36
     fig, axes = plt.subplots(2, 1, figsize=(7.8, 5.4), sharex=True)
     for i, metric in enumerate(["f1", "fpr"]):
-        for offset, method in [(-width / 2, "Volatility"), (width / 2, "Hybrid")]:
+        for offset, method in [(-width / 2, "Volatility"), (width / 2, "Confirmation")]:
             vals = focus[focus["method"] == method].set_index("subset").loc[subsets, metric]
             axes[i].bar(x + offset, vals, width=width, color=COLORS[method], label=method)
         axes[i].set_ylabel(metric.upper() if metric == "fpr" else "F1")
@@ -206,7 +206,7 @@ def fig_multi_asset() -> None:
     focus = data[data["method"].isin(["Volatility percentile", "Hybrid volatility + instability confirmation", "CUSUM", "MMD-only confirmation"])].copy()
     focus["method"] = focus["method"].map(method_label)
     tickers = list(focus["ticker"].drop_duplicates())
-    markers = {"Volatility": "o", "Hybrid": "s", "CUSUM": "^", "MMD": "D"}
+    markers = {"Volatility": "o", "Confirmation": "s", "CUSUM": "^", "MMD": "D"}
     fig, axes = plt.subplots(1, len(tickers), figsize=(8.8, 2.8), sharey=True)
     for ax, ticker in zip(axes, tickers):
         grp = focus[focus["ticker"] == ticker]
@@ -230,9 +230,9 @@ def fig_event_level() -> None:
     focus["method"] = focus["method"].map(method_label)
     events = focus[["event_id", "event_name"]].drop_duplicates().reset_index(drop=True)
     x = np.arange(len(events))
-    offsets = {"Volatility": -0.17, "Hybrid": 0.17}
+    offsets = {"Volatility": -0.17, "Confirmation": 0.17}
     fig, ax = plt.subplots(figsize=(9.2, 4.4))
-    for method in ["Volatility", "Hybrid"]:
+    for method in ["Volatility", "Confirmation"]:
         rows = focus[focus["method"] == method].set_index("event_id")
         for i, event_id in enumerate(events["event_id"]):
             row = rows.loc[event_id]

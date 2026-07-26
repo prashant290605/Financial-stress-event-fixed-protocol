@@ -197,7 +197,6 @@ C^-_t &= \min(0,\,C^-_{t-1}+z_r(t)),\\
 C_t &= \max(C^+_t,\,-C^-_t),
 \end{align}
 where $C_t$ is smoothed and thresholded at its 90th calibration percentile \cite{page1954}.
-and take $C_t=\max(C^+_t,-C^-_t)$, smoothed and thresholded at its 90th calibration percentile \cite{page1954}.
 \item \textbf{MMD.} At each $t$, compare the 30 values of $x$ before $t$ with the 30 values from $t$ onward using the kernel $K(x_i,x_j)=\exp[-\|x_i-x_j\|^2/(2\gamma^2)]$, with $\gamma$ the median pairwise distance between the two sets, floored at $10^{-4}$ \cite{gretton2012}. With $\bar K_{aa}$, $\bar K_{bb}$, and $\bar K_{ab}$ the mean kernel values within the first set, within the second, and between them,
 \begin{equation}
 \widehat{\mathrm{MMD}}^2=\bar K_{aa}+\bar K_{bb}-2\bar K_{ab},
