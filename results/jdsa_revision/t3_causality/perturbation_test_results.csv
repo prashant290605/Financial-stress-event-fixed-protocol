@@ -1,0 +1,213 @@
+mode,label,index,date,period,perturbation,constants_changed,fully_causal_confirmation_base,fully_causal_confirmation_perturbed,fully_causal_confirmation_alarm_unchanged,fully_causal_confirmation_history_unchanged,retrospective_confirmation_base,retrospective_confirmation_perturbed,retrospective_confirmation_alarm_unchanged,retrospective_confirmation_history_unchanged,trailing_confirmation_base,trailing_confirmation_perturbed,trailing_confirmation_alarm_unchanged,trailing_confirmation_history_unchanged,volatility_base,volatility_perturbed,volatility_alarm_unchanged,volatility_history_unchanged
+frozen,calm 2005-06-15,1319,2005-06-15,calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,calm 2005-06-15,1319,2005-06-15,calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,calm 2005-06-15,1319,2005-06-15,calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,calm 2005-06-15,1319,2005-06-15,calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E05 2008-09-29,2147,2008-09-29,calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,1,1,True,True
+frozen,E05 2008-09-29,2147,2008-09-29,calibration,crash,frozen,0,0,True,True,0,1,False,False,0,1,False,False,1,1,True,True
+frozen,E05 2008-09-29,2147,2008-09-29,calibration,spike,frozen,0,0,True,True,0,1,False,False,0,1,False,False,1,1,True,True
+frozen,E05 2008-09-29,2147,2008-09-29,calibration,flat,frozen,0,0,True,True,0,1,False,False,0,1,False,False,1,1,True,True
+frozen,E05+33,2181,2008-11-14,calibration,noise,frozen,0,0,True,True,1,0,False,False,0,0,True,True,1,1,True,True
+frozen,E05+33,2181,2008-11-14,calibration,crash,frozen,0,0,True,True,1,1,True,False,0,0,True,True,1,1,True,True
+frozen,E05+33,2181,2008-11-14,calibration,spike,frozen,0,0,True,True,1,1,True,False,0,1,False,False,1,1,True,True
+frozen,E05+33,2181,2008-11-14,calibration,flat,frozen,0,0,True,True,1,1,True,False,0,1,False,False,1,1,True,True
+frozen,E07 2011-08-08,2867,2011-08-08,calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E07 2011-08-08,2867,2011-08-08,calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E07 2011-08-08,2867,2011-08-08,calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E07 2011-08-08,2867,2011-08-08,calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E08 2015-08-24,3884,2015-08-24,calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E08 2015-08-24,3884,2015-08-24,calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E08 2015-08-24,3884,2015-08-24,calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E08 2015-08-24,3884,2015-08-24,calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,last calibration day,4190,2016-11-08,calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,last calibration day,4190,2016-11-08,calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,last calibration day,4190,2016-11-08,calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,last calibration day,4190,2016-11-08,calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,first post-cutoff day,4191,2016-11-09,post_calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,first post-cutoff day,4191,2016-11-09,post_calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,first post-cutoff day,4191,2016-11-09,post_calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,first post-cutoff day,4191,2016-11-09,post_calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,cutoff+10,4201,2016-11-23,post_calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,cutoff+10,4201,2016-11-23,post_calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,cutoff+10,4201,2016-11-23,post_calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,cutoff+10,4201,2016-11-23,post_calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,day before latest calibration close,4218,2016-12-19,post_calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,day before latest calibration close,4218,2016-12-19,post_calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,day before latest calibration close,4218,2016-12-19,post_calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,day before latest calibration close,4218,2016-12-19,post_calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,latest calibration close,4219,2016-12-20,post_calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,latest calibration close,4219,2016-12-20,post_calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,latest calibration close,4219,2016-12-20,post_calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,latest calibration close,4219,2016-12-20,post_calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,operational start,4220,2016-12-21,post_calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,operational start,4220,2016-12-21,post_calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,operational start,4220,2016-12-21,post_calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,operational start,4220,2016-12-21,post_calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,operational start+10,4230,2017-01-06,post_calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,operational start+10,4230,2017-01-06,post_calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,operational start+10,4230,2017-01-06,post_calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,operational start+10,4230,2017-01-06,post_calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,calm 2017-06-15,4340,2017-06-15,post_calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,calm 2017-06-15,4340,2017-06-15,post_calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,calm 2017-06-15,4340,2017-06-15,post_calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,calm 2017-06-15,4340,2017-06-15,post_calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E09 window start,4442,2017-11-08,post_calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E09 window start,4442,2017-11-08,post_calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E09 window start,4442,2017-11-08,post_calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E09 window start,4442,2017-11-08,post_calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E09 2018-02-05,4501,2018-02-05,post_calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E09 2018-02-05,4501,2018-02-05,post_calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E09 2018-02-05,4501,2018-02-05,post_calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E09 2018-02-05,4501,2018-02-05,post_calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E09+8,4509,2018-02-15,post_calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E09+8,4509,2018-02-15,post_calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E09+8,4509,2018-02-15,post_calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E09+8,4509,2018-02-15,post_calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E10 2018-12-24,4724,2018-12-24,post_calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E10 2018-12-24,4724,2018-12-24,post_calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E10 2018-12-24,4724,2018-12-24,post_calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E10 2018-12-24,4724,2018-12-24,post_calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,calm 2019-07-15,4862,2019-07-15,post_calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,calm 2019-07-15,4862,2019-07-15,post_calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,calm 2019-07-15,4862,2019-07-15,post_calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,calm 2019-07-15,4862,2019-07-15,post_calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E11-20,5011,2020-02-14,post_calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E11-20,5011,2020-02-14,post_calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E11-20,5011,2020-02-14,post_calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E11-20,5011,2020-02-14,post_calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E11 2020-03-16,5031,2020-03-16,post_calibration,noise,frozen,1,1,True,True,1,1,True,True,1,1,True,True,1,1,True,True
+frozen,E11 2020-03-16,5031,2020-03-16,post_calibration,crash,frozen,1,1,True,True,1,1,True,True,1,1,True,True,1,1,True,True
+frozen,E11 2020-03-16,5031,2020-03-16,post_calibration,spike,frozen,1,1,True,True,1,1,True,True,1,1,True,True,1,1,True,True
+frozen,E11 2020-03-16,5031,2020-03-16,post_calibration,flat,frozen,1,1,True,True,1,1,True,True,1,1,True,False,1,1,True,True
+frozen,E12 2022-06-13,5597,2022-06-13,post_calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E12 2022-06-13,5597,2022-06-13,post_calibration,crash,frozen,0,0,True,True,0,0,True,False,0,0,True,False,0,0,True,True
+frozen,E12 2022-06-13,5597,2022-06-13,post_calibration,spike,frozen,0,0,True,True,0,0,True,False,0,0,True,False,0,0,True,True
+frozen,E12 2022-06-13,5597,2022-06-13,post_calibration,flat,frozen,0,0,True,True,0,0,True,False,0,0,True,False,0,0,True,True
+frozen,E13 2023-03-13,5784,2023-03-13,post_calibration,noise,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E13 2023-03-13,5784,2023-03-13,post_calibration,crash,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E13 2023-03-13,5784,2023-03-13,post_calibration,spike,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,E13 2023-03-13,5784,2023-03-13,post_calibration,flat,frozen,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+frozen,first post-cutoff causal alarm,5026,2020-03-09,post_calibration,noise,frozen,1,1,True,True,1,1,True,True,1,1,True,True,1,1,True,True
+frozen,first post-cutoff causal alarm,5026,2020-03-09,post_calibration,crash,frozen,1,1,True,True,1,1,True,True,1,1,True,True,1,1,True,True
+frozen,first post-cutoff causal alarm,5026,2020-03-09,post_calibration,spike,frozen,1,1,True,True,1,1,True,True,1,1,True,False,1,1,True,True
+frozen,first post-cutoff causal alarm,5026,2020-03-09,post_calibration,flat,frozen,1,1,True,True,1,1,True,True,1,1,True,True,1,1,True,True
+frozen,middle post-cutoff causal alarm,5053,2020-04-16,post_calibration,noise,frozen,1,1,True,True,1,1,True,True,1,1,True,False,1,1,True,True
+frozen,middle post-cutoff causal alarm,5053,2020-04-16,post_calibration,crash,frozen,1,1,True,True,1,1,True,True,1,1,True,False,1,1,True,True
+frozen,middle post-cutoff causal alarm,5053,2020-04-16,post_calibration,spike,frozen,1,1,True,True,1,1,True,True,1,1,True,False,1,1,True,True
+frozen,middle post-cutoff causal alarm,5053,2020-04-16,post_calibration,flat,frozen,1,1,True,True,1,1,True,True,1,1,True,True,1,1,True,True
+frozen,last post-cutoff causal alarm,5679,2022-10-10,post_calibration,noise,frozen,1,1,True,True,0,0,True,True,0,0,True,True,1,1,True,True
+frozen,last post-cutoff causal alarm,5679,2022-10-10,post_calibration,crash,frozen,1,1,True,True,0,0,True,True,0,0,True,True,1,1,True,True
+frozen,last post-cutoff causal alarm,5679,2022-10-10,post_calibration,spike,frozen,1,1,True,True,0,1,False,False,0,1,False,False,1,1,True,True
+frozen,last post-cutoff causal alarm,5679,2022-10-10,post_calibration,flat,frozen,1,1,True,True,0,1,False,False,0,1,False,False,1,1,True,True
+frozen,symmetric alarm confirmed only by days after t #0,267,2001-04-05,calibration,noise,frozen,1,1,True,True,1,0,False,False,0,0,True,False,1,1,True,True
+frozen,symmetric alarm confirmed only by days after t #0,267,2001-04-05,calibration,crash,frozen,1,1,True,True,1,0,False,False,0,0,True,False,1,1,True,True
+frozen,symmetric alarm confirmed only by days after t #0,267,2001-04-05,calibration,spike,frozen,1,1,True,True,1,1,True,False,0,1,False,False,1,1,True,True
+frozen,symmetric alarm confirmed only by days after t #0,267,2001-04-05,calibration,flat,frozen,1,1,True,True,1,1,True,False,0,1,False,False,1,1,True,True
+frozen,symmetric alarm confirmed only by days after t #1,595,2002-07-31,calibration,noise,frozen,0,0,True,True,1,0,False,False,0,0,True,True,1,1,True,True
+frozen,symmetric alarm confirmed only by days after t #1,595,2002-07-31,calibration,crash,frozen,0,0,True,True,1,1,True,False,0,0,True,True,1,1,True,True
+frozen,symmetric alarm confirmed only by days after t #1,595,2002-07-31,calibration,spike,frozen,0,0,True,True,1,1,True,False,0,1,False,False,1,1,True,True
+frozen,symmetric alarm confirmed only by days after t #1,595,2002-07-31,calibration,flat,frozen,0,0,True,True,1,1,True,False,0,1,False,False,1,1,True,True
+frozen,symmetric alarm confirmed only by days after t #2,5032,2020-03-17,post_calibration,noise,frozen,1,1,True,True,1,1,True,True,0,1,False,False,1,1,True,True
+frozen,symmetric alarm confirmed only by days after t #2,5032,2020-03-17,post_calibration,crash,frozen,1,1,True,True,1,1,True,True,0,0,True,True,1,1,True,True
+frozen,symmetric alarm confirmed only by days after t #2,5032,2020-03-17,post_calibration,spike,frozen,1,1,True,True,1,1,True,True,0,1,False,False,1,1,True,True
+frozen,symmetric alarm confirmed only by days after t #2,5032,2020-03-17,post_calibration,flat,frozen,1,1,True,True,1,1,True,True,0,1,False,False,1,1,True,True
+refit,first post-cutoff day,4191,2016-11-09,post_calibration,noise,mmd_mean;mmd_sd;threshold_instability,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,first post-cutoff day,4191,2016-11-09,post_calibration,crash,mmd_mean;mmd_sd;threshold_instability,0,0,True,True,0,0,True,False,0,0,True,False,0,0,True,True
+refit,first post-cutoff day,4191,2016-11-09,post_calibration,spike,mmd_mean;mmd_sd;threshold_instability,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,first post-cutoff day,4191,2016-11-09,post_calibration,flat,mmd_mean;mmd_sd;threshold_instability,0,0,True,True,0,0,True,False,0,0,True,False,0,0,True,True
+refit,cutoff+10,4201,2016-11-23,post_calibration,noise,mmd_mean;mmd_sd;threshold_instability,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,cutoff+10,4201,2016-11-23,post_calibration,crash,mmd_mean;mmd_sd;threshold_instability,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,cutoff+10,4201,2016-11-23,post_calibration,spike,mmd_mean;mmd_sd;threshold_instability,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,cutoff+10,4201,2016-11-23,post_calibration,flat,mmd_mean;mmd_sd;threshold_instability,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,day before latest calibration close,4218,2016-12-19,post_calibration,noise,mmd_mean;mmd_sd;threshold_instability,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,day before latest calibration close,4218,2016-12-19,post_calibration,crash,mmd_mean;mmd_sd;threshold_instability,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,day before latest calibration close,4218,2016-12-19,post_calibration,spike,mmd_mean;mmd_sd;threshold_instability,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,day before latest calibration close,4218,2016-12-19,post_calibration,flat,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,latest calibration close,4219,2016-12-20,post_calibration,noise,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,latest calibration close,4219,2016-12-20,post_calibration,crash,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,latest calibration close,4219,2016-12-20,post_calibration,spike,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,latest calibration close,4219,2016-12-20,post_calibration,flat,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,operational start,4220,2016-12-21,post_calibration,noise,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,operational start,4220,2016-12-21,post_calibration,crash,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,operational start,4220,2016-12-21,post_calibration,spike,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,operational start,4220,2016-12-21,post_calibration,flat,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,operational start+10,4230,2017-01-06,post_calibration,noise,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,operational start+10,4230,2017-01-06,post_calibration,crash,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,operational start+10,4230,2017-01-06,post_calibration,spike,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,operational start+10,4230,2017-01-06,post_calibration,flat,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,calm 2017-06-15,4340,2017-06-15,post_calibration,noise,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,calm 2017-06-15,4340,2017-06-15,post_calibration,crash,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,calm 2017-06-15,4340,2017-06-15,post_calibration,spike,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,calm 2017-06-15,4340,2017-06-15,post_calibration,flat,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E09 window start,4442,2017-11-08,post_calibration,noise,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E09 window start,4442,2017-11-08,post_calibration,crash,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E09 window start,4442,2017-11-08,post_calibration,spike,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E09 window start,4442,2017-11-08,post_calibration,flat,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E09 2018-02-05,4501,2018-02-05,post_calibration,noise,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E09 2018-02-05,4501,2018-02-05,post_calibration,crash,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E09 2018-02-05,4501,2018-02-05,post_calibration,spike,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E09 2018-02-05,4501,2018-02-05,post_calibration,flat,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E09+8,4509,2018-02-15,post_calibration,noise,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E09+8,4509,2018-02-15,post_calibration,crash,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E09+8,4509,2018-02-15,post_calibration,spike,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E09+8,4509,2018-02-15,post_calibration,flat,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E10 2018-12-24,4724,2018-12-24,post_calibration,noise,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E10 2018-12-24,4724,2018-12-24,post_calibration,crash,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E10 2018-12-24,4724,2018-12-24,post_calibration,spike,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E10 2018-12-24,4724,2018-12-24,post_calibration,flat,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,calm 2019-07-15,4862,2019-07-15,post_calibration,noise,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,calm 2019-07-15,4862,2019-07-15,post_calibration,crash,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,calm 2019-07-15,4862,2019-07-15,post_calibration,spike,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,calm 2019-07-15,4862,2019-07-15,post_calibration,flat,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E11-20,5011,2020-02-14,post_calibration,noise,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E11-20,5011,2020-02-14,post_calibration,crash,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E11-20,5011,2020-02-14,post_calibration,spike,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E11-20,5011,2020-02-14,post_calibration,flat,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E11 2020-03-16,5031,2020-03-16,post_calibration,noise,,1,1,True,True,1,1,True,True,1,1,True,True,1,1,True,True
+refit,E11 2020-03-16,5031,2020-03-16,post_calibration,crash,,1,1,True,True,1,1,True,True,1,1,True,True,1,1,True,True
+refit,E11 2020-03-16,5031,2020-03-16,post_calibration,spike,,1,1,True,True,1,1,True,True,1,1,True,True,1,1,True,True
+refit,E11 2020-03-16,5031,2020-03-16,post_calibration,flat,,1,1,True,True,1,1,True,True,1,1,True,False,1,1,True,True
+refit,E12 2022-06-13,5597,2022-06-13,post_calibration,noise,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E12 2022-06-13,5597,2022-06-13,post_calibration,crash,,0,0,True,True,0,0,True,False,0,0,True,False,0,0,True,True
+refit,E12 2022-06-13,5597,2022-06-13,post_calibration,spike,,0,0,True,True,0,0,True,False,0,0,True,False,0,0,True,True
+refit,E12 2022-06-13,5597,2022-06-13,post_calibration,flat,,0,0,True,True,0,0,True,False,0,0,True,False,0,0,True,True
+refit,E13 2023-03-13,5784,2023-03-13,post_calibration,noise,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E13 2023-03-13,5784,2023-03-13,post_calibration,crash,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E13 2023-03-13,5784,2023-03-13,post_calibration,spike,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,E13 2023-03-13,5784,2023-03-13,post_calibration,flat,,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,first post-cutoff causal alarm,5026,2020-03-09,post_calibration,noise,,1,1,True,True,1,1,True,True,1,1,True,True,1,1,True,True
+refit,first post-cutoff causal alarm,5026,2020-03-09,post_calibration,crash,,1,1,True,True,1,1,True,True,1,1,True,True,1,1,True,True
+refit,first post-cutoff causal alarm,5026,2020-03-09,post_calibration,spike,,1,1,True,True,1,1,True,True,1,1,True,False,1,1,True,True
+refit,first post-cutoff causal alarm,5026,2020-03-09,post_calibration,flat,,1,1,True,True,1,1,True,True,1,1,True,True,1,1,True,True
+refit,middle post-cutoff causal alarm,5053,2020-04-16,post_calibration,noise,,1,1,True,True,1,1,True,True,1,1,True,False,1,1,True,True
+refit,middle post-cutoff causal alarm,5053,2020-04-16,post_calibration,crash,,1,1,True,True,1,1,True,True,1,1,True,False,1,1,True,True
+refit,middle post-cutoff causal alarm,5053,2020-04-16,post_calibration,spike,,1,1,True,True,1,1,True,True,1,1,True,False,1,1,True,True
+refit,middle post-cutoff causal alarm,5053,2020-04-16,post_calibration,flat,,1,1,True,True,1,1,True,True,1,1,True,True,1,1,True,True
+refit,last post-cutoff causal alarm,5679,2022-10-10,post_calibration,noise,,1,1,True,True,0,1,False,False,0,1,False,False,1,1,True,True
+refit,last post-cutoff causal alarm,5679,2022-10-10,post_calibration,crash,,1,1,True,True,0,0,True,True,0,0,True,True,1,1,True,True
+refit,last post-cutoff causal alarm,5679,2022-10-10,post_calibration,spike,,1,1,True,True,0,1,False,False,0,1,False,False,1,1,True,True
+refit,last post-cutoff causal alarm,5679,2022-10-10,post_calibration,flat,,1,1,True,True,0,1,False,False,0,1,False,False,1,1,True,True
+refit,calm 2005-06-15,1319,2005-06-15,calibration,noise,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,0,0,True,False,0,0,True,False,0,0,True,False
+refit,calm 2005-06-15,1319,2005-06-15,calibration,crash,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,0,0,True,False,0,0,True,False,0,0,True,True
+refit,calm 2005-06-15,1319,2005-06-15,calibration,spike,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,0,0,True,False,0,0,True,False,0,0,True,False
+refit,calm 2005-06-15,1319,2005-06-15,calibration,flat,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,0,0,True,False,0,0,True,False,0,0,True,False
+refit,E05 2008-09-29,2147,2008-09-29,calibration,noise,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,0,0,True,False,0,0,True,False,1,0,False,False
+refit,E05 2008-09-29,2147,2008-09-29,calibration,crash,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,True,0,1,False,False,0,1,False,False,1,1,True,True
+refit,E05 2008-09-29,2147,2008-09-29,calibration,spike,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,True,0,1,False,False,0,1,False,False,1,1,True,True
+refit,E05 2008-09-29,2147,2008-09-29,calibration,flat,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,0,1,False,False,0,1,False,False,1,1,True,False
+refit,E05+33,2181,2008-11-14,calibration,noise,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,1,0,False,False,0,0,True,False,1,0,False,False
+refit,E05+33,2181,2008-11-14,calibration,crash,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,True,1,1,True,False,0,0,True,True,1,1,True,True
+refit,E05+33,2181,2008-11-14,calibration,spike,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,1,1,True,False,0,1,False,False,1,1,True,True
+refit,E05+33,2181,2008-11-14,calibration,flat,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,1,1,True,False,0,1,False,False,1,1,True,False
+refit,E07 2011-08-08,2867,2011-08-08,calibration,noise,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,0,0,True,False,0,0,True,False,0,0,True,False
+refit,E07 2011-08-08,2867,2011-08-08,calibration,crash,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,0,0,True,False,0,0,True,False,0,0,True,False
+refit,E07 2011-08-08,2867,2011-08-08,calibration,spike,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,0,0,True,False,0,0,True,False,0,0,True,True
+refit,E07 2011-08-08,2867,2011-08-08,calibration,flat,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,0,0,True,False,0,0,True,False,0,0,True,False
+refit,E08 2015-08-24,3884,2015-08-24,calibration,noise,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,0,0,True,False,0,0,True,False,0,0,True,False
+refit,E08 2015-08-24,3884,2015-08-24,calibration,crash,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,0,0,True,False,0,0,True,False,0,0,True,False
+refit,E08 2015-08-24,3884,2015-08-24,calibration,spike,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,0,0,True,False,0,0,True,False,0,0,True,False
+refit,E08 2015-08-24,3884,2015-08-24,calibration,flat,mmd_mean;mmd_sd;kappa_mean;kappa_sd;volatility_mean;volatility_sd;threshold_volatility;threshold_instability,0,0,True,False,0,0,True,False,0,0,True,False,0,0,True,False
+refit,last calibration day,4190,2016-11-08,calibration,noise,mmd_mean;mmd_sd;threshold_instability,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,last calibration day,4190,2016-11-08,calibration,crash,mmd_mean;mmd_sd;threshold_instability,0,0,True,True,0,0,True,False,0,0,True,False,0,0,True,True
+refit,last calibration day,4190,2016-11-08,calibration,spike,mmd_mean;mmd_sd;threshold_instability,0,0,True,True,0,0,True,True,0,0,True,True,0,0,True,True
+refit,last calibration day,4190,2016-11-08,calibration,flat,mmd_mean;mmd_sd;threshold_instability,0,0,True,True,0,0,True,False,0,0,True,False,0,0,True,True

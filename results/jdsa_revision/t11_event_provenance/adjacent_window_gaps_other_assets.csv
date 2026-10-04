@@ -1,0 +1,5 @@
+ticker,observable_events,min_trading_days_between_windows,any_overlap
+QQQ,13,66,False
+IWM,12,66,False
+HYG,10,66,False
+TLT,10,66,False

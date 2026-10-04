@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 
 from src.multi_asset_evaluation import _load_asset_events, _load_processed_asset, _method_predictions
+from src.observability import observable_events
 from src.paper_protocol import ROOT, detector_outputs, event_mask, load_config, point_metrics
 
 
@@ -25,9 +26,14 @@ def _available_tickers() -> list[str]:
     return availability.loc[availability["number_of_trading_days"] > 0, "ticker"].tolist()
 
 
-def _focus_predictions(ticker: str, config: dict[str, Any]) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, np.ndarray]]:
+def _focus_predictions(
+    ticker: str, config: dict[str, Any], observable_only: bool = False, events: pd.DataFrame | None = None
+) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, np.ndarray]]:
     df = _load_processed_asset(ticker)
-    events = _load_asset_events(ticker)
+    if events is None:
+        events = _load_asset_events(ticker)
+    if observable_only:
+        events = observable_events(df, events)
     _, pred = detector_outputs(df, config)
     all_preds = _method_predictions(pred, config)
     return df, events, {
@@ -47,10 +53,13 @@ def _preferred(group: pd.DataFrame, ratio_col: str) -> pd.DataFrame:
     return out
 
 
-def compute_pointwise_cost(config: dict[str, Any]) -> pd.DataFrame:
+def compute_pointwise_cost(
+    config: dict[str, Any], observable_only: bool = False, events_by_ticker: dict[str, pd.DataFrame] | None = None
+) -> pd.DataFrame:
     rows: list[dict[str, Any]] = []
     for ticker in _available_tickers():
-        df, events, preds = _focus_predictions(ticker, config)
+        events = None if events_by_ticker is None else events_by_ticker[ticker]
+        df, events, preds = _focus_predictions(ticker, config, observable_only, events)
         y, _ = event_mask(df, events, config["events"]["half_window"])
         for method, arr in preds.items():
             metrics = point_metrics(y, arr)
@@ -84,14 +93,32 @@ def _event_components(ticker: str, method: str, y: np.ndarray, alarms: np.ndarra
     }
 
 
-def compute_event_aware_cost(config: dict[str, Any]) -> pd.DataFrame:
-    event_detail_path = ROOT / "results" / "event_level" / "event_level_metrics.csv"
-    if not event_detail_path.exists():
-        raise FileNotFoundError("Run scripts/evaluate_event_level.py before cost analysis.")
-    event_detail = pd.read_csv(event_detail_path)
+def compute_event_aware_cost(
+    config: dict[str, Any],
+    observable_only: bool = False,
+    event_detail: pd.DataFrame | None = None,
+    events_by_ticker: dict[str, pd.DataFrame] | None = None,
+) -> pd.DataFrame:
+    """Event-aware cost per asset, method, and cost ratio.
+
+    ``event_detail`` defaults to the stored event-level rows. With ``observable_only=True``
+    the day-level mask and the missed-event count use only the events whose reference
+    date lies inside each asset's sample; rows for any other event are dropped from
+    ``event_detail`` before missed events are counted. ``events_by_ticker`` replaces the
+    stored per-asset event tables (used for a revised panel).
+    """
+    if event_detail is None:
+        event_detail_path = ROOT / "results" / "event_level" / "event_level_metrics.csv"
+        if not event_detail_path.exists():
+            raise FileNotFoundError("Run scripts/evaluate_event_level.py before cost analysis.")
+        event_detail = pd.read_csv(event_detail_path)
     rows: list[dict[str, Any]] = []
     for ticker in _available_tickers():
-        df, events, preds = _focus_predictions(ticker, config)
+        events = None if events_by_ticker is None else events_by_ticker[ticker]
+        df, events, preds = _focus_predictions(ticker, config, observable_only, events)
+        if observable_only:
+            keep = ~((event_detail["ticker"] == ticker) & ~event_detail["event_id"].isin(events["event_id"]))
+            event_detail = event_detail.loc[keep]
         y, _ = event_mask(df, events, config["events"]["half_window"])
         for method, arr in preds.items():
             components = _event_components(ticker, method, y, arr, event_detail)

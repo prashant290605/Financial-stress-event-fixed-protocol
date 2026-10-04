@@ -1,0 +1,14 @@
+quantity,definition,price closes read (signal path),forward_reach_days
+r_t,log(P_t / P_{t-1}),P_{t-1}..P_t,0
+sigma_t,sd of r_{t-19..t},P_{t-20}..P_t,0
+z_t,(r_t - mean)/sd over r_{t-49..t},P_{t-50}..P_t,0
+x_t,0.5 r_t + 0.3 sigma_t + 0.2 z_t,P_{t-50}..P_t,0
+kappa_t,1 - AR(1) slope through the origin on x_{t-35..t},P_{t-85}..P_t,0
+MMD_t,"x_{t-30..t-1} against x_{t..t+29}, then 3-day trailing mean",P_{t-82}..P_{t+29},29
+s(t),5-day trailing mean of 0.5 z_MMD + 0.5 |z_kappa|,P_{t-86}..P_{t+29},29
+i(t),s(t) above its calibration 90th percentile,as s(t),29
+v(t),5-day trailing mean of standardized sigma above its calibration 90th percentile,P_{t-24}..P_t,0
+h_W(t) symmetric (submitted),"v(t) and any i(tau), tau in [t-10, t+10]",up to P_(t+39),39
+trailing h_W(t),"v(t) and any i(tau), tau in [t-10, t]",up to P_(t+29),29
+i_lag(t) = i(t-30),instability indicator issued 30 days late,up to P_(t-1),-1
+fully causal h_W(t),"v(t) and any i_lag(tau), tau in [t-10, t]",up to P_t,0

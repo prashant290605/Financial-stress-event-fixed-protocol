@@ -1,0 +1,7 @@
+table,reference,alternative,delay_cost,crossover_ratio
+full_period_reference,volatility,retrospective_confirmation,0.0,0.011560693641618497
+full_period_reference,volatility,retrospective_confirmation,0.05,0.020520231213872833
+full_period_reference,volatility,retrospective_confirmation,0.1,0.029479768786127167
+full_period_reference,volatility,fully_causal_confirmation,0.0,0.040268456375838924
+full_period_reference,volatility,fully_causal_confirmation,0.05,0.05201342281879195
+full_period_reference,volatility,fully_causal_confirmation,0.1,0.06375838926174497

@@ -1,0 +1,14 @@
+event_id,event_name,symmetric_w10_first_delay,trailing_w10_first_delay,trailing_w20_first_delay,fully_causal_w10_first_delay,fully_causal_w40_first_delay,volatility_reference_first_delay
+E01,Dot-com selloff,4.0,4.0,4.0,8.0,8.0,4.0
+E02,September 11 reopening,6.0,8.0,8.0,,6.0,6.0
+E03,WorldCom bankruptcy selloff,-2.0,8.0,8.0,51.0,51.0,-6.0
+E04,Quant crisis,,,,,,
+E05,Lehman crisis,33.0,43.0,43.0,,,-7.0
+E06,Flash crash,11.0,21.0,11.0,11.0,11.0,11.0
+E07,U.S. downgrade selloff,,,,,2.0,2.0
+E08,China devaluation selloff,8.0,8.0,8.0,,,8.0
+E09,Volmageddon,,,,,,
+E10,Q4 2018 selloff,4.0,4.0,4.0,,4.0,4.0
+E11,COVID crash,-8.0,-8.0,-8.0,-5.0,-8.0,-8.0
+E12,Inflation selloff,,,,,,-24.0
+E13,Bank stress,,,,,,

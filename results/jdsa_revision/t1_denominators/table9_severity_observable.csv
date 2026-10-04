@@ -1,0 +1,7 @@
+severity_label,method,event_detection_rate,mean_of_per_asset_median_first_delay,mean_event_coverage,pooled_event_asset_pairs,pooled_detected,pooled_median_first_delay,pooled_detection_rate
+high,Volatility percentile,0.65,-8.9,0.20428490822795312,17,11,4.0,0.6470588235294118
+high,Hybrid volatility + instability confirmation,0.3333333333333333,-1.25,0.0730442430880547,17,6,4.5,0.35294117647058826
+critical,Volatility percentile,1.0,-2.4,0.3809366391184573,21,21,-2.0,1.0
+critical,Hybrid volatility + instability confirmation,0.7733333333333333,1.1,0.22192837465564738,21,16,-1.5,0.7619047619047619
+medium,Volatility percentile,0.15,-26.0,0.046280991735537194,20,3,-60.0,0.15
+medium,Hybrid volatility + instability confirmation,0.1,-26.0,0.01115702479338843,20,2,-26.0,0.1

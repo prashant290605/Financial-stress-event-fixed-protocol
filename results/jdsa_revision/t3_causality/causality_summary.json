@@ -1,0 +1,19 @@
+{
+  "train_end_index": 4191,
+  "last_calibration_date": "2016-11-08",
+  "instability_constants_read_data_through": "2016-12-20",
+  "volatility_alarms_between_cutoff_and_that_date": 0,
+  "frozen_signal_path_fully_causal_alarm_unchanged_in_all_trials": true,
+  "frozen_signal_path_fully_causal_history_unchanged_in_all_trials": true,
+  "frozen_trials": 112,
+  "refit_post_calibration_fully_causal_alarm_unchanged_in_all_trials": true,
+  "refit_post_calibration_trials": 76,
+  "refit_post_calibration_history_unchanged_from_first_issuable_day": true,
+  "operational_start": "2016-12-21",
+  "refit_trials_from_operational_start": 60,
+  "refit_from_operational_start_alarm_and_history_unchanged": true,
+  "refit_post_calibration_volatility_alarm_unchanged_in_all_trials": true,
+  "refit_calibration_period_history_changed_in_some_trial": true,
+  "refit_calibration_period_constants_changed_in_all_trials": true,
+  "negative_control_symmetric_rule_alarm_changed_in_some_trial": true
+}

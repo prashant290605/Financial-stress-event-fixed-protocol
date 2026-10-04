@@ -1,0 +1,23 @@
+{
+  "n_days": 5987,
+  "calibration_fraction": 0.7,
+  "train_end_index": 4191,
+  "first_date": "2000-03-15",
+  "last_calibration_date": "2016-11-08",
+  "first_post_calibration_date": "2016-11-09",
+  "operational_start_date": "2016-12-21",
+  "latest_calibration_close_date": "2016-12-20",
+  "last_date": "2023-12-29",
+  "note": "train_end is 70 per cent of the archived sample length, so the cutoff date itself is fixed retrospectively; no price value after the latest calibration close enters any fitted quantity.",
+  "frozen_calibration_quantities": {
+    "mmd_mean": 0.04307939710528246,
+    "mmd_sd": 0.03378118119226799,
+    "kappa_mean": 1.04068234348785,
+    "kappa_sd": 0.1557660068285106,
+    "volatility_mean": 0.010650967886467176,
+    "volatility_sd": 0.006708851788864912,
+    "threshold_volatility": 1.0994114016151826,
+    "threshold_instability": 1.1225136318204176,
+    "cusum_threshold": 1.5323538465939635
+  }
+}

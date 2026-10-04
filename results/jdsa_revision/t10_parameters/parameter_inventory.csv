@@ -1,0 +1,23 @@
+parameter,value,defined_in,used_by,status,evidence
+Rolling volatility window,20 trading days,config spy.rolling_vol_window,sigma_t; volatility trigger; composite,not sensitivity-tested,
+Return z-score window,50 trading days,config spy.zscore_window,z_t; composite,not sensitivity-tested,
+"Composite weights (w_r, w_sigma, w_z)","(0.5, 0.3, 0.2)",config spy.signal_weights,x_t,already sensitivity-tested,Table 14 (results/ablations/table_weight_ablation.csv); t8_z_dominance
+Event half-window,60 trading days,config events.half_window,evaluation windows,already sensitivity-tested,Table 13 / Fig 6 (results/paper/table_event_window_sensitivity.csv)
+Severity half-window,20 trading days,config events.severity_half_window,severity terciles only,not sensitivity-tested,
+AR window for kappa,36 trading days,config features.ar_window,kappa_t,not sensitivity-tested,
+MMD sample length,30 + 30 observations,config features.mmd_window,MMD; also the lag of the fully causal variant,not sensitivity-tested,
+MMD smoothing,3-day trailing mean,code: compute_instability_features,MMD,not sensitivity-tested,
+MMD kernel bandwidth,"median pairwise distance, floor 1e-4",code: compute_instability_features,MMD,not sensitivity-tested,
+Score smoothing,5-day trailing mean,config features.smooth_window,all thresholded scores,not sensitivity-tested,
+Instability score composition,0.5 z_MMD + 0.5 |z_kappa|,code: detector_outputs,instability score,already sensitivity-tested,"results/paper/table_score_component_sensitivity.csv (MMD only, |kappa| only, CIS variants)"
+kappa sign convention,two-sided |z_kappa|,code: detector_outputs,instability score,already sensitivity-tested,Table 15 (results/ablations/table_kappa_sign_ablation.csv)
+CIS window,10 days (ablations only),config features.cis_window,CIS ablation variants,already sensitivity-tested,results/paper/table_score_component_sensitivity.csv
+Calibration fraction,first 70 per cent of each series,config detectors.calibration_fraction,all thresholds and z-scores,not sensitivity-tested,post-calibration results reported separately in t2_post_calibration (split not varied)
+Volatility percentile,0.90,config detectors.volatility_threshold_quantile,volatility trigger; first condition of confirmation,newly covered in this revision,t4_operating_curves (SPY and four assets); t10 volatility_percentile_sensitivity_spy.csv
+Instability percentile,0.90,config detectors.score_threshold_quantile,instability indicator i(t),newly covered in this revision,t10 instability_percentile_sensitivity_spy.csv
+CUSUM percentile,0.90,config detectors.cusum_threshold_quantile,CUSUM baseline,not sensitivity-tested,t7_cusum documents its behaviour
+Confirmation window W,10 trading days,config detectors.default_hybrid_window,confirmation rule,already sensitivity-tested,"Fig 7 (results/paper/table_window_sensitivity.csv, W = 0..60)"
+Confirmation timing,"symmetric [t-W, t+W]",code: windowed_hybrid,confirmation rule,already sensitivity-tested,Table 16 (results/ablations/table_causal_confirmation.csv); t2_post_calibration; t3_causality
+Bootstrap resamples,2000,config bootstrap.n_resamples,intervals,not sensitivity-tested,second-seed check in t6_uncertainty
+Bootstrap block length,20 (submitted); 121 primary in revision,config bootstrap.block_length,block intervals,newly covered in this revision,"t6_uncertainty (20, 60, 121)"
+Random seed,42,config seed,bootstrap and synthetic data,not sensitivity-tested,

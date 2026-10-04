@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 
 from src.multi_asset_data import ASSETS
+from src.observability import observable_events
 from src.paper_protocol import ROOT, detector_outputs, event_mask, event_metrics, load_config, point_metrics
 
 
@@ -55,9 +56,20 @@ def _method_predictions(pred: dict[str, np.ndarray], config: dict[str, Any]) -> 
     }
 
 
-def evaluate_asset(ticker: str, config: dict[str, Any]) -> pd.DataFrame:
+def evaluate_asset(
+    ticker: str, config: dict[str, Any], observable_only: bool = False, events: pd.DataFrame | None = None
+) -> pd.DataFrame:
+    """Day-level and event metrics for one asset.
+
+    With ``observable_only=True`` events dated before the asset's processed sample
+    contribute no window to the day-level mask and no row to the event metrics.
+    ``events`` replaces the stored per-asset event table (used for a revised panel).
+    """
     df = _load_processed_asset(ticker)
-    events = _load_asset_events(ticker)
+    if events is None:
+        events = _load_asset_events(ticker)
+    if observable_only:
+        events = observable_events(df, events)
     _, pred = detector_outputs(df, config)
     y, spans = event_mask(df, events, config["events"]["half_window"])
     names = dict(METHODS)

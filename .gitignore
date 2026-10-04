@@ -49,3 +49,19 @@ node_modules/
 # Local working copies of the journal submission folder; canonical sources live
 # in paper/. The trailing "__N_" suffix changes with each download, so match any.
 A_Reproducible_Event_Fixed_Protocol_for_Evaluating_Financial_Stress_Detectors*/
+A_Reproducible_Event_Fixed_Protocol_for_Evaluating_Financial_Stress_Detectors*.zip
+paper.zip
+
+# Local working copy of the journal revision and the audit of its manuscript,
+# which are not part of this repository
+submission/
+scripts/jdsa_revision/manuscript_number_audit.py
+
+# JDSA revision outputs that the revision commands regenerate (see README.md):
+# the comparison run on the submitted panel, the raw bootstrap resamples, and the
+# bulk comparison of operating curves and resamples
+results/jdsa_revision/pre_E03_fix/
+results/jdsa_revision/pre_E03_fix_vs_post_E03_fix_curves_and_samples.csv
+results/jdsa_revision/t6_uncertainty/bootstrap_samples_spy.csv
+# Integrity check of the authors' local working tree (lists local file names)
+results/jdsa_revision/t12_audit/pre_phase1_files_check.csv

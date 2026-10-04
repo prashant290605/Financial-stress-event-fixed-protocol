@@ -1,0 +1,12 @@
+file,line,text
+docs/paper_protocol.md,48,"If an event window has no detection, it contributes `0` to event coverage and `NaN` to delay/alignment before averaging over detected events only. Overlapping event windows are merged for pointwise confusion-matrix metrics through their uni"
+archive/paper_history/CHANGELOG_PAPER.md,34,"Documented 2000 resamples, percentile intervals, event-row resampling, rebuilt event masks, fixed detector outputs, overlapping non-circular 20-day block bootstrap, and timeline reconstruction."
+archive/legacy_dashboard/backend/app/services/data_service.py,453,"drift_candidates = np.argsort(event_presence)[-max(3, min(16, n // 35)) :]"
+archive/legacy_dashboard/backend/app/services/model_service.py,836,"end_candidates = [int(np.clip(int(x), 0, max(0, n - 1))) for x in known_events if int(np.clip(int(x), 0, max(0, n - 1))) >= peak]"
+paper/manuscript.tex,120,An event is excluded if any of these holds:
+paper/manuscript.tex,124,\item its window would overlap that of an included event.
+paper/manuscript.tex,226,"A day counts as positive if it lies inside any event window and negative otherwise, with overlapping windows merged first. A true positive (TP) is an alarm on a positive day, a false positive (FP) is an alarm on a negative day, and a false "
+paper/manuscript.tex,242,"All intervals are 95 per cent percentile intervals from 2000 bootstrap resamples. The event bootstrap draws the 13 events with replacement, rebuilds the windows from them, and re-scores the existing detector output. The block bootstrap draw"
+paper/manuscript.tex,478,"Table~\ref{tab:cost} and Figure~\ref{fig:cost} give the day-level cost with $c_{\mathrm{FN}}=1$. The confirmation rule has the lower cost at every ratio tested. At $c_{\mathrm{FP}}/c_{\mathrm{FN}}=1$ the two costs are 1372 and 1384, and the"
+paper/manuscript.tex,839,Bootstrap & 2000 resamples; event rows or overlapping 20-day blocks; 95\% percentile intervals.\\
+paper/manuscript.tex,881,"Across the seven detected events with a full 120-day preceding window, the mean ratio is 3.03 for raw volatility and 1.29 for $x_t$. The dot-com selloff is excluded, since it lies too near the start of the processed series to have a full pr"

@@ -1,0 +1,7 @@
+quantity,perturbed_close_index,earliest_index_changed,forward_reach_days
+x_t (composite),3000,3000,0
+sigma_t (20-day volatility),3000,3000,0
+volatility score (5-day smoothed z of sigma),3000,3000,0
+kappa_t,3000,3000,0
+MMD_t (3-day smoothed),3000,2971,29
+instability score s(t),3000,2971,29

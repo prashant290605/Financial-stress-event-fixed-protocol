@@ -1,0 +1,4 @@
+detector,calibration_events,calibration_detected,post_cutoff_events,post_cutoff_detected,straddling_events
+volatility,8,7,5,3,0
+retrospective_confirmation,8,6,5,2,0
+fully_causal_confirmation,8,3,5,1,0

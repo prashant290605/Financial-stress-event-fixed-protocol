@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 
 from src.multi_asset_evaluation import _asset_name_lookup, _load_asset_events, _load_processed_asset, _method_predictions
+from src.observability import observable_events
 from src.paper_protocol import ROOT, detector_outputs, load_config
 
 
@@ -36,10 +37,28 @@ def _available_tickers() -> list[str]:
     return availability.loc[availability["number_of_trading_days"] > 0, "ticker"].tolist()
 
 
-def _asset_event_rows(ticker: str, config: dict[str, Any]) -> pd.DataFrame:
+def _asset_event_rows(
+    ticker: str,
+    config: dict[str, Any],
+    observable_only: bool = False,
+    events: pd.DataFrame | None = None,
+    severity_labels: dict[str, str] | None = None,
+) -> pd.DataFrame:
+    """Per-event rows for one asset.
+
+    With ``observable_only=True`` events dated before the asset's processed sample are
+    dropped, so they cannot be scored as missed events. The default keeps the submitted
+    behaviour, in which they are mapped to the first available day. ``events`` and
+    ``severity_labels`` replace the stored event files (used for a revised event panel).
+    """
     df = _load_processed_asset(ticker)
-    events = _load_asset_events(ticker)
-    main_severity = pd.read_csv(ROOT / "data" / "events_spy.csv").set_index("event_id")["severity_label"].to_dict()
+    if events is None:
+        events = _load_asset_events(ticker)
+    if observable_only:
+        events = observable_events(df, events)
+    if severity_labels is None:
+        severity_labels = pd.read_csv(ROOT / "data" / "events_spy.csv").set_index("event_id")["severity_label"].to_dict()
+    main_severity = severity_labels
     _, pred = detector_outputs(df, config)
     preds = _method_predictions(pred, config)
     names = _method_display_names()

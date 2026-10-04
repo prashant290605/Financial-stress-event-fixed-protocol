@@ -1,0 +1,74 @@
+ticker,detector,event_id,detected_composite,detected_z_only,first_delay_composite,first_delay_z_only,window_alarm_days_composite,window_alarm_days_z_only
+SPY,instability score alone,E02,True,True,-58.0,-59.0,20,22
+SPY,instability score alone,E06,True,True,-56.0,-57.0,49,50
+SPY,instability score alone,E08,True,True,2.0,3.0,44,43
+SPY,instability score alone,E11,True,True,-35.0,-35.0,46,42
+SPY,instability score alone,E12,True,True,48.0,49.0,2,1
+SPY,MMD alone,E03,True,True,10.0,8.0,13,14
+SPY,MMD alone,E05,True,True,24.0,23.0,23,24
+SPY,MMD alone,E06,True,True,-58.0,-58.0,55,56
+SPY,MMD alone,E08,True,True,13.0,14.0,30,29
+SPY,MMD alone,E10,True,True,3.0,3.0,28,25
+SPY,MMD alone,E11,True,True,-33.0,-33.0,44,41
+SPY,|kappa| alone,E02,True,True,-51.0,-52.0,29,29
+SPY,|kappa| alone,E05,True,True,-52.0,-52.0,9,7
+SPY,|kappa| alone,E07,True,True,11.0,12.0,19,17
+SPY,|kappa| alone,E09,True,True,-50.0,-50.0,17,20
+SPY,|kappa| alone,E11,True,True,-11.0,-11.0,18,19
+QQQ,confirmation (W=10),E01,True,True,-21.0,-21.0,41,42
+QQQ,instability score alone,E01,True,True,-22.0,-22.0,9,12
+QQQ,instability score alone,E02,True,True,6.0,7.0,16,14
+QQQ,instability score alone,E03,True,True,56.0,57.0,5,4
+QQQ,instability score alone,E04,True,True,17.0,17.0,14,16
+QQQ,instability score alone,E06,True,True,-58.0,-58.0,53,52
+QQQ,instability score alone,E07,True,True,-60.0,-60.0,16,18
+QQQ,instability score alone,E09,True,True,55.0,56.0,6,5
+QQQ,instability score alone,E10,True,True,19.0,19.0,4,3
+QQQ,instability score alone,E11,True,True,-35.0,-35.0,61,59
+QQQ,MMD alone,E01,True,True,36.0,-11.0,4,4
+QQQ,MMD alone,E05,True,True,-17.0,-17.0,6,4
+QQQ,MMD alone,E06,True,True,-60.0,-60.0,63,60
+QQQ,MMD alone,E08,True,True,15.0,14.0,11,12
+QQQ,MMD alone,E10,True,True,-54.0,-54.0,20,18
+QQQ,MMD alone,E11,True,True,-34.0,-34.0,52,46
+QQQ,|kappa| alone,E02,True,False,-3.0,,4,0
+QQQ,|kappa| alone,E05,True,True,-42.0,-42.0,14,15
+QQQ,|kappa| alone,E07,True,True,-60.0,-60.0,40,41
+QQQ,|kappa| alone,E11,True,True,-38.0,-38.0,22,26
+IWM,confirmation (W=10),E05,True,True,-6.0,-6.0,57,58
+IWM,instability score alone,E02,True,True,-60.0,-60.0,31,29
+IWM,instability score alone,E03,True,True,-60.0,-60.0,6,5
+IWM,instability score alone,E05,True,True,-16.0,-16.0,22,25
+IWM,instability score alone,E06,True,True,-24.0,-23.0,30,30
+IWM,instability score alone,E10,True,True,-60.0,-60.0,45,44
+IWM,instability score alone,E11,True,True,-41.0,-41.0,67,66
+IWM,instability score alone,E12,True,True,42.0,43.0,15,14
+IWM,MMD alone,E02,True,True,-60.0,-60.0,22,23
+IWM,MMD alone,E03,True,True,13.0,13.0,4,5
+IWM,MMD alone,E05,True,True,-18.0,-18.0,41,40
+IWM,MMD alone,E06,True,True,-58.0,-58.0,38,39
+IWM,MMD alone,E09,True,True,45.0,45.0,10,9
+IWM,MMD alone,E10,True,True,-60.0,-60.0,41,40
+IWM,MMD alone,E11,True,True,-43.0,-43.0,62,60
+IWM,|kappa| alone,E02,True,True,-60.0,-60.0,40,37
+IWM,|kappa| alone,E03,True,True,-60.0,-60.0,14,15
+IWM,|kappa| alone,E10,True,True,-60.0,-60.0,23,20
+IWM,|kappa| alone,E11,True,True,-13.0,-13.0,16,18
+IWM,|kappa| alone,E12,True,True,-58.0,-57.0,3,2
+HYG,instability score alone,E06,True,True,-53.0,-53.0,43,44
+HYG,instability score alone,E10,True,True,3.0,3.0,27,25
+HYG,instability score alone,E11,True,True,-34.0,-34.0,34,33
+HYG,MMD alone,E04,True,True,-5.0,-4.0,17,16
+HYG,|kappa| alone,E04,True,True,-34.0,-34.0,10,9
+HYG,|kappa| alone,E08,True,True,-59.0,-59.0,27,26
+TLT,instability score alone,E07,True,True,-42.0,-42.0,47,45
+TLT,instability score alone,E08,True,False,41.0,,1,0
+TLT,instability score alone,E11,True,True,-43.0,-43.0,67,69
+TLT,MMD alone,E04,True,True,-45.0,-44.0,27,25
+TLT,MMD alone,E07,True,True,-21.0,-21.0,27,30
+TLT,MMD alone,E11,True,True,-41.0,-41.0,63,70
+TLT,|kappa| alone,E06,True,True,-55.0,-55.0,9,10
+TLT,|kappa| alone,E09,True,True,-59.0,-58.0,6,5
+TLT,|kappa| alone,E10,True,True,-7.0,-7.0,17,15
+TLT,|kappa| alone,E12,True,True,52.0,53.0,9,8
+TLT,|kappa| alone,E13,True,True,-60.0,-60.0,32,30

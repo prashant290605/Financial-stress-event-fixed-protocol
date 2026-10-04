@@ -1,0 +1,87 @@
+{
+  "train_end_index": 4191,
+  "last_calibration_date": "2016-11-08",
+  "latest_calibration_close_index": 4219,
+  "latest_calibration_close_date": "2016-12-20",
+  "operational_start_index": 4220,
+  "operational_start_date": "2016-12-21",
+  "check_all_closes_from_start_perturbed_leaves_calibration_identical": true,
+  "check_single_close_before_start_moves_calibration": true,
+  "calibration_quantities": {
+    "mmd_mean": 0.04307939710528246,
+    "mmd_sd": 0.03378118119226799,
+    "kappa_mean": 1.04068234348785,
+    "kappa_sd": 0.1557660068285106,
+    "volatility_mean": 0.010650967886467176,
+    "volatility_sd": 0.006708851788864912,
+    "threshold_volatility": 1.0994114016151826,
+    "threshold_instability": 1.1225136318204176
+  },
+  "search_log": [
+    {
+      "k": 4181,
+      "date": "2016-10-26",
+      "moved": true
+    },
+    {
+      "k": 5986,
+      "date": "2023-12-29",
+      "moved": false
+    },
+    {
+      "k": 5083,
+      "date": "2020-05-29",
+      "moved": false
+    },
+    {
+      "k": 4632,
+      "date": "2018-08-13",
+      "moved": false
+    },
+    {
+      "k": 4406,
+      "date": "2017-09-19",
+      "moved": false
+    },
+    {
+      "k": 4293,
+      "date": "2017-04-07",
+      "moved": false
+    },
+    {
+      "k": 4237,
+      "date": "2017-01-18",
+      "moved": false
+    },
+    {
+      "k": 4209,
+      "date": "2016-12-06",
+      "moved": true
+    },
+    {
+      "k": 4223,
+      "date": "2016-12-27",
+      "moved": false
+    },
+    {
+      "k": 4216,
+      "date": "2016-12-15",
+      "moved": true
+    },
+    {
+      "k": 4219,
+      "date": "2016-12-20",
+      "moved": true
+    },
+    {
+      "k": 4221,
+      "date": "2016-12-22",
+      "moved": false
+    },
+    {
+      "k": 4220,
+      "date": "2016-12-21",
+      "moved": false
+    }
+  ]
+}

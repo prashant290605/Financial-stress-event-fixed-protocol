@@ -1,0 +1,14 @@
+event_id,center,lo,hi,detected,first_delay,nearest_delay,coverage,alarm_days,first_alarm_at_window_start,event_name,alarm_on_at_window_start
+E01,22,0,82,False,,,0.0,0,False,Dot-com selloff,False
+E02,376,316,436,False,,,0.0,0,False,September 11 reopening,False
+E03,588,528,648,False,,,0.0,0,False,WorldCom bankruptcy selloff,False
+E04,1860,1800,1920,False,,,0.0,0,False,Quant crisis,False
+E05,2147,2087,2207,False,,,0.0,0,False,Lehman crisis,False
+E06,2550,2490,2610,False,,,0.0,0,False,Flash crash,False
+E07,2867,2807,2927,False,,,0.0,0,False,U.S. downgrade selloff,False
+E08,3884,3824,3944,True,-60.0,-1.0,0.6446280991735537,78,True,China devaluation selloff,True
+E09,4501,4441,4561,True,-60.0,0.0,1.0,121,True,Volmageddon,True
+E10,4724,4664,4784,True,-60.0,0.0,1.0,121,True,Q4 2018 selloff,True
+E11,5031,4971,5091,True,-60.0,0.0,1.0,121,True,COVID crash,True
+E12,5597,5537,5657,True,-60.0,0.0,1.0,121,True,Inflation selloff,True
+E13,5784,5724,5844,True,-60.0,0.0,1.0,121,True,Bank stress,True

@@ -1,0 +1,11 @@
+event_id,center,lo,hi,detected,first_delay,nearest_delay,coverage,alarm_days,first_alarm_at_window_start,table,detector,event_name
+E09,4501,4441,4561,False,,,0.0,0,False,B_prospective_operational,volatility,Volmageddon
+E10,4724,4664,4784,True,4.0,4.0,0.12396694214876033,15,False,B_prospective_operational,volatility,Q4 2018 selloff
+E11,5031,4971,5091,True,-8.0,0.0,0.4049586776859504,49,False,B_prospective_operational,volatility,COVID crash
+E12,5597,5537,5657,True,-24.0,1.0,0.3305785123966942,40,False,B_prospective_operational,volatility,Inflation selloff
+E13,5784,5724,5844,False,,,0.0,0,False,B_prospective_operational,volatility,Bank stress
+E09,4501,4441,4561,False,,,0.0,0,False,B_prospective_operational,fully_causal_confirmation,Volmageddon
+E10,4724,4664,4784,False,,,0.0,0,False,B_prospective_operational,fully_causal_confirmation,Q4 2018 selloff
+E11,5031,4971,5091,True,-5.0,0.0,0.3305785123966942,40,False,B_prospective_operational,fully_causal_confirmation,COVID crash
+E12,5597,5537,5657,False,,,0.0,0,False,B_prospective_operational,fully_causal_confirmation,Inflation selloff
+E13,5784,5724,5844,False,,,0.0,0,False,B_prospective_operational,fully_causal_confirmation,Bank stress

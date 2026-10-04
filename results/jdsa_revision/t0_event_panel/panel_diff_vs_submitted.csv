@@ -1,0 +1,6 @@
+event_id,field,submitted_panel,active_panel
+E03,event_name,WorldCom selloff,WorldCom bankruptcy selloff
+E03,calendar_date,2002-07-24,2002-07-22
+E03,mapped_trading_date,2002-07-24,2002-07-22
+E03,source_reference,SEC WorldCom accounting fraud litigation; Federal Reserve History corporate accounting scandals,"WorldCom Inc. Form 8-K: Chapter 11 petitions filed 2002-07-21, U.S. Bankruptcy Court S.D.N.Y., Case No. 02-13533; UPI market report of 2002-07-22"
+E03,severity_score,0.19591684339011606,0.1988981278345624

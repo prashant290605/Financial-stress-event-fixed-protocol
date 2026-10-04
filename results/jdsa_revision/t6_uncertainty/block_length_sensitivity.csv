@@ -1,0 +1,41 @@
+ticker,comparison,estimand,excludes_zero_block20,excludes_zero_block60,excludes_zero_block121,same_conclusion_at_all_block_lengths
+HYG,volatility at matched FPR vs confirmation default (not nested),day-level f1 difference (b - a),False,False,False,True
+HYG,volatility at matched FPR vs confirmation default (not nested),day-level fpr difference (b - a),False,False,False,True
+HYG,volatility at matched FPR vs confirmation default (not nested),day-level precision difference (b - a),False,False,False,True
+HYG,volatility at matched FPR vs confirmation default (not nested),day-level recall difference (b - a),False,False,False,True
+HYG,volatility default vs confirmation default (nested),day-level f1 difference (b - a),True,False,False,False
+HYG,volatility default vs confirmation default (nested),day-level fpr difference (b - a),True,True,True,True
+HYG,volatility default vs confirmation default (nested),day-level precision difference (b - a),False,False,False,True
+HYG,volatility default vs confirmation default (nested),day-level recall difference (b - a),True,True,True,True
+IWM,volatility at matched FPR vs confirmation default (not nested),day-level f1 difference (b - a),True,False,False,False
+IWM,volatility at matched FPR vs confirmation default (not nested),day-level fpr difference (b - a),False,False,False,True
+IWM,volatility at matched FPR vs confirmation default (not nested),day-level precision difference (b - a),False,False,False,True
+IWM,volatility at matched FPR vs confirmation default (not nested),day-level recall difference (b - a),True,False,False,False
+IWM,volatility default vs confirmation default (nested),day-level f1 difference (b - a),True,True,True,True
+IWM,volatility default vs confirmation default (nested),day-level fpr difference (b - a),True,True,True,True
+IWM,volatility default vs confirmation default (nested),day-level precision difference (b - a),False,False,False,True
+IWM,volatility default vs confirmation default (nested),day-level recall difference (b - a),True,True,True,True
+QQQ,volatility at matched FPR vs confirmation default (not nested),day-level f1 difference (b - a),True,True,True,True
+QQQ,volatility at matched FPR vs confirmation default (not nested),day-level fpr difference (b - a),False,False,False,True
+QQQ,volatility at matched FPR vs confirmation default (not nested),day-level precision difference (b - a),False,False,False,True
+QQQ,volatility at matched FPR vs confirmation default (not nested),day-level recall difference (b - a),True,True,True,True
+QQQ,volatility default vs confirmation default (nested),day-level f1 difference (b - a),True,True,True,True
+QQQ,volatility default vs confirmation default (nested),day-level fpr difference (b - a),True,True,False,False
+QQQ,volatility default vs confirmation default (nested),day-level precision difference (b - a),False,False,False,True
+QQQ,volatility default vs confirmation default (nested),day-level recall difference (b - a),True,True,True,True
+SPY,volatility at matched FPR vs confirmation default (not nested),day-level f1 difference (b - a),False,False,False,True
+SPY,volatility at matched FPR vs confirmation default (not nested),day-level fpr difference (b - a),False,False,False,True
+SPY,volatility at matched FPR vs confirmation default (not nested),day-level precision difference (b - a),False,False,False,True
+SPY,volatility at matched FPR vs confirmation default (not nested),day-level recall difference (b - a),False,False,False,True
+SPY,volatility default vs confirmation default (nested),day-level f1 difference (b - a),True,True,True,True
+SPY,volatility default vs confirmation default (nested),day-level fpr difference (b - a),True,True,True,True
+SPY,volatility default vs confirmation default (nested),day-level precision difference (b - a),True,True,True,True
+SPY,volatility default vs confirmation default (nested),day-level recall difference (b - a),True,True,True,True
+TLT,volatility at matched FPR vs confirmation default (not nested),day-level f1 difference (b - a),True,True,True,True
+TLT,volatility at matched FPR vs confirmation default (not nested),day-level fpr difference (b - a),False,False,False,True
+TLT,volatility at matched FPR vs confirmation default (not nested),day-level precision difference (b - a),True,True,True,True
+TLT,volatility at matched FPR vs confirmation default (not nested),day-level recall difference (b - a),True,True,True,True
+TLT,volatility default vs confirmation default (nested),day-level f1 difference (b - a),True,True,True,True
+TLT,volatility default vs confirmation default (nested),day-level fpr difference (b - a),True,True,True,True
+TLT,volatility default vs confirmation default (nested),day-level precision difference (b - a),True,False,False,False
+TLT,volatility default vs confirmation default (nested),day-level recall difference (b - a),True,True,True,True

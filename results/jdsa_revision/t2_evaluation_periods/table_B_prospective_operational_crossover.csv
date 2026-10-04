@@ -1,0 +1,4 @@
+table,reference,alternative,delay_cost,crossover_ratio
+B_prospective_operational,volatility,fully_causal_confirmation,0.0,0.15384615384615385
+B_prospective_operational,volatility,fully_causal_confirmation,0.05,0.13846153846153847
+B_prospective_operational,volatility,fully_causal_confirmation,0.1,0.12307692307692308

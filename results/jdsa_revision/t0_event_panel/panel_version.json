@@ -1,0 +1,12 @@
+{
+  "event_panel": "jdsa_revision_v2",
+  "seed_file": "data/jdsa_revision/events_spy_seed_v2.csv",
+  "events": 13,
+  "events_changed": [
+    "E03"
+  ],
+  "severity_labels_changed": [],
+  "revision_notes": {
+    "E03": "JDSA revision correction (panel jdsa_revision_v2): the submitted panel dated E03 2002-07-24, a +5.97% SPY rebound day with no recorded rationale. The reference date is now 2002-07-22, the first trading day after the Sunday 2002-07-21 Chapter 11 filing."
+  }
+}

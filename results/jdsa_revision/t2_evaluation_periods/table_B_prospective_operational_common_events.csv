@@ -1,0 +1,2 @@
+event_id,first_delay_a,first_delay_b,difference_b_minus_a,table,method_a,method_b
+E11,-8.0,-5.0,3.0,B_prospective_operational,volatility,fully_causal_confirmation

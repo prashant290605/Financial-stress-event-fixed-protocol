@@ -1,0 +1,35 @@
+event_id,first_delay_a,first_delay_b,difference_b_minus_a,comparison,ticker,method_a,method_b
+E01,4.0,4.0,0.0,volatility vs confirmation (submitted defaults),SPY,volatility,retrospective_confirmation
+E02,6.0,6.0,0.0,volatility vs confirmation (submitted defaults),SPY,volatility,retrospective_confirmation
+E03,-6.0,-2.0,4.0,volatility vs confirmation (submitted defaults),SPY,volatility,retrospective_confirmation
+E05,-7.0,33.0,40.0,volatility vs confirmation (submitted defaults),SPY,volatility,retrospective_confirmation
+E06,11.0,11.0,0.0,volatility vs confirmation (submitted defaults),SPY,volatility,retrospective_confirmation
+E08,8.0,8.0,0.0,volatility vs confirmation (submitted defaults),SPY,volatility,retrospective_confirmation
+E10,4.0,4.0,0.0,volatility vs confirmation (submitted defaults),SPY,volatility,retrospective_confirmation
+E11,-8.0,-8.0,0.0,volatility vs confirmation (submitted defaults),SPY,volatility,retrospective_confirmation
+E01,4.0,8.0,4.0,"volatility vs fully causal confirmation, full period (not prospective)",SPY,volatility,fully_causal_confirmation
+E03,-6.0,51.0,57.0,"volatility vs fully causal confirmation, full period (not prospective)",SPY,volatility,fully_causal_confirmation
+E06,11.0,11.0,0.0,"volatility vs fully causal confirmation, full period (not prospective)",SPY,volatility,fully_causal_confirmation
+E11,-8.0,-5.0,3.0,"volatility vs fully causal confirmation, full period (not prospective)",SPY,volatility,fully_causal_confirmation
+E10,4.0,4.0,0.0,"volatility vs retrospective confirmation, post-calibration retrospective (Table A)",SPY,volatility,retrospective_confirmation
+E11,-8.0,-8.0,0.0,"volatility vs retrospective confirmation, post-calibration retrospective (Table A)",SPY,volatility,retrospective_confirmation
+E11,-8.0,-5.0,3.0,"volatility vs fully causal confirmation, prospective operational (Table B)",SPY,volatility,fully_causal_confirmation
+E03,7.0,-2.0,-9.0,volatility at matched FPR vs confirmation (submitted default),SPY,volatility_matched_fpr,retrospective_confirmation
+E05,1.0,33.0,32.0,volatility at matched FPR vs confirmation (submitted default),SPY,volatility_matched_fpr,retrospective_confirmation
+E11,-3.0,-8.0,-5.0,volatility at matched FPR vs confirmation (submitted default),SPY,volatility_matched_fpr,retrospective_confirmation
+E01,-21.0,-21.0,0.0,volatility vs confirmation (submitted defaults),QQQ,volatility,retrospective_confirmation
+E02,-60.0,2.0,62.0,volatility vs confirmation (submitted defaults),QQQ,volatility,retrospective_confirmation
+E07,13.0,13.0,0.0,volatility vs confirmation (submitted defaults),QQQ,volatility,retrospective_confirmation
+E11,-2.0,-2.0,0.0,volatility vs confirmation (submitted defaults),QQQ,volatility,retrospective_confirmation
+E02,19.0,19.0,0.0,volatility vs confirmation (submitted defaults),IWM,volatility,retrospective_confirmation
+E03,4.0,59.0,55.0,volatility vs confirmation (submitted defaults),IWM,volatility,retrospective_confirmation
+E05,-6.0,-6.0,0.0,volatility vs confirmation (submitted defaults),IWM,volatility,retrospective_confirmation
+E06,5.0,5.0,0.0,volatility vs confirmation (submitted defaults),IWM,volatility,retrospective_confirmation
+E11,-4.0,-4.0,0.0,volatility vs confirmation (submitted defaults),IWM,volatility,retrospective_confirmation
+E05,-7.0,-7.0,0.0,volatility vs confirmation (submitted defaults),HYG,volatility,retrospective_confirmation
+E06,7.0,7.0,0.0,volatility vs confirmation (submitted defaults),HYG,volatility,retrospective_confirmation
+E11,-3.0,-3.0,0.0,volatility vs confirmation (submitted defaults),HYG,volatility,retrospective_confirmation
+E05,-2.0,46.0,48.0,volatility vs confirmation (submitted defaults),TLT,volatility,retrospective_confirmation
+E07,-1.0,-1.0,0.0,volatility vs confirmation (submitted defaults),TLT,volatility,retrospective_confirmation
+E11,-4.0,-4.0,0.0,volatility vs confirmation (submitted defaults),TLT,volatility,retrospective_confirmation
+E13,-60.0,-60.0,0.0,volatility vs confirmation (submitted defaults),TLT,volatility,retrospective_confirmation

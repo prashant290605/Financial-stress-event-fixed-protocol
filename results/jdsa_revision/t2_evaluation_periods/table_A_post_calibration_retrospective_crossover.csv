@@ -1,0 +1,4 @@
+table,reference,alternative,delay_cost,crossover_ratio
+A_post_calibration_retrospective,volatility,retrospective_confirmation,0.0,0.05555555555555555
+A_post_calibration_retrospective,volatility,retrospective_confirmation,0.05,0.05555555555555555
+A_post_calibration_retrospective,volatility,retrospective_confirmation,0.1,0.05555555555555555

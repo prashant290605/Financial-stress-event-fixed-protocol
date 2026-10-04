@@ -1,0 +1,21 @@
+ticker,detector,alarm_days_composite,alarm_days_z_only,differing_days,composite_only_days,z_only_days,first_differing_date
+SPY,confirmation (W=10),211,211,0,0,0,
+SPY,instability score alone,596,593,19,11,8,2001-03-08
+SPY,MMD alone,613,604,17,13,4,2001-05-15
+SPY,|kappa| alone,578,585,31,12,19,2001-05-30
+QQQ,confirmation (W=10),144,145,1,0,1,2000-05-24
+QQQ,instability score alone,643,632,41,26,15,2000-03-22
+QQQ,MMD alone,622,616,36,21,15,2000-03-30
+QQQ,|kappa| alone,554,567,43,15,28,2001-05-31
+IWM,confirmation (W=10),263,264,3,1,2,2002-10-29
+IWM,instability score alone,631,624,31,19,12,2001-09-04
+IWM,MMD alone,613,610,25,14,11,2001-05-30
+IWM,|kappa| alone,533,530,37,20,17,2001-06-05
+HYG,confirmation (W=10),200,199,1,1,0,2009-02-19
+HYG,instability score alone,352,350,10,6,4,2008-05-09
+HYG,MMD alone,348,348,8,4,4,2007-08-02
+HYG,|kappa| alone,342,342,8,4,4,2007-07-09
+TLT,confirmation (W=10),327,327,2,1,1,2022-10-07
+TLT,instability score alone,619,623,20,8,12,2002-11-04
+TLT,MMD alone,628,632,24,10,14,2004-12-10
+TLT,|kappa| alone,574,567,25,16,9,2002-10-22

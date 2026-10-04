@@ -1,0 +1,7 @@
+,value
+own_set_mean_delay_volatility,0.2
+own_set_mean_delay_confirmation,-1.0
+common_events,3
+common_mean_delay_volatility,-1.0
+common_mean_delay_confirmation,-1.0
+events_detected_by_volatility_only,"E07,E12"

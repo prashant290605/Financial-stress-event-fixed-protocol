@@ -1,0 +1,31 @@
+quantity,recomputed,manuscript,status
+"reference events (confirmed, full pre-window)","E02,E03,E05,E06,E08,E10,E11",,
+reference mean ratio raw volatility,3.0230644662285786,3.03,DIFFERS
+reference mean ratio x_t,1.288122159581505,1.29,matches
+E07 ratio raw volatility,3.2570227024041802,3.26,matches
+E07 ratio x_t,1.2423826782613123,1.24,matches
+E12 ratio raw volatility,1.1069901635285824,1.11,matches
+E12 ratio x_t,0.8469172597238529,0.85,matches
+confirmed events with x_t ratio below E07,"E02,E06,E08",,
+confirmed x_t ratio min,1.0662476321791983,,
+confirmed x_t ratio max,1.5509754123086865,,
+event with lowest x_t ratio (all with pre-window),E12,,
+E07 instability alarm days,1,1.0,matches
+E12 instability alarm days,2,2.0,matches
+confirmed instability alarm days min,10,10.0,matches
+confirmed instability alarm days max,49,49.0,matches
+confirmed instability alarm days mean,28.0,28.0,matches
+E07 volatility alarm days,49,49.0,matches
+E12 volatility alarm days,40,40.0,matches
+E07 peak z_MMD,0.9638906098308624,0.96,matches
+E12 peak z_MMD,1.8394304252616038,1.84,matches
+confirmed mean peak z_MMD,3.375082444833326,3.38,matches
+missed (by confirmation) mean severity,0.10960836085331294,0.11,matches
+confirmed mean severity,0.19591542377822482,0.196,matches
+"missed mean peak-to-trough days, severity window",13.2,13.2,matches
+"confirmed mean peak-to-trough days, severity window",22.875,22.5,DIFFERS
+"missed mean peak-to-trough days, event window",34.0,,
+"confirmed mean peak-to-trough days, event window",49.5,,
+E07 severity,0.16584928542732014,0.166,matches
+"E07 worst day (log return, per cent), severity window",6.73408158195592,6.73,matches
+"confirmed events with a smaller worst day than E07, severity window",6,6.0,matches

@@ -1,0 +1,10 @@
+comparison,ticker,event_scope,method_a,method_b,n_events,detected_a,detected_b,n_common,own_set_mean_delay_a,own_set_mean_delay_b,common_mean_delay_a,common_mean_delay_b,common_median_delay_a,common_median_delay_b,paired_mean_difference,paired_median_difference,events_only_a,events_only_b
+volatility vs confirmation (submitted defaults),SPY,observable events (13),volatility,retrospective_confirmation,13,10,8,8,-1.0,7.0,1.5,7.0,4.0,5.0,5.5,0.0,"E07,E12",
+"volatility vs fully causal confirmation, full period (not prospective)",SPY,observable events (13),volatility,fully_causal_confirmation,13,10,4,4,-1.0,16.25,0.25,16.25,-1.0,9.5,16.0,3.5,"E02,E05,E07,E08,E10,E12",
+"volatility vs retrospective confirmation, post-calibration retrospective (Table A)",SPY,"post-calibration events (E09,E10,E11,E12,E13)",volatility,retrospective_confirmation,5,3,2,2,-9.333333333333334,-2.0,-2.0,-2.0,-2.0,-2.0,0.0,0.0,E12,
+"volatility vs fully causal confirmation, prospective operational (Table B)",SPY,"prospective operational events (E09,E10,E11,E12,E13)",volatility,fully_causal_confirmation,5,3,1,1,-9.333333333333334,-5.0,-8.0,-5.0,-8.0,-5.0,3.0,3.0,"E10,E12",
+volatility at matched FPR vs confirmation (submitted default),SPY,observable events (13),volatility_matched_fpr,retrospective_confirmation,13,4,8,3,2.75,7.0,1.6666666666666667,7.666666666666667,1.0,-2.0,6.0,-5.0,E07,"E01,E02,E06,E08,E10"
+volatility vs confirmation (submitted defaults),QQQ,observable events (13),volatility,retrospective_confirmation,13,6,4,4,-19.0,-2.0,-17.5,-2.0,-11.5,0.0,15.5,0.0,"E03,E05",
+volatility vs confirmation (submitted defaults),IWM,observable events (12),volatility,retrospective_confirmation,12,7,5,5,0.0,14.6,3.6,14.6,4.0,5.0,11.0,0.0,"E07,E12",
+volatility vs confirmation (submitted defaults),HYG,observable events (10),volatility,retrospective_confirmation,10,5,3,3,0.2,-1.0,-1.0,-1.0,-3.0,-3.0,0.0,0.0,"E07,E12",
+volatility vs confirmation (submitted defaults),TLT,observable events (10),volatility,retrospective_confirmation,10,7,4,4,-25.285714285714285,-4.75,-16.75,-4.75,-3.0,-2.5,12.0,0.0,"E06,E08,E12",
