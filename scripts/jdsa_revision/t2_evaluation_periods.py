@@ -1,4 +1,4 @@
-"""Task 2: post-calibration retrospective evaluation (Table A) and prospective operational evaluation (Table B).
+"""Task 2: post-calibration retrospective evaluation (Table A) and post-calibration causal evaluation (Table B).
 
 Reviewer 1 further comments 1-2 and Reviewer 2 majors 2-3. Calibration constants and
 thresholds are the submitted ones, fitted on the first 70 per cent of the series; nothing
@@ -10,7 +10,9 @@ is refitted.
 * Table B starts on the operational start date derived by ``derive_operational_start``: the
   first trading day after the latest raw close read by any fitted constant or threshold.
   It compares the volatility trigger with the fully causal confirmation rule on exactly the
-  same scoring days.
+  same scoring days. File and table labels keep the earlier name ``B_prospective_operational``;
+  the five scored events were part of the development panel, so Table B is not a design-blind
+  holdout.
 
 Event-level metrics use only events whose whole +/-60-day window lies inside the scored
 period. The full-period numbers are kept in a separate reference table.

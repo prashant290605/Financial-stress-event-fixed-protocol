@@ -471,7 +471,7 @@ def documentation_rows() -> list[dict]:
          "see matched-FPR results (t4) and FROZEN_RESULTS.md", "matched FPR"),
         ("Table 16 caption; Sec. 4.6.4; Limitations", "'so no input uses future data' for the full-period causal variant",
          f"true for the signal path only; fitted constants read prices through {op['latest_calibration_close_date']}; operational claims use "
-         f"Table B from {op['operational_start_date']}", "prospective operational evaluation"),
+         f"Table B from {op['operational_start_date']}", "post-calibration causal evaluation"),
         ("Sec. 4.1; Discussion", "CUSUM 'alarms across much of each window'",
          f"alarms on {cu['post_calibration_alarm_days']} of {cu['post_calibration_days']} post-cutoff days, continuously from "
          f"{cu['persistent_alarm_state_first_day']}; conclusions restricted to this implementation", "documentation correction"),
@@ -509,6 +509,17 @@ def new_result_rows() -> list[dict]:
             rows.append({"kind": "new result", "location": "matched FPR", "row": f"{r['ticker']}: {r['operating_point']}", "column": f,
                          "submitted_value": "", "pre_E03_fix_value": "", "revised_value": r[f], "changed": True, "drivers": "new analysis",
                          "source": f"t4_operating_curves:{f}"})
+    t16 = POST.csv("t16_followups/causal_matched_comparison.csv")
+    for _, r in t16[t16["match"].isin(["default", "nearest"])].iterrows():
+        for f in ["quantile_min", "fpr", "alarm_days", "precision", "recall", "f1", "events_detected", "n_events", "A_out", "M", "D_plus",
+                  "common_events_with_fully_causal", "common_mean_delay_fully_causal", "common_mean_delay_this"]:
+            rows.append({"kind": "new result", "location": "causal matched FPR", "row": f"{r['period']}: {r['operating_point']}", "column": f,
+                         "submitted_value": "", "pre_E03_fix_value": "", "revised_value": r[f], "changed": True, "drivers": "new analysis",
+                         "source": f"t16_followups/causal_matched_comparison.csv:{f}"})
+    for _, r in POST.csv("t16_followups/window_width_detections.csv").iterrows():
+        rows.append({"kind": "new result", "location": "Sec. 3.5 window widths", "row": f"+/-{r['half_window']} {r['rule']}",
+                     "column": "events_detected", "submitted_value": "", "pre_E03_fix_value": "", "revised_value": r["events_detected"],
+                     "changed": True, "drivers": "new analysis", "source": "t16_followups/window_width_detections.csv:events_detected"})
     return rows
 
 

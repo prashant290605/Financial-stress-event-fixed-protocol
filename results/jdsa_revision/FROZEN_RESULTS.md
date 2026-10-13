@@ -33,7 +33,7 @@ Scored days 2016-11-09 to 2023-12-29; events E09,E10,E11,E12,E13. Retrospective:
 
 Common events: 2; mean first delay volatility -2.0, confirmation -2.0. Crossover r*: c_D=0.0: 0.056, c_D=0.05: 0.056, c_D=0.1: 0.056.
 
-## Table B: prospective operational evaluation (SPY)
+## Table B: post-calibration causal evaluation (SPY)
 
 Scored days 2016-12-21 to 2023-12-29; events E09,E10,E11,E12,E13. Only calibration quantities frozen before the first scored day are used.
 
@@ -43,6 +43,19 @@ Scored days 2016-12-21 to 2023-12-29; events E09,E10,E11,E12,E13. Only calibrati
 | fully_causal_confirmation | 0.889 | 0.066 | 0.123 | 0.0043 | 45 | 1/5 (E11) | 5 | 4 | 0 |
 
 Common events: 1; mean first delay volatility -8.0, fully causal -5.0. Crossover r*: c_D=0.0: 0.154, c_D=0.05: 0.138, c_D=0.1: 0.123.
+
+## Fully causal rule at a matched false positive rate (SPY; Task 16)
+
+| Period | Operating point | q | FPR | Precision | Recall | F1 | Events | A_out | M | D_plus |
+|---|---|---|---|---|---|---|---|---|---|---|
+| full_period | fully causal confirmation (default, W=10) | 0.9000 | 0.0108 | 0.644 | 0.057 | 0.104 | 4/13 | 48 | 9 | 70.0 |
+| full_period | volatility default (q=0.90) | 0.9000 | 0.0442 | 0.636 | 0.224 | 0.331 | 10/13 | 197 | 3 | 35.0 |
+| full_period | volatility matched on fpr (nearest) | 0.9652 | 0.0108 | 0.739 | 0.089 | 0.158 | 4/13 | 48 | 9 | 10.0 |
+| post_calibration_causal | fully causal confirmation (default, W=10) | 0.9000 | 0.0043 | 0.889 | 0.066 | 0.123 | 1/5 | 5 | 4 | 0.0 |
+| post_calibration_causal | volatility default (q=0.90) | 0.9000 | 0.0155 | 0.852 | 0.172 | 0.286 | 3/5 | 18 | 2 | 4.0 |
+| post_calibration_causal | volatility matched on fpr (nearest) | 0.9111 | 0.0043 | 0.948 | 0.150 | 0.260 | 3/5 | 5 | 2 | 5.0 |
+
+Matched rows are the volatility trigger at the fully causal rule's false positive rate (nearest grid point, as in Task 4). At its default the fully causal rule is nested in the trigger, and the matched point has the same false positive count. Event detections by event-window half-width (default rules): +/-20 volatility: 10; +/-20 retrospective_confirmation: 7; +/-30 volatility: 10; +/-30 retrospective_confirmation: 7; +/-45 volatility: 10; +/-45 retrospective_confirmation: 8; +/-60 volatility: 10; +/-60 retrospective_confirmation: 8.
 
 ## Matched-FPR comparison (volatility trigger at the confirmation rule's FPR; all five assets)
 
@@ -177,7 +190,7 @@ Day-level intervals whose conclusion (excludes zero or not) changes with block l
 
 ## Effect of the E03 correction
 
-`pre_E03_fix_vs_post_E03_fix.csv` lists every revision result value that differs between the submitted-panel run and this run (2206 values). The 232366 changed values of the full operating curves and raw bootstrap resamples are in `pre_E03_fix_vs_post_E03_fix_curves_and_samples.csv`. Changed values per file (results, curves and resamples):
+`pre_E03_fix_vs_post_E03_fix.csv` lists every revision result value that differs between the submitted-panel run and this run (2682 values). The 232366 changed values of the full operating curves and raw bootstrap resamples are in `pre_E03_fix_vs_post_E03_fix_curves_and_samples.csv`. Changed values per file (results, curves and resamples):
 
 | file | cells_changed |
 |---|---|
@@ -200,6 +213,10 @@ Day-level intervals whose conclusion (excludes zero or not) changes with block l
 | t13_paper_tables/table4_vix_benchmark.csv | 16 |
 | t13_paper_tables/table6_spy_event_level_detection.csv | 4 |
 | t13_paper_tables/table7_component_diagnosis.csv | 3 |
+| t16_followups/causal_matched_comparison.csv | 169 |
+| t16_followups/causal_matched_costs.csv | 252 |
+| t16_followups/causal_matched_per_event.csv | 39 |
+| t16_followups/causal_matched_summary.json | 16 |
 | t1_denominators/day_mask_sensitivity_true_window_excluded.csv | 86 |
 | t1_denominators/denominators_by_asset.csv | 5 |
 | t1_denominators/event_aware_cost_by_asset_observable.csv | 254 |

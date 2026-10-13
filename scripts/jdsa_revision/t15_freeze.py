@@ -148,6 +148,14 @@ def main() -> None:
     nest_viol = int(nest["days_alarmed_but_not_by_volatility"].sum())
     by_loc = changed.groupby("location").size().reset_index(name="numbers to change")
     e03_files = e03[e03["cells_changed"] > 0][["file", "cells_changed"]]
+    cm = csv("t16_followups/causal_matched_comparison.csv")
+    cm = cm[cm["match"].isin(["default", "nearest"])]
+    causal_md = md_table(pd.DataFrame([{"Period": r.period, "Operating point": r.operating_point, "q": f"{r.quantile_min:.4f}",
+                                         "FPR": f"{r.fpr:.4f}", "Precision": f3(r.precision), "Recall": f3(r.recall), "F1": f3(r.f1),
+                                         "Events": f"{int(r.events_detected)}/{int(r.n_events)}", "A_out": int(r.A_out), "M": int(r.M),
+                                         "D_plus": f1(r.D_plus)} for r in cm.itertuples()]))
+    ww = csv("t16_followups/window_width_detections.csv")
+    widths_line = "; ".join(f"+/-{int(r.half_window)} {r.rule}: {int(r.events_detected)}" for r in ww.itertuples())
     lines = [
         "# JDSA revision: frozen numerical results",
         "",
@@ -189,7 +197,7 @@ def main() -> None:
         f"confirmation {f1(a.iloc[0]['common_event_common_mean_delay_b'])}. Crossover r*: "
         + ", ".join(f"c_D={r.delay_cost}: {f3(r.crossover_ratio)}" for r in ac.itertuples()) + ".",
         "",
-        "## Table B: prospective operational evaluation (SPY)",
+        "## Table B: post-calibration causal evaluation (SPY)",
         "",
         f"Scored days {b.iloc[0]['first_scored_date']} to {b.iloc[0]['last_scored_date']}; events {b.iloc[0]['events_in_scope']}. "
         "Only calibration quantities frozen before the first scored day are used.",
@@ -199,6 +207,14 @@ def main() -> None:
         f"Common events: {int(b.iloc[0]['common_event_n_common'])}; mean first delay volatility {f1(b.iloc[0]['common_event_common_mean_delay_a'])}, "
         f"fully causal {f1(b.iloc[0]['common_event_common_mean_delay_b'])}. Crossover r*: "
         + ", ".join(f"c_D={r.delay_cost}: {f3(r.crossover_ratio)}" for r in bc.itertuples()) + ".",
+        "",
+        "## Fully causal rule at a matched false positive rate (SPY; Task 16)",
+        "",
+        causal_md,
+        "",
+        "Matched rows are the volatility trigger at the fully causal rule's false positive rate (nearest grid point, as in Task 4). "
+        "At its default the fully causal rule is nested in the trigger, and the matched point has the same false positive count. "
+        f"Event detections by event-window half-width (default rules): {widths_line}.",
         "",
         "## Matched-FPR comparison (volatility trigger at the confirmation rule's FPR; all five assets)",
         "",

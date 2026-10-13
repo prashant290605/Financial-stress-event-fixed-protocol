@@ -1,0 +1,181 @@
+period,operating_point,match,ratio_false_alarm_to_missed_event,delay_cost,A_out,M,D_plus,cost
+full_period,"fully causal confirmation (default, W=10)",default,0.01,0.0,48,9,70.0,9.48
+full_period,"fully causal confirmation (default, W=10)",default,0.05,0.0,48,9,70.0,11.4
+full_period,"fully causal confirmation (default, W=10)",default,0.1,0.0,48,9,70.0,13.8
+full_period,"fully causal confirmation (default, W=10)",default,0.25,0.0,48,9,70.0,21.0
+full_period,"fully causal confirmation (default, W=10)",default,0.5,0.0,48,9,70.0,33.0
+full_period,"fully causal confirmation (default, W=10)",default,1.0,0.0,48,9,70.0,57.0
+full_period,"fully causal confirmation (default, W=10)",default,0.01,0.05,48,9,70.0,12.98
+full_period,"fully causal confirmation (default, W=10)",default,0.05,0.05,48,9,70.0,14.9
+full_period,"fully causal confirmation (default, W=10)",default,0.1,0.05,48,9,70.0,17.3
+full_period,"fully causal confirmation (default, W=10)",default,0.25,0.05,48,9,70.0,24.5
+full_period,"fully causal confirmation (default, W=10)",default,0.5,0.05,48,9,70.0,36.5
+full_period,"fully causal confirmation (default, W=10)",default,1.0,0.05,48,9,70.0,60.5
+full_period,"fully causal confirmation (default, W=10)",default,0.01,0.1,48,9,70.0,16.48
+full_period,"fully causal confirmation (default, W=10)",default,0.05,0.1,48,9,70.0,18.4
+full_period,"fully causal confirmation (default, W=10)",default,0.1,0.1,48,9,70.0,20.8
+full_period,"fully causal confirmation (default, W=10)",default,0.25,0.1,48,9,70.0,28.0
+full_period,"fully causal confirmation (default, W=10)",default,0.5,0.1,48,9,70.0,40.0
+full_period,"fully causal confirmation (default, W=10)",default,1.0,0.1,48,9,70.0,64.0
+full_period,volatility default (q=0.90),default,0.01,0.0,197,3,35.0,4.97
+full_period,volatility default (q=0.90),default,0.05,0.0,197,3,35.0,12.850000000000001
+full_period,volatility default (q=0.90),default,0.1,0.0,197,3,35.0,22.700000000000003
+full_period,volatility default (q=0.90),default,0.25,0.0,197,3,35.0,52.25
+full_period,volatility default (q=0.90),default,0.5,0.0,197,3,35.0,101.5
+full_period,volatility default (q=0.90),default,1.0,0.0,197,3,35.0,200.0
+full_period,volatility default (q=0.90),default,0.01,0.05,197,3,35.0,6.72
+full_period,volatility default (q=0.90),default,0.05,0.05,197,3,35.0,14.600000000000001
+full_period,volatility default (q=0.90),default,0.1,0.05,197,3,35.0,24.450000000000003
+full_period,volatility default (q=0.90),default,0.25,0.05,197,3,35.0,54.0
+full_period,volatility default (q=0.90),default,0.5,0.05,197,3,35.0,103.25
+full_period,volatility default (q=0.90),default,1.0,0.05,197,3,35.0,201.75
+full_period,volatility default (q=0.90),default,0.01,0.1,197,3,35.0,8.469999999999999
+full_period,volatility default (q=0.90),default,0.05,0.1,197,3,35.0,16.35
+full_period,volatility default (q=0.90),default,0.1,0.1,197,3,35.0,26.200000000000003
+full_period,volatility default (q=0.90),default,0.25,0.1,197,3,35.0,55.75
+full_period,volatility default (q=0.90),default,0.5,0.1,197,3,35.0,105.0
+full_period,volatility default (q=0.90),default,1.0,0.1,197,3,35.0,203.5
+full_period,volatility matched on fpr (nearest),nearest,0.01,0.0,48,9,10.0,9.48
+full_period,volatility matched on fpr (nearest),nearest,0.05,0.0,48,9,10.0,11.4
+full_period,volatility matched on fpr (nearest),nearest,0.1,0.0,48,9,10.0,13.8
+full_period,volatility matched on fpr (nearest),nearest,0.25,0.0,48,9,10.0,21.0
+full_period,volatility matched on fpr (nearest),nearest,0.5,0.0,48,9,10.0,33.0
+full_period,volatility matched on fpr (nearest),nearest,1.0,0.0,48,9,10.0,57.0
+full_period,volatility matched on fpr (nearest),nearest,0.01,0.05,48,9,10.0,9.98
+full_period,volatility matched on fpr (nearest),nearest,0.05,0.05,48,9,10.0,11.9
+full_period,volatility matched on fpr (nearest),nearest,0.1,0.05,48,9,10.0,14.3
+full_period,volatility matched on fpr (nearest),nearest,0.25,0.05,48,9,10.0,21.5
+full_period,volatility matched on fpr (nearest),nearest,0.5,0.05,48,9,10.0,33.5
+full_period,volatility matched on fpr (nearest),nearest,1.0,0.05,48,9,10.0,57.5
+full_period,volatility matched on fpr (nearest),nearest,0.01,0.1,48,9,10.0,10.48
+full_period,volatility matched on fpr (nearest),nearest,0.05,0.1,48,9,10.0,12.4
+full_period,volatility matched on fpr (nearest),nearest,0.1,0.1,48,9,10.0,14.8
+full_period,volatility matched on fpr (nearest),nearest,0.25,0.1,48,9,10.0,22.0
+full_period,volatility matched on fpr (nearest),nearest,0.5,0.1,48,9,10.0,34.0
+full_period,volatility matched on fpr (nearest),nearest,1.0,0.1,48,9,10.0,58.0
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.01,0.0,48,9,10.0,9.48
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.05,0.0,48,9,10.0,11.4
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.1,0.0,48,9,10.0,13.8
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.25,0.0,48,9,10.0,21.0
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.5,0.0,48,9,10.0,33.0
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,1.0,0.0,48,9,10.0,57.0
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.01,0.05,48,9,10.0,9.98
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.05,0.05,48,9,10.0,11.9
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.1,0.05,48,9,10.0,14.3
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.25,0.05,48,9,10.0,21.5
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.5,0.05,48,9,10.0,33.5
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,1.0,0.05,48,9,10.0,57.5
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.01,0.1,48,9,10.0,10.48
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.05,0.1,48,9,10.0,12.4
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.1,0.1,48,9,10.0,14.8
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.25,0.1,48,9,10.0,22.0
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.5,0.1,48,9,10.0,34.0
+full_period,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,1.0,0.1,48,9,10.0,58.0
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.01,0.0,48,9,10.0,9.48
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.05,0.0,48,9,10.0,11.4
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.1,0.0,48,9,10.0,13.8
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.25,0.0,48,9,10.0,21.0
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.5,0.0,48,9,10.0,33.0
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,1.0,0.0,48,9,10.0,57.0
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.01,0.05,48,9,10.0,9.98
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.05,0.05,48,9,10.0,11.9
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.1,0.05,48,9,10.0,14.3
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.25,0.05,48,9,10.0,21.5
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.5,0.05,48,9,10.0,33.5
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,1.0,0.05,48,9,10.0,57.5
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.01,0.1,48,9,10.0,10.48
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.05,0.1,48,9,10.0,12.4
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.1,0.1,48,9,10.0,14.8
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.25,0.1,48,9,10.0,22.0
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.5,0.1,48,9,10.0,34.0
+full_period,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,1.0,0.1,48,9,10.0,58.0
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,0.01,0.0,5,4,0.0,4.05
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,0.05,0.0,5,4,0.0,4.25
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,0.1,0.0,5,4,0.0,4.5
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,0.25,0.0,5,4,0.0,5.25
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,0.5,0.0,5,4,0.0,6.5
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,1.0,0.0,5,4,0.0,9.0
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,0.01,0.05,5,4,0.0,4.05
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,0.05,0.05,5,4,0.0,4.25
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,0.1,0.05,5,4,0.0,4.5
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,0.25,0.05,5,4,0.0,5.25
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,0.5,0.05,5,4,0.0,6.5
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,1.0,0.05,5,4,0.0,9.0
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,0.01,0.1,5,4,0.0,4.05
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,0.05,0.1,5,4,0.0,4.25
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,0.1,0.1,5,4,0.0,4.5
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,0.25,0.1,5,4,0.0,5.25
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,0.5,0.1,5,4,0.0,6.5
+post_calibration_causal,"fully causal confirmation (default, W=10)",default,1.0,0.1,5,4,0.0,9.0
+post_calibration_causal,volatility default (q=0.90),default,0.01,0.0,18,2,4.0,2.18
+post_calibration_causal,volatility default (q=0.90),default,0.05,0.0,18,2,4.0,2.9
+post_calibration_causal,volatility default (q=0.90),default,0.1,0.0,18,2,4.0,3.8
+post_calibration_causal,volatility default (q=0.90),default,0.25,0.0,18,2,4.0,6.5
+post_calibration_causal,volatility default (q=0.90),default,0.5,0.0,18,2,4.0,11.0
+post_calibration_causal,volatility default (q=0.90),default,1.0,0.0,18,2,4.0,20.0
+post_calibration_causal,volatility default (q=0.90),default,0.01,0.05,18,2,4.0,2.3800000000000003
+post_calibration_causal,volatility default (q=0.90),default,0.05,0.05,18,2,4.0,3.1
+post_calibration_causal,volatility default (q=0.90),default,0.1,0.05,18,2,4.0,4.0
+post_calibration_causal,volatility default (q=0.90),default,0.25,0.05,18,2,4.0,6.7
+post_calibration_causal,volatility default (q=0.90),default,0.5,0.05,18,2,4.0,11.2
+post_calibration_causal,volatility default (q=0.90),default,1.0,0.05,18,2,4.0,20.2
+post_calibration_causal,volatility default (q=0.90),default,0.01,0.1,18,2,4.0,2.58
+post_calibration_causal,volatility default (q=0.90),default,0.05,0.1,18,2,4.0,3.3
+post_calibration_causal,volatility default (q=0.90),default,0.1,0.1,18,2,4.0,4.2
+post_calibration_causal,volatility default (q=0.90),default,0.25,0.1,18,2,4.0,6.9
+post_calibration_causal,volatility default (q=0.90),default,0.5,0.1,18,2,4.0,11.4
+post_calibration_causal,volatility default (q=0.90),default,1.0,0.1,18,2,4.0,20.4
+post_calibration_causal,volatility matched on fpr (nearest),nearest,0.01,0.0,5,2,5.0,2.05
+post_calibration_causal,volatility matched on fpr (nearest),nearest,0.05,0.0,5,2,5.0,2.25
+post_calibration_causal,volatility matched on fpr (nearest),nearest,0.1,0.0,5,2,5.0,2.5
+post_calibration_causal,volatility matched on fpr (nearest),nearest,0.25,0.0,5,2,5.0,3.25
+post_calibration_causal,volatility matched on fpr (nearest),nearest,0.5,0.0,5,2,5.0,4.5
+post_calibration_causal,volatility matched on fpr (nearest),nearest,1.0,0.0,5,2,5.0,7.0
+post_calibration_causal,volatility matched on fpr (nearest),nearest,0.01,0.05,5,2,5.0,2.3
+post_calibration_causal,volatility matched on fpr (nearest),nearest,0.05,0.05,5,2,5.0,2.5
+post_calibration_causal,volatility matched on fpr (nearest),nearest,0.1,0.05,5,2,5.0,2.75
+post_calibration_causal,volatility matched on fpr (nearest),nearest,0.25,0.05,5,2,5.0,3.5
+post_calibration_causal,volatility matched on fpr (nearest),nearest,0.5,0.05,5,2,5.0,4.75
+post_calibration_causal,volatility matched on fpr (nearest),nearest,1.0,0.05,5,2,5.0,7.25
+post_calibration_causal,volatility matched on fpr (nearest),nearest,0.01,0.1,5,2,5.0,2.55
+post_calibration_causal,volatility matched on fpr (nearest),nearest,0.05,0.1,5,2,5.0,2.75
+post_calibration_causal,volatility matched on fpr (nearest),nearest,0.1,0.1,5,2,5.0,3.0
+post_calibration_causal,volatility matched on fpr (nearest),nearest,0.25,0.1,5,2,5.0,3.75
+post_calibration_causal,volatility matched on fpr (nearest),nearest,0.5,0.1,5,2,5.0,5.0
+post_calibration_causal,volatility matched on fpr (nearest),nearest,1.0,0.1,5,2,5.0,7.5
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.01,0.0,5,2,5.0,2.05
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.05,0.0,5,2,5.0,2.25
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.1,0.0,5,2,5.0,2.5
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.25,0.0,5,2,5.0,3.25
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.5,0.0,5,2,5.0,4.5
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,1.0,0.0,5,2,5.0,7.0
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.01,0.05,5,2,5.0,2.3
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.05,0.05,5,2,5.0,2.5
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.1,0.05,5,2,5.0,2.75
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.25,0.05,5,2,5.0,3.5
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.5,0.05,5,2,5.0,4.75
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,1.0,0.05,5,2,5.0,7.25
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.01,0.1,5,2,5.0,2.55
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.05,0.1,5,2,5.0,2.75
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.1,0.1,5,2,5.0,3.0
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.25,0.1,5,2,5.0,3.75
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,0.5,0.1,5,2,5.0,5.0
+post_calibration_causal,volatility matched on fpr (nearest_at_or_above),nearest_at_or_above,1.0,0.1,5,2,5.0,7.5
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.01,0.0,5,2,5.0,2.05
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.05,0.0,5,2,5.0,2.25
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.1,0.0,5,2,5.0,2.5
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.25,0.0,5,2,5.0,3.25
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.5,0.0,5,2,5.0,4.5
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,1.0,0.0,5,2,5.0,7.0
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.01,0.05,5,2,5.0,2.3
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.05,0.05,5,2,5.0,2.5
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.1,0.05,5,2,5.0,2.75
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.25,0.05,5,2,5.0,3.5
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.5,0.05,5,2,5.0,4.75
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,1.0,0.05,5,2,5.0,7.25
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.01,0.1,5,2,5.0,2.55
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.05,0.1,5,2,5.0,2.75
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.1,0.1,5,2,5.0,3.0
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.25,0.1,5,2,5.0,3.75
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,0.5,0.1,5,2,5.0,5.0
+post_calibration_causal,volatility matched on fpr (nearest_at_or_below),nearest_at_or_below,1.0,0.1,5,2,5.0,7.5

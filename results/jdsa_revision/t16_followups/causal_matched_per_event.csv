@@ -1,0 +1,91 @@
+event_id,center,lo,hi,detected,first_delay,nearest_delay,coverage,alarm_days,first_alarm_at_window_start,period,operating_point,event_name
+E01,22,0,82,True,8.0,8.0,0.1927710843373494,16,False,full_period,"fully causal confirmation (default, W=10)",Dot-com selloff
+E02,376,316,436,False,,,0.0,0,False,full_period,"fully causal confirmation (default, W=10)",September 11 reopening
+E03,588,528,648,True,51.0,51.0,0.08264462809917356,10,False,full_period,"fully causal confirmation (default, W=10)",WorldCom bankruptcy selloff
+E04,1860,1800,1920,False,,,0.0,0,False,full_period,"fully causal confirmation (default, W=10)",Quant crisis
+E05,2147,2087,2207,False,,,0.0,0,False,full_period,"fully causal confirmation (default, W=10)",Lehman crisis
+E06,2550,2490,2610,True,11.0,11.0,0.17355371900826447,21,False,full_period,"fully causal confirmation (default, W=10)",Flash crash
+E07,2867,2807,2927,False,,,0.0,0,False,full_period,"fully causal confirmation (default, W=10)",U.S. downgrade selloff
+E08,3884,3824,3944,False,,,0.0,0,False,full_period,"fully causal confirmation (default, W=10)",China devaluation selloff
+E09,4501,4441,4561,False,,,0.0,0,False,full_period,"fully causal confirmation (default, W=10)",Volmageddon
+E10,4724,4664,4784,False,,,0.0,0,False,full_period,"fully causal confirmation (default, W=10)",Q4 2018 selloff
+E11,5031,4971,5091,True,-5.0,0.0,0.3305785123966942,40,False,full_period,"fully causal confirmation (default, W=10)",COVID crash
+E12,5597,5537,5657,False,,,0.0,0,False,full_period,"fully causal confirmation (default, W=10)",Inflation selloff
+E13,5784,5724,5844,False,,,0.0,0,False,full_period,"fully causal confirmation (default, W=10)",Bank stress
+E01,22,0,82,True,4.0,4.0,0.24096385542168675,20,False,full_period,volatility default (q=0.90),Dot-com selloff
+E02,376,316,436,True,6.0,6.0,0.1322314049586777,16,False,full_period,volatility default (q=0.90),September 11 reopening
+E03,588,528,648,True,-6.0,0.0,0.4297520661157025,52,False,full_period,volatility default (q=0.90),WorldCom bankruptcy selloff
+E04,1860,1800,1920,False,,,0.0,0,False,full_period,volatility default (q=0.90),Quant crisis
+E05,2147,2087,2207,True,-7.0,0.0,0.5619834710743802,68,False,full_period,volatility default (q=0.90),Lehman crisis
+E06,2550,2490,2610,True,11.0,11.0,0.17355371900826447,21,False,full_period,volatility default (q=0.90),Flash crash
+E07,2867,2807,2927,True,2.0,2.0,0.4049586776859504,49,False,full_period,volatility default (q=0.90),U.S. downgrade selloff
+E08,3884,3824,3944,True,8.0,8.0,0.11570247933884298,14,False,full_period,volatility default (q=0.90),China devaluation selloff
+E09,4501,4441,4561,False,,,0.0,0,False,full_period,volatility default (q=0.90),Volmageddon
+E10,4724,4664,4784,True,4.0,4.0,0.12396694214876033,15,False,full_period,volatility default (q=0.90),Q4 2018 selloff
+E11,5031,4971,5091,True,-8.0,0.0,0.4049586776859504,49,False,full_period,volatility default (q=0.90),COVID crash
+E12,5597,5537,5657,True,-24.0,1.0,0.3305785123966942,40,False,full_period,volatility default (q=0.90),Inflation selloff
+E13,5784,5724,5844,False,,,0.0,0,False,full_period,volatility default (q=0.90),Bank stress
+E01,22,0,82,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest),Dot-com selloff
+E02,376,316,436,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest),September 11 reopening
+E03,588,528,648,True,5.0,5.0,0.15702479338842976,19,False,full_period,volatility matched on fpr (nearest),WorldCom bankruptcy selloff
+E04,1860,1800,1920,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest),Quant crisis
+E05,2147,2087,2207,True,0.0,0.0,0.5041322314049587,61,False,full_period,volatility matched on fpr (nearest),Lehman crisis
+E06,2550,2490,2610,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest),Flash crash
+E07,2867,2807,2927,True,5.0,5.0,0.1487603305785124,18,False,full_period,volatility matched on fpr (nearest),U.S. downgrade selloff
+E08,3884,3824,3944,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest),China devaluation selloff
+E09,4501,4441,4561,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest),Volmageddon
+E10,4724,4664,4784,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest),Q4 2018 selloff
+E11,5031,4971,5091,True,-4.0,0.0,0.3140495867768595,38,False,full_period,volatility matched on fpr (nearest),COVID crash
+E12,5597,5537,5657,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest),Inflation selloff
+E13,5784,5724,5844,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest),Bank stress
+E01,22,0,82,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_above),Dot-com selloff
+E02,376,316,436,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_above),September 11 reopening
+E03,588,528,648,True,5.0,5.0,0.15702479338842976,19,False,full_period,volatility matched on fpr (nearest_at_or_above),WorldCom bankruptcy selloff
+E04,1860,1800,1920,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_above),Quant crisis
+E05,2147,2087,2207,True,0.0,0.0,0.5041322314049587,61,False,full_period,volatility matched on fpr (nearest_at_or_above),Lehman crisis
+E06,2550,2490,2610,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_above),Flash crash
+E07,2867,2807,2927,True,5.0,5.0,0.1487603305785124,18,False,full_period,volatility matched on fpr (nearest_at_or_above),U.S. downgrade selloff
+E08,3884,3824,3944,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_above),China devaluation selloff
+E09,4501,4441,4561,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_above),Volmageddon
+E10,4724,4664,4784,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_above),Q4 2018 selloff
+E11,5031,4971,5091,True,-4.0,0.0,0.3140495867768595,38,False,full_period,volatility matched on fpr (nearest_at_or_above),COVID crash
+E12,5597,5537,5657,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_above),Inflation selloff
+E13,5784,5724,5844,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_above),Bank stress
+E01,22,0,82,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_below),Dot-com selloff
+E02,376,316,436,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_below),September 11 reopening
+E03,588,528,648,True,5.0,5.0,0.15702479338842976,19,False,full_period,volatility matched on fpr (nearest_at_or_below),WorldCom bankruptcy selloff
+E04,1860,1800,1920,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_below),Quant crisis
+E05,2147,2087,2207,True,0.0,0.0,0.5041322314049587,61,False,full_period,volatility matched on fpr (nearest_at_or_below),Lehman crisis
+E06,2550,2490,2610,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_below),Flash crash
+E07,2867,2807,2927,True,5.0,5.0,0.1487603305785124,18,False,full_period,volatility matched on fpr (nearest_at_or_below),U.S. downgrade selloff
+E08,3884,3824,3944,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_below),China devaluation selloff
+E09,4501,4441,4561,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_below),Volmageddon
+E10,4724,4664,4784,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_below),Q4 2018 selloff
+E11,5031,4971,5091,True,-4.0,0.0,0.3140495867768595,38,False,full_period,volatility matched on fpr (nearest_at_or_below),COVID crash
+E12,5597,5537,5657,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_below),Inflation selloff
+E13,5784,5724,5844,False,,,0.0,0,False,full_period,volatility matched on fpr (nearest_at_or_below),Bank stress
+E09,4501,4441,4561,False,,,0.0,0,False,post_calibration_causal,"fully causal confirmation (default, W=10)",Volmageddon
+E10,4724,4664,4784,False,,,0.0,0,False,post_calibration_causal,"fully causal confirmation (default, W=10)",Q4 2018 selloff
+E11,5031,4971,5091,True,-5.0,0.0,0.3305785123966942,40,False,post_calibration_causal,"fully causal confirmation (default, W=10)",COVID crash
+E12,5597,5537,5657,False,,,0.0,0,False,post_calibration_causal,"fully causal confirmation (default, W=10)",Inflation selloff
+E13,5784,5724,5844,False,,,0.0,0,False,post_calibration_causal,"fully causal confirmation (default, W=10)",Bank stress
+E09,4501,4441,4561,False,,,0.0,0,False,post_calibration_causal,volatility default (q=0.90),Volmageddon
+E10,4724,4664,4784,True,4.0,4.0,0.12396694214876033,15,False,post_calibration_causal,volatility default (q=0.90),Q4 2018 selloff
+E11,5031,4971,5091,True,-8.0,0.0,0.4049586776859504,49,False,post_calibration_causal,volatility default (q=0.90),COVID crash
+E12,5597,5537,5657,True,-24.0,1.0,0.3305785123966942,40,False,post_calibration_causal,volatility default (q=0.90),Inflation selloff
+E13,5784,5724,5844,False,,,0.0,0,False,post_calibration_causal,volatility default (q=0.90),Bank stress
+E09,4501,4441,4561,False,,,0.0,0,False,post_calibration_causal,volatility matched on fpr (nearest),Volmageddon
+E10,4724,4664,4784,True,5.0,5.0,0.0743801652892562,9,False,post_calibration_causal,volatility matched on fpr (nearest),Q4 2018 selloff
+E11,5031,4971,5091,True,-7.0,0.0,0.38016528925619836,46,False,post_calibration_causal,volatility matched on fpr (nearest),COVID crash
+E12,5597,5537,5657,True,-23.0,2.0,0.2975206611570248,36,False,post_calibration_causal,volatility matched on fpr (nearest),Inflation selloff
+E13,5784,5724,5844,False,,,0.0,0,False,post_calibration_causal,volatility matched on fpr (nearest),Bank stress
+E09,4501,4441,4561,False,,,0.0,0,False,post_calibration_causal,volatility matched on fpr (nearest_at_or_above),Volmageddon
+E10,4724,4664,4784,True,5.0,5.0,0.0743801652892562,9,False,post_calibration_causal,volatility matched on fpr (nearest_at_or_above),Q4 2018 selloff
+E11,5031,4971,5091,True,-7.0,0.0,0.38016528925619836,46,False,post_calibration_causal,volatility matched on fpr (nearest_at_or_above),COVID crash
+E12,5597,5537,5657,True,-23.0,2.0,0.2975206611570248,36,False,post_calibration_causal,volatility matched on fpr (nearest_at_or_above),Inflation selloff
+E13,5784,5724,5844,False,,,0.0,0,False,post_calibration_causal,volatility matched on fpr (nearest_at_or_above),Bank stress
+E09,4501,4441,4561,False,,,0.0,0,False,post_calibration_causal,volatility matched on fpr (nearest_at_or_below),Volmageddon
+E10,4724,4664,4784,True,5.0,5.0,0.0743801652892562,9,False,post_calibration_causal,volatility matched on fpr (nearest_at_or_below),Q4 2018 selloff
+E11,5031,4971,5091,True,-7.0,0.0,0.38016528925619836,46,False,post_calibration_causal,volatility matched on fpr (nearest_at_or_below),COVID crash
+E12,5597,5537,5657,True,-23.0,2.0,0.2975206611570248,36,False,post_calibration_causal,volatility matched on fpr (nearest_at_or_below),Inflation selloff
+E13,5784,5724,5844,False,,,0.0,0,False,post_calibration_causal,volatility matched on fpr (nearest_at_or_below),Bank stress

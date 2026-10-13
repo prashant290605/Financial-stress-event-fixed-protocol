@@ -33,6 +33,10 @@ python scripts/download_data.py
 
 The multi-asset preparation script also attempts to download missing assets with `yfinance` if a local CSV is not present.
 
+## Third-party data and terms of use
+
+The archived price snapshots in `data/raw_market/` are third-party data: the ETF prices were retrieved from Yahoo Finance through `yfinance`, and the VIX levels originate from Cboe. They are not covered by the repository's software license (MIT), are included only for research reproducibility, and remain subject to their providers' terms of use; consult the Yahoo Finance and Cboe terms before any other use.
+
 ## Event Data
 
 The fixed event panel is stored in:

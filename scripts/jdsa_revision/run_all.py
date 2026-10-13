@@ -1,6 +1,6 @@
 """Run every JDSA revision analysis in dependency order.
 
-t3 reads the operational start from t2; t5, t6 and t10 read the matched thresholds and
+t3 and t16 read the operational start from t2; t5, t6 and t10 read the matched thresholds and
 curves written by t4; t12 reads the outputs of all others. t3 (about 250 recomputations
 from the raw price file) and t4 (5001-point curves on five assets) take several minutes.
 
@@ -28,7 +28,7 @@ HERE = Path(__file__).resolve().parent
 ORDER = [
     "t0_event_panel", "t1_observable_denominators", "t2_evaluation_periods", "t3_causality", "t4_operating_curves",
     "t5_common_event_delay", "t6_uncertainty", "t7_cusum_diagnostic", "t8_z_dominance", "t9_mechanism", "t10_parameters",
-    "t11_event_provenance", "t13_paper_tables", "t14_figures", "t12_audit",
+    "t11_event_provenance", "t13_paper_tables", "t14_figures", "t16_followups", "t12_audit",
 ]
 
 

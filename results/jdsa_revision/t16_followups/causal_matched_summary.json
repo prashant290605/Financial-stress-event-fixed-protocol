@@ -1,0 +1,106 @@
+{
+  "operational_start_date": "2016-12-21",
+  "fully_causal_nested_in_volatility_at_default": true,
+  "matched_point_has_equal_false_positive_count": true,
+  "full_period": {
+    "n_events": 13,
+    "fully_causal": {
+      "fp": 48,
+      "fpr": 0.01078167115902965,
+      "alarm_days": 135,
+      "precision": 0.6444444444444445,
+      "recall": 0.05667752442996743,
+      "f1": 0.10419161676646709,
+      "events_detected": 4,
+      "events_detected_ids": "E01,E03,E06,E11",
+      "A_out": 48,
+      "M": 9,
+      "D_plus": 70.0
+    },
+    "volatility_matched": {
+      "quantile_min": 0.9652,
+      "quantile_max": 0.9653,
+      "fp": 48,
+      "fpr": 0.01078167115902965,
+      "alarm_days": 184,
+      "precision": 0.7391304347826086,
+      "recall": 0.08859934853420195,
+      "f1": 0.15823152995927867,
+      "events_detected": 4,
+      "events_detected_ids": "E03,E05,E07,E11",
+      "A_out": 48,
+      "M": 9,
+      "D_plus": 10.0,
+      "common_events_with_fully_causal": 2,
+      "common_mean_delay_fully_causal": 23.0,
+      "common_mean_delay_this": 0.5,
+      "alarm_days_shared_with_fully_causal": 36,
+      "alarm_days_only_this": 148,
+      "alarm_days_only_fully_causal": 99
+    },
+    "cost_difference_causal_minus_matched_excluding_false_alarm_term": {
+      "c_D=0.0": 0.0,
+      "c_D=0.05": 3.0,
+      "c_D=0.1": 6.0
+    },
+    "cheaper_rule_over_tested_cost_settings": [
+      "tie at c_D=0.0",
+      "volatility matched"
+    ]
+  },
+  "post_calibration_causal": {
+    "n_events": 5,
+    "fully_causal": {
+      "fp": 5,
+      "fpr": 0.004302925989672977,
+      "alarm_days": 45,
+      "precision": 0.8888888888888888,
+      "recall": 0.06611570247933884,
+      "f1": 0.12307692307692308,
+      "events_detected": 1,
+      "events_detected_ids": "E11",
+      "A_out": 5,
+      "M": 4,
+      "D_plus": 0.0
+    },
+    "volatility_matched": {
+      "quantile_min": 0.9111,
+      "quantile_max": 0.9122,
+      "fp": 5,
+      "fpr": 0.004302925989672977,
+      "alarm_days": 96,
+      "precision": 0.9479166666666666,
+      "recall": 0.15041322314049588,
+      "f1": 0.25962910128388017,
+      "events_detected": 3,
+      "events_detected_ids": "E10,E11,E12",
+      "A_out": 5,
+      "M": 2,
+      "D_plus": 5.0,
+      "common_events_with_fully_causal": 1,
+      "common_mean_delay_fully_causal": -5.0,
+      "common_mean_delay_this": -7.0,
+      "alarm_days_shared_with_fully_causal": 40,
+      "alarm_days_only_this": 56,
+      "alarm_days_only_fully_causal": 5
+    },
+    "cost_difference_causal_minus_matched_excluding_false_alarm_term": {
+      "c_D=0.0": 2.0,
+      "c_D=0.05": 1.75,
+      "c_D=0.1": 1.5
+    },
+    "cheaper_rule_over_tested_cost_settings": [
+      "volatility matched"
+    ]
+  },
+  "window_width_detections": {
+    "+/-20 volatility": 10,
+    "+/-20 retrospective_confirmation": 7,
+    "+/-30 volatility": 10,
+    "+/-30 retrospective_confirmation": 7,
+    "+/-45 volatility": 10,
+    "+/-45 retrospective_confirmation": 8,
+    "+/-60 volatility": 10,
+    "+/-60 retrospective_confirmation": 8
+  }
+}

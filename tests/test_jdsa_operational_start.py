@@ -1,5 +1,6 @@
-"""The prospective operational evaluation starts strictly after every raw close that any
-calibration quantity reads, and its alarms read no price after their issue date."""
+"""The post-calibration causal evaluation (legacy name: prospective operational) starts strictly
+after every raw close that any calibration quantity reads, and its alarms read no price after
+their issue date."""
 from pathlib import Path
 
 import numpy as np

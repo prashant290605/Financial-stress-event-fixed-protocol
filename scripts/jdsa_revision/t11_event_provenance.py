@@ -33,7 +33,7 @@ FETCHED, PDF = "page fetched and read", "PDF retrieved and its text extracted"
 # event_id: (underlying documented event, its date(s), anchor type, revision rationale, [sources])
 # source: (tier, citation, url, proposition supported, verification)
 EVENTS = {
-    "E01": ("Record one-day declines in the Nasdaq Composite and the Dow after the March 2000 consumer price report",
+    "E01": ("Record one-day point declines in the Nasdaq Composite and the Dow after the March 2000 consumer price report",
             "2000-04-14", "crash day: same-day reaction to the CPI release",
             "Documented crash day of the April 2000 selloff. No official source located dates the selloff to the day; the NBER "
             "chronology cited in the submitted Table 2 dates recessions by month only.",
@@ -81,7 +81,7 @@ EVENTS = {
             "the Emergency Economic Stabilization Act vehicle, H.R. 3997, 205 to 228",
             "2008-09-15 (onset: Lehman filing); 2008-09-29 (House vote)",
             "policy-event day with same-day market reaction; not the onset",
-            "Largest SPY fall of the crisis window, on the day of the House vote. The Lehman filing lies 10 trading days earlier "
+            "Day of the House vote, on which SPY fell 7.8 per cent. The Lehman filing lies 10 trading days earlier "
             "inside the same window. Not the onset date.",
             [(1, "U.S. Securities and Exchange Commission, press release 2008-198, 15 September 2008",
               "https://www.sec.gov/news/press/2008/2008-198.htm",
@@ -123,7 +123,7 @@ EVENTS = {
                  "volatility products'",
               "https://www.bis.org/publ/qtrpdf/r_qt1803t.htm",
               "On Monday 5 February 2018 the S&P 500 fell about 4% and the VIX rose 20 points, its largest daily rise since 1987.", FETCHED)]),
-    "E10": ("Fourth-quarter 2018 equity decline; on 24 December 2018 the S&P 500 fell 2.7% into bear-market territory",
+    "E10": ("Fourth-quarter 2018 equity decline, ending with a 2.7% fall in the S&P 500 on 24 December 2018",
             "2018-12-24", "trough: lowest close of the decline",
             "Trough day of the Q4 2018 decline, confirmed in the archived prices.",
             [(4, "UPI, 'Dow plummets 653 points in worst Christmas Eve ever; S&P, Nasdaq also fall', 24 December 2018",
@@ -159,7 +159,7 @@ EVENTS = {
     "E13": ("Silicon Valley Bank closed on Friday 10 March 2023 with the FDIC as receiver; joint Treasury, Federal Reserve and "
             "FDIC statement on Sunday 12 March 2023", "2023-03-10 (bank failure); 2023-03-12 (policy statement)",
             "first trading day after the weekend policy announcement",
-            "First trading day after the joint statement. The larger SPY fall within five days (9 March) preceded the failure.",
+            "First trading day after the joint statement. SPY fell more on 9 March, before the failure, than on the reference date.",
             [(1, "Federal Deposit Insurance Corporation, Silicon Valley Bank failed-bank page",
               "https://www.fdic.gov/resources/resolutions/bank-failures/failed-bank-list/silicon-valley.html",
               "SVB was closed on Friday 10 March 2023 by the California Department of Financial Protection and Innovation; the "

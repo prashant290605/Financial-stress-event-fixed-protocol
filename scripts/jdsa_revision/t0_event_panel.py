@@ -2,8 +2,10 @@
 
 The panel is a versioned input (``src/event_panels.py``). This script writes the active
 panel's SPY table (with drawdown severity) and its per-asset mapping, and lists every
-field that differs from the submitted panel. With the default panel the only change is
-the E03 reference date and label (see ``data/jdsa_revision/events_spy_seed_v2.csv``).
+field that differs from the submitted panel. With the default panel the changes are the E03
+reference date, label and source reference, and the inclusion-rule wording of every event, which no
+longer states that the panel was fixed before detector evaluation
+(see ``data/jdsa_revision/events_spy_seed_v2.csv``).
 
 Outputs: <out root>/t0_event_panel/
 """

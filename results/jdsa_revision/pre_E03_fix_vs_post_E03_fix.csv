@@ -279,6 +279,482 @@ t13_paper_tables/table6_spy_event_level_detection.csv,2: WorldCom bankruptcy sel
 t13_paper_tables/table7_component_diagnosis.csv,2: WorldCom bankruptcy selloff | critical,event_name,WorldCom selloff,WorldCom bankruptcy selloff,
 t13_paper_tables/table7_component_diagnosis.csv,2: WorldCom bankruptcy selloff | critical,severity_score,0.195916843390116,0.1988981278345624,0.002981284444446397
 t13_paper_tables/table7_component_diagnosis.csv,2: WorldCom bankruptcy selloff | critical,volatility_alarm_days,54,52,2.0
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",precision,0.6592592592592592,0.6444444444444445,0.014814814814814725
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",recall,0.0579804560260586,0.0566775244299674,0.0013029315960911975
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",f1,0.1065868263473053,0.104191616766467,0.0023952095808383034
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",fpr,0.0103324348607367,0.0107816711590296,0.0004492362982928995
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",tp,89,87,2.0
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",fp,46,48,2.0
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",fn,1446,1448,2.0
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",tn,4406,4404,2.0
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",mean_first_delay,15.75,16.25,0.5
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",mean_coverage,0.0612366822662551,0.0599652264493447,0.001271455816910405
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",alignment_error,17.0,17.5,0.5
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",A_out,46,48,2.0
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",common_mean_delay_fully_causal,15.75,16.25,0.5
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",common_mean_delay_this,15.75,16.25,0.5
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa0.01_cd0.0,9.46,9.48,0.019999999999999574
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa0.05_cd0.0,11.3,11.4,0.09999999999999964
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa0.1_cd0.0,13.6,13.8,0.20000000000000107
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa0.25_cd0.0,20.5,21.0,0.5
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa0.5_cd0.0,32.0,33.0,1.0
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa1.0_cd0.0,55.0,57.0,2.0
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa0.01_cd0.05,12.86,12.98,0.120000000000001
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa0.05_cd0.05,14.7,14.9,0.20000000000000107
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa0.1_cd0.05,17.0,17.3,0.3000000000000007
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa0.25_cd0.05,23.9,24.5,0.6000000000000014
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa0.5_cd0.05,35.4,36.5,1.1000000000000014
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa1.0_cd0.05,58.4,60.5,2.1000000000000014
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa0.01_cd0.1,16.26,16.48,0.21999999999999886
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa0.05_cd0.1,18.1,18.4,0.29999999999999716
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa0.1_cd0.1,20.4,20.8,0.40000000000000213
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa0.25_cd0.1,27.3,28.0,0.6999999999999993
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa0.5_cd0.1,38.8,40.0,1.2000000000000028
+t16_followups/causal_matched_comparison.csv,"0: full_period | fully causal confirmation (default, W=10) | E01,E03,E06,E11",cost_cfa1.0_cd0.1,61.8,64.0,2.200000000000003
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",precision,0.6395563770794824,0.6358595194085028,0.003696857670979603
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",recall,0.2254071661237785,0.2241042345276873,0.0013029315960912113
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",f1,0.3333333333333333,0.3314065510597302,0.0019267822736031004
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",fpr,0.0438005390835579,0.0442497753818508,0.000449236298292896
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",tp,346,344,2.0
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",fp,195,197,2.0
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",fn,1189,1191,2.0
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",tn,4257,4255,2.0
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",mean_first_delay,-1.2,-1.0,0.19999999999999996
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",mean_coverage,0.2257829793426726,0.2245115235257622,0.001271455816910405
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",A_out,195,197,2.0
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",common_mean_delay_fully_causal,15.75,16.25,0.5
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",common_mean_delay_this,-0.25,0.25,0.5
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa0.01_cd0.0,4.95,4.97,0.019999999999999574
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa0.05_cd0.0,12.75,12.85,0.09999999999999964
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa0.1_cd0.0,22.5,22.700000000000003,0.20000000000000284
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa0.25_cd0.0,51.75,52.25,0.5
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa0.5_cd0.0,100.5,101.5,1.0
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa1.0_cd0.0,198.0,200.0,2.0
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa0.01_cd0.05,6.7,6.72,0.019999999999999574
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa0.05_cd0.05,14.5,14.6,0.09999999999999964
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa0.1_cd0.05,24.25,24.450000000000003,0.20000000000000284
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa0.25_cd0.05,53.5,54.0,0.5
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa0.5_cd0.05,102.25,103.25,1.0
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa1.0_cd0.05,199.75,201.75,2.0
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa0.01_cd0.1,8.45,8.469999999999999,0.019999999999999574
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa0.05_cd0.1,16.25,16.35,0.10000000000000142
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa0.1_cd0.1,26.0,26.200000000000003,0.20000000000000284
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa0.25_cd0.1,55.25,55.75,0.5
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa0.5_cd0.1,104.0,105.0,1.0
+t16_followups/causal_matched_comparison.csv,"1: full_period | volatility default (q=0.90) | E01,E02,E03,E05,E06,E07,E08,E10,E11,E12",cost_cfa1.0_cd0.1,201.5,203.5,2.0
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",precision,0.75,0.7391304347826086,0.010869565217391353
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",recall,0.0899022801302931,0.0885993485342019,0.0013029315960911975
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",f1,0.1605584642233857,0.1582315299592786,0.0023269342641071
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",fpr,0.0103324348607367,0.0107816711590296,0.0004492362982928995
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",tp,138,136,2.0
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",fp,46,48,2.0
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",fn,1397,1399,2.0
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",tn,4406,4404,2.0
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",mean_first_delay,1.0,1.5,0.5
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",median_first_delay,1.5,2.5,1.0
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",mean_coverage,0.087730451366815,0.0864589955499046,0.0012714558169103912
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",alignment_error,2.0,2.5,0.5
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",A_out,46,48,2.0
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",common_mean_delay_fully_causal,22.0,23.0,1.0
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",common_mean_delay_this,-0.5,0.5,1.0
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa0.01_cd0.0,9.46,9.48,0.019999999999999574
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa0.05_cd0.0,11.3,11.4,0.09999999999999964
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa0.1_cd0.0,13.6,13.8,0.20000000000000107
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa0.25_cd0.0,20.5,21.0,0.5
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa0.5_cd0.0,32.0,33.0,1.0
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa1.0_cd0.0,55.0,57.0,2.0
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa0.01_cd0.05,9.86,9.98,0.120000000000001
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa0.05_cd0.05,11.7,11.9,0.20000000000000107
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa0.1_cd0.05,14.000000000000002,14.3,0.29999999999999893
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa0.25_cd0.05,20.9,21.5,0.6000000000000014
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa0.5_cd0.05,32.4,33.5,1.1000000000000014
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa1.0_cd0.05,55.4,57.5,2.1000000000000014
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa0.01_cd0.1,10.260000000000002,10.48,0.21999999999999886
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa0.05_cd0.1,12.1,12.4,0.3000000000000007
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa0.1_cd0.1,14.400000000000002,14.8,0.3999999999999986
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa0.25_cd0.1,21.3,22.0,0.6999999999999993
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa0.5_cd0.1,32.8,34.0,1.2000000000000028
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",cost_cfa1.0_cd0.1,55.8,58.0,2.200000000000003
+t16_followups/causal_matched_comparison.csv,"2: full_period | volatility matched on fpr (nearest) | E03,E05,E07,E11",target,0.0103324348607367,0.0107816711590296,0.0004492362982928995
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",precision,0.75,0.7391304347826086,0.010869565217391353
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",recall,0.0899022801302931,0.0885993485342019,0.0013029315960911975
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",f1,0.1605584642233857,0.1582315299592786,0.0023269342641071
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",fpr,0.0103324348607367,0.0107816711590296,0.0004492362982928995
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",tp,138,136,2.0
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",fp,46,48,2.0
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",fn,1397,1399,2.0
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",tn,4406,4404,2.0
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",mean_first_delay,1.0,1.5,0.5
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",median_first_delay,1.5,2.5,1.0
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",mean_coverage,0.087730451366815,0.0864589955499046,0.0012714558169103912
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",alignment_error,2.0,2.5,0.5
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",A_out,46,48,2.0
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",common_mean_delay_fully_causal,22.0,23.0,1.0
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",common_mean_delay_this,-0.5,0.5,1.0
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa0.01_cd0.0,9.46,9.48,0.019999999999999574
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa0.05_cd0.0,11.3,11.4,0.09999999999999964
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa0.1_cd0.0,13.6,13.8,0.20000000000000107
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa0.25_cd0.0,20.5,21.0,0.5
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa0.5_cd0.0,32.0,33.0,1.0
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa1.0_cd0.0,55.0,57.0,2.0
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa0.01_cd0.05,9.86,9.98,0.120000000000001
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa0.05_cd0.05,11.7,11.9,0.20000000000000107
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa0.1_cd0.05,14.000000000000002,14.3,0.29999999999999893
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa0.25_cd0.05,20.9,21.5,0.6000000000000014
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa0.5_cd0.05,32.4,33.5,1.1000000000000014
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa1.0_cd0.05,55.4,57.5,2.1000000000000014
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa0.01_cd0.1,10.260000000000002,10.48,0.21999999999999886
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa0.05_cd0.1,12.1,12.4,0.3000000000000007
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa0.1_cd0.1,14.400000000000002,14.8,0.3999999999999986
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa0.25_cd0.1,21.3,22.0,0.6999999999999993
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa0.5_cd0.1,32.8,34.0,1.2000000000000028
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",cost_cfa1.0_cd0.1,55.8,58.0,2.200000000000003
+t16_followups/causal_matched_comparison.csv,"3: full_period | volatility matched on fpr (nearest_at_or_above) | E03,E05,E07,E11",target,0.0103324348607367,0.0107816711590296,0.0004492362982928995
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",precision,0.75,0.7391304347826086,0.010869565217391353
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",recall,0.0899022801302931,0.0885993485342019,0.0013029315960911975
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",f1,0.1605584642233857,0.1582315299592786,0.0023269342641071
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",fpr,0.0103324348607367,0.0107816711590296,0.0004492362982928995
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",tp,138,136,2.0
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",fp,46,48,2.0
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",fn,1397,1399,2.0
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",tn,4406,4404,2.0
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",mean_first_delay,1.0,1.5,0.5
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",median_first_delay,1.5,2.5,1.0
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",mean_coverage,0.087730451366815,0.0864589955499046,0.0012714558169103912
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",alignment_error,2.0,2.5,0.5
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",A_out,46,48,2.0
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",common_mean_delay_fully_causal,22.0,23.0,1.0
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",common_mean_delay_this,-0.5,0.5,1.0
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa0.01_cd0.0,9.46,9.48,0.019999999999999574
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa0.05_cd0.0,11.3,11.4,0.09999999999999964
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa0.1_cd0.0,13.6,13.8,0.20000000000000107
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa0.25_cd0.0,20.5,21.0,0.5
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa0.5_cd0.0,32.0,33.0,1.0
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa1.0_cd0.0,55.0,57.0,2.0
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa0.01_cd0.05,9.86,9.98,0.120000000000001
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa0.05_cd0.05,11.7,11.9,0.20000000000000107
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa0.1_cd0.05,14.000000000000002,14.3,0.29999999999999893
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa0.25_cd0.05,20.9,21.5,0.6000000000000014
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa0.5_cd0.05,32.4,33.5,1.1000000000000014
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa1.0_cd0.05,55.4,57.5,2.1000000000000014
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa0.01_cd0.1,10.260000000000002,10.48,0.21999999999999886
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa0.05_cd0.1,12.1,12.4,0.3000000000000007
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa0.1_cd0.1,14.400000000000002,14.8,0.3999999999999986
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa0.25_cd0.1,21.3,22.0,0.6999999999999993
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa0.5_cd0.1,32.8,34.0,1.2000000000000028
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",cost_cfa1.0_cd0.1,55.8,58.0,2.200000000000003
+t16_followups/causal_matched_comparison.csv,"4: full_period | volatility matched on fpr (nearest_at_or_below) | E03,E05,E07,E11",target,0.0103324348607367,0.0107816711590296,0.0004492362982928995
+t16_followups/causal_matched_costs.csv,"0: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"0: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"0: full_period | fully causal confirmation (default, W=10) | default",cost,9.46,9.48,0.019999999999999574
+t16_followups/causal_matched_costs.csv,"1: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"1: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"1: full_period | fully causal confirmation (default, W=10) | default",cost,11.3,11.4,0.09999999999999964
+t16_followups/causal_matched_costs.csv,"2: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"2: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"2: full_period | fully causal confirmation (default, W=10) | default",cost,13.6,13.8,0.20000000000000107
+t16_followups/causal_matched_costs.csv,"3: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"3: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"3: full_period | fully causal confirmation (default, W=10) | default",cost,20.5,21.0,0.5
+t16_followups/causal_matched_costs.csv,"4: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"4: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"4: full_period | fully causal confirmation (default, W=10) | default",cost,32.0,33.0,1.0
+t16_followups/causal_matched_costs.csv,"5: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"5: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"5: full_period | fully causal confirmation (default, W=10) | default",cost,55.0,57.0,2.0
+t16_followups/causal_matched_costs.csv,"6: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"6: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"6: full_period | fully causal confirmation (default, W=10) | default",cost,12.86,12.98,0.120000000000001
+t16_followups/causal_matched_costs.csv,"7: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"7: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"7: full_period | fully causal confirmation (default, W=10) | default",cost,14.7,14.9,0.20000000000000107
+t16_followups/causal_matched_costs.csv,"8: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"8: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"8: full_period | fully causal confirmation (default, W=10) | default",cost,17.0,17.3,0.3000000000000007
+t16_followups/causal_matched_costs.csv,"9: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"9: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"9: full_period | fully causal confirmation (default, W=10) | default",cost,23.9,24.5,0.6000000000000014
+t16_followups/causal_matched_costs.csv,"10: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"10: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"10: full_period | fully causal confirmation (default, W=10) | default",cost,35.4,36.5,1.1000000000000014
+t16_followups/causal_matched_costs.csv,"11: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"11: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"11: full_period | fully causal confirmation (default, W=10) | default",cost,58.4,60.5,2.1000000000000014
+t16_followups/causal_matched_costs.csv,"12: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"12: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"12: full_period | fully causal confirmation (default, W=10) | default",cost,16.26,16.48,0.21999999999999886
+t16_followups/causal_matched_costs.csv,"13: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"13: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"13: full_period | fully causal confirmation (default, W=10) | default",cost,18.1,18.4,0.29999999999999716
+t16_followups/causal_matched_costs.csv,"14: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"14: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"14: full_period | fully causal confirmation (default, W=10) | default",cost,20.4,20.8,0.40000000000000213
+t16_followups/causal_matched_costs.csv,"15: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"15: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"15: full_period | fully causal confirmation (default, W=10) | default",cost,27.3,28.0,0.6999999999999993
+t16_followups/causal_matched_costs.csv,"16: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"16: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"16: full_period | fully causal confirmation (default, W=10) | default",cost,38.8,40.0,1.2000000000000028
+t16_followups/causal_matched_costs.csv,"17: full_period | fully causal confirmation (default, W=10) | default",A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,"17: full_period | fully causal confirmation (default, W=10) | default",D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_costs.csv,"17: full_period | fully causal confirmation (default, W=10) | default",cost,61.8,64.0,2.200000000000003
+t16_followups/causal_matched_costs.csv,18: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,18: full_period | volatility default (q=0.90) | default,cost,4.95,4.97,0.019999999999999574
+t16_followups/causal_matched_costs.csv,19: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,19: full_period | volatility default (q=0.90) | default,cost,12.75,12.85,0.09999999999999964
+t16_followups/causal_matched_costs.csv,20: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,20: full_period | volatility default (q=0.90) | default,cost,22.5,22.700000000000003,0.20000000000000284
+t16_followups/causal_matched_costs.csv,21: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,21: full_period | volatility default (q=0.90) | default,cost,51.75,52.25,0.5
+t16_followups/causal_matched_costs.csv,22: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,22: full_period | volatility default (q=0.90) | default,cost,100.5,101.5,1.0
+t16_followups/causal_matched_costs.csv,23: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,23: full_period | volatility default (q=0.90) | default,cost,198.0,200.0,2.0
+t16_followups/causal_matched_costs.csv,24: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,24: full_period | volatility default (q=0.90) | default,cost,6.7,6.72,0.019999999999999574
+t16_followups/causal_matched_costs.csv,25: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,25: full_period | volatility default (q=0.90) | default,cost,14.5,14.6,0.09999999999999964
+t16_followups/causal_matched_costs.csv,26: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,26: full_period | volatility default (q=0.90) | default,cost,24.25,24.450000000000003,0.20000000000000284
+t16_followups/causal_matched_costs.csv,27: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,27: full_period | volatility default (q=0.90) | default,cost,53.5,54.0,0.5
+t16_followups/causal_matched_costs.csv,28: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,28: full_period | volatility default (q=0.90) | default,cost,102.25,103.25,1.0
+t16_followups/causal_matched_costs.csv,29: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,29: full_period | volatility default (q=0.90) | default,cost,199.75,201.75,2.0
+t16_followups/causal_matched_costs.csv,30: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,30: full_period | volatility default (q=0.90) | default,cost,8.45,8.469999999999999,0.019999999999999574
+t16_followups/causal_matched_costs.csv,31: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,31: full_period | volatility default (q=0.90) | default,cost,16.25,16.35,0.10000000000000142
+t16_followups/causal_matched_costs.csv,32: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,32: full_period | volatility default (q=0.90) | default,cost,26.0,26.200000000000003,0.20000000000000284
+t16_followups/causal_matched_costs.csv,33: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,33: full_period | volatility default (q=0.90) | default,cost,55.25,55.75,0.5
+t16_followups/causal_matched_costs.csv,34: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,34: full_period | volatility default (q=0.90) | default,cost,104.0,105.0,1.0
+t16_followups/causal_matched_costs.csv,35: full_period | volatility default (q=0.90) | default,A_out,195,197,2.0
+t16_followups/causal_matched_costs.csv,35: full_period | volatility default (q=0.90) | default,cost,201.5,203.5,2.0
+t16_followups/causal_matched_costs.csv,36: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,36: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,36: full_period | volatility matched on fpr (nearest) | nearest,cost,9.46,9.48,0.019999999999999574
+t16_followups/causal_matched_costs.csv,37: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,37: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,37: full_period | volatility matched on fpr (nearest) | nearest,cost,11.3,11.4,0.09999999999999964
+t16_followups/causal_matched_costs.csv,38: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,38: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,38: full_period | volatility matched on fpr (nearest) | nearest,cost,13.6,13.8,0.20000000000000107
+t16_followups/causal_matched_costs.csv,39: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,39: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,39: full_period | volatility matched on fpr (nearest) | nearest,cost,20.5,21.0,0.5
+t16_followups/causal_matched_costs.csv,40: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,40: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,40: full_period | volatility matched on fpr (nearest) | nearest,cost,32.0,33.0,1.0
+t16_followups/causal_matched_costs.csv,41: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,41: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,41: full_period | volatility matched on fpr (nearest) | nearest,cost,55.0,57.0,2.0
+t16_followups/causal_matched_costs.csv,42: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,42: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,42: full_period | volatility matched on fpr (nearest) | nearest,cost,9.86,9.98,0.120000000000001
+t16_followups/causal_matched_costs.csv,43: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,43: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,43: full_period | volatility matched on fpr (nearest) | nearest,cost,11.7,11.9,0.20000000000000107
+t16_followups/causal_matched_costs.csv,44: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,44: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,44: full_period | volatility matched on fpr (nearest) | nearest,cost,14.000000000000002,14.3,0.29999999999999893
+t16_followups/causal_matched_costs.csv,45: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,45: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,45: full_period | volatility matched on fpr (nearest) | nearest,cost,20.9,21.5,0.6000000000000014
+t16_followups/causal_matched_costs.csv,46: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,46: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,46: full_period | volatility matched on fpr (nearest) | nearest,cost,32.4,33.5,1.1000000000000014
+t16_followups/causal_matched_costs.csv,47: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,47: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,47: full_period | volatility matched on fpr (nearest) | nearest,cost,55.4,57.5,2.1000000000000014
+t16_followups/causal_matched_costs.csv,48: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,48: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,48: full_period | volatility matched on fpr (nearest) | nearest,cost,10.260000000000002,10.48,0.21999999999999886
+t16_followups/causal_matched_costs.csv,49: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,49: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,49: full_period | volatility matched on fpr (nearest) | nearest,cost,12.1,12.4,0.3000000000000007
+t16_followups/causal_matched_costs.csv,50: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,50: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,50: full_period | volatility matched on fpr (nearest) | nearest,cost,14.400000000000002,14.8,0.3999999999999986
+t16_followups/causal_matched_costs.csv,51: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,51: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,51: full_period | volatility matched on fpr (nearest) | nearest,cost,21.3,22.0,0.6999999999999993
+t16_followups/causal_matched_costs.csv,52: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,52: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,52: full_period | volatility matched on fpr (nearest) | nearest,cost,32.8,34.0,1.2000000000000028
+t16_followups/causal_matched_costs.csv,53: full_period | volatility matched on fpr (nearest) | nearest,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,53: full_period | volatility matched on fpr (nearest) | nearest,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,53: full_period | volatility matched on fpr (nearest) | nearest,cost,55.8,58.0,2.200000000000003
+t16_followups/causal_matched_costs.csv,54: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,54: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,54: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,9.46,9.48,0.019999999999999574
+t16_followups/causal_matched_costs.csv,55: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,55: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,55: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,11.3,11.4,0.09999999999999964
+t16_followups/causal_matched_costs.csv,56: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,56: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,56: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,13.6,13.8,0.20000000000000107
+t16_followups/causal_matched_costs.csv,57: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,57: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,57: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,20.5,21.0,0.5
+t16_followups/causal_matched_costs.csv,58: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,58: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,58: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,32.0,33.0,1.0
+t16_followups/causal_matched_costs.csv,59: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,59: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,59: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,55.0,57.0,2.0
+t16_followups/causal_matched_costs.csv,60: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,60: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,60: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,9.86,9.98,0.120000000000001
+t16_followups/causal_matched_costs.csv,61: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,61: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,61: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,11.7,11.9,0.20000000000000107
+t16_followups/causal_matched_costs.csv,62: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,62: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,62: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,14.000000000000002,14.3,0.29999999999999893
+t16_followups/causal_matched_costs.csv,63: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,63: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,63: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,20.9,21.5,0.6000000000000014
+t16_followups/causal_matched_costs.csv,64: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,64: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,64: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,32.4,33.5,1.1000000000000014
+t16_followups/causal_matched_costs.csv,65: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,65: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,65: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,55.4,57.5,2.1000000000000014
+t16_followups/causal_matched_costs.csv,66: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,66: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,66: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,10.260000000000002,10.48,0.21999999999999886
+t16_followups/causal_matched_costs.csv,67: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,67: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,67: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,12.1,12.4,0.3000000000000007
+t16_followups/causal_matched_costs.csv,68: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,68: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,68: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,14.400000000000002,14.8,0.3999999999999986
+t16_followups/causal_matched_costs.csv,69: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,69: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,69: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,21.3,22.0,0.6999999999999993
+t16_followups/causal_matched_costs.csv,70: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,70: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,70: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,32.8,34.0,1.2000000000000028
+t16_followups/causal_matched_costs.csv,71: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,71: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,71: full_period | volatility matched on fpr (nearest_at_or_above) | nearest_at_or_above,cost,55.8,58.0,2.200000000000003
+t16_followups/causal_matched_costs.csv,72: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,72: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,72: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,9.46,9.48,0.019999999999999574
+t16_followups/causal_matched_costs.csv,73: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,73: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,73: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,11.3,11.4,0.09999999999999964
+t16_followups/causal_matched_costs.csv,74: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,74: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,74: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,13.6,13.8,0.20000000000000107
+t16_followups/causal_matched_costs.csv,75: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,75: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,75: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,20.5,21.0,0.5
+t16_followups/causal_matched_costs.csv,76: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,76: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,76: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,32.0,33.0,1.0
+t16_followups/causal_matched_costs.csv,77: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,77: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,77: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,55.0,57.0,2.0
+t16_followups/causal_matched_costs.csv,78: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,78: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,78: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,9.86,9.98,0.120000000000001
+t16_followups/causal_matched_costs.csv,79: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,79: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,79: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,11.7,11.9,0.20000000000000107
+t16_followups/causal_matched_costs.csv,80: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,80: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,80: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,14.000000000000002,14.3,0.29999999999999893
+t16_followups/causal_matched_costs.csv,81: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,81: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,81: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,20.9,21.5,0.6000000000000014
+t16_followups/causal_matched_costs.csv,82: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,82: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,82: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,32.4,33.5,1.1000000000000014
+t16_followups/causal_matched_costs.csv,83: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,83: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,83: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,55.4,57.5,2.1000000000000014
+t16_followups/causal_matched_costs.csv,84: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,84: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,84: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,10.260000000000002,10.48,0.21999999999999886
+t16_followups/causal_matched_costs.csv,85: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,85: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,85: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,12.1,12.4,0.3000000000000007
+t16_followups/causal_matched_costs.csv,86: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,86: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,86: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,14.400000000000002,14.8,0.3999999999999986
+t16_followups/causal_matched_costs.csv,87: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,87: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,87: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,21.3,22.0,0.6999999999999993
+t16_followups/causal_matched_costs.csv,88: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,88: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,88: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,32.8,34.0,1.2000000000000028
+t16_followups/causal_matched_costs.csv,89: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,A_out,46,48,2.0
+t16_followups/causal_matched_costs.csv,89: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_costs.csv,89: full_period | volatility matched on fpr (nearest_at_or_below) | nearest_at_or_below,cost,55.8,58.0,2.200000000000003
+t16_followups/causal_matched_per_event.csv,"2: E03 | full_period | fully causal confirmation (default, W=10)",center,590,588,2.0
+t16_followups/causal_matched_per_event.csv,"2: E03 | full_period | fully causal confirmation (default, W=10)",lo,530,528,2.0
+t16_followups/causal_matched_per_event.csv,"2: E03 | full_period | fully causal confirmation (default, W=10)",hi,650,648,2.0
+t16_followups/causal_matched_per_event.csv,"2: E03 | full_period | fully causal confirmation (default, W=10)",first_delay,49.0,51.0,2.0
+t16_followups/causal_matched_per_event.csv,"2: E03 | full_period | fully causal confirmation (default, W=10)",nearest_delay,49.0,51.0,2.0
+t16_followups/causal_matched_per_event.csv,"2: E03 | full_period | fully causal confirmation (default, W=10)",coverage,0.0991735537190082,0.0826446280991735,0.016528925619834697
+t16_followups/causal_matched_per_event.csv,"2: E03 | full_period | fully causal confirmation (default, W=10)",alarm_days,12,10,2.0
+t16_followups/causal_matched_per_event.csv,"2: E03 | full_period | fully causal confirmation (default, W=10)",event_name,WorldCom selloff,WorldCom bankruptcy selloff,
+t16_followups/causal_matched_per_event.csv,15: E03 | full_period | volatility default (q=0.90),center,590,588,2.0
+t16_followups/causal_matched_per_event.csv,15: E03 | full_period | volatility default (q=0.90),lo,530,528,2.0
+t16_followups/causal_matched_per_event.csv,15: E03 | full_period | volatility default (q=0.90),hi,650,648,2.0
+t16_followups/causal_matched_per_event.csv,15: E03 | full_period | volatility default (q=0.90),first_delay,-8.0,-6.0,2.0
+t16_followups/causal_matched_per_event.csv,15: E03 | full_period | volatility default (q=0.90),coverage,0.4462809917355372,0.4297520661157025,0.01652892561983471
+t16_followups/causal_matched_per_event.csv,15: E03 | full_period | volatility default (q=0.90),alarm_days,54,52,2.0
+t16_followups/causal_matched_per_event.csv,15: E03 | full_period | volatility default (q=0.90),event_name,WorldCom selloff,WorldCom bankruptcy selloff,
+t16_followups/causal_matched_per_event.csv,28: E03 | full_period | volatility matched on fpr (nearest),center,590,588,2.0
+t16_followups/causal_matched_per_event.csv,28: E03 | full_period | volatility matched on fpr (nearest),lo,530,528,2.0
+t16_followups/causal_matched_per_event.csv,28: E03 | full_period | volatility matched on fpr (nearest),hi,650,648,2.0
+t16_followups/causal_matched_per_event.csv,28: E03 | full_period | volatility matched on fpr (nearest),first_delay,3.0,5.0,2.0
+t16_followups/causal_matched_per_event.csv,28: E03 | full_period | volatility matched on fpr (nearest),nearest_delay,3.0,5.0,2.0
+t16_followups/causal_matched_per_event.csv,28: E03 | full_period | volatility matched on fpr (nearest),coverage,0.1735537190082644,0.1570247933884297,0.01652892561983471
+t16_followups/causal_matched_per_event.csv,28: E03 | full_period | volatility matched on fpr (nearest),alarm_days,21,19,2.0
+t16_followups/causal_matched_per_event.csv,28: E03 | full_period | volatility matched on fpr (nearest),event_name,WorldCom selloff,WorldCom bankruptcy selloff,
+t16_followups/causal_matched_per_event.csv,41: E03 | full_period | volatility matched on fpr (nearest_at_or_above),center,590,588,2.0
+t16_followups/causal_matched_per_event.csv,41: E03 | full_period | volatility matched on fpr (nearest_at_or_above),lo,530,528,2.0
+t16_followups/causal_matched_per_event.csv,41: E03 | full_period | volatility matched on fpr (nearest_at_or_above),hi,650,648,2.0
+t16_followups/causal_matched_per_event.csv,41: E03 | full_period | volatility matched on fpr (nearest_at_or_above),first_delay,3.0,5.0,2.0
+t16_followups/causal_matched_per_event.csv,41: E03 | full_period | volatility matched on fpr (nearest_at_or_above),nearest_delay,3.0,5.0,2.0
+t16_followups/causal_matched_per_event.csv,41: E03 | full_period | volatility matched on fpr (nearest_at_or_above),coverage,0.1735537190082644,0.1570247933884297,0.01652892561983471
+t16_followups/causal_matched_per_event.csv,41: E03 | full_period | volatility matched on fpr (nearest_at_or_above),alarm_days,21,19,2.0
+t16_followups/causal_matched_per_event.csv,41: E03 | full_period | volatility matched on fpr (nearest_at_or_above),event_name,WorldCom selloff,WorldCom bankruptcy selloff,
+t16_followups/causal_matched_per_event.csv,54: E03 | full_period | volatility matched on fpr (nearest_at_or_below),center,590,588,2.0
+t16_followups/causal_matched_per_event.csv,54: E03 | full_period | volatility matched on fpr (nearest_at_or_below),lo,530,528,2.0
+t16_followups/causal_matched_per_event.csv,54: E03 | full_period | volatility matched on fpr (nearest_at_or_below),hi,650,648,2.0
+t16_followups/causal_matched_per_event.csv,54: E03 | full_period | volatility matched on fpr (nearest_at_or_below),first_delay,3.0,5.0,2.0
+t16_followups/causal_matched_per_event.csv,54: E03 | full_period | volatility matched on fpr (nearest_at_or_below),nearest_delay,3.0,5.0,2.0
+t16_followups/causal_matched_per_event.csv,54: E03 | full_period | volatility matched on fpr (nearest_at_or_below),coverage,0.1735537190082644,0.1570247933884297,0.01652892561983471
+t16_followups/causal_matched_per_event.csv,54: E03 | full_period | volatility matched on fpr (nearest_at_or_below),alarm_days,21,19,2.0
+t16_followups/causal_matched_per_event.csv,54: E03 | full_period | volatility matched on fpr (nearest_at_or_below),event_name,WorldCom selloff,WorldCom bankruptcy selloff,
+t16_followups/causal_matched_summary.json,,full_period.fully_causal.A_out,46,48,2.0
+t16_followups/causal_matched_summary.json,,full_period.fully_causal.D_plus,68.0,70.0,2.0
+t16_followups/causal_matched_summary.json,,full_period.fully_causal.f1,0.10658682634730539,0.10419161676646709,0.0023952095808383034
+t16_followups/causal_matched_summary.json,,full_period.fully_causal.fp,46,48,2.0
+t16_followups/causal_matched_summary.json,,full_period.fully_causal.fpr,0.010332434860736747,0.01078167115902965,0.00044923629829290296
+t16_followups/causal_matched_summary.json,,full_period.fully_causal.precision,0.6592592592592592,0.6444444444444445,0.014814814814814725
+t16_followups/causal_matched_summary.json,,full_period.fully_causal.recall,0.057980456026058634,0.05667752442996743,0.0013029315960912044
+t16_followups/causal_matched_summary.json,,full_period.volatility_matched.A_out,46,48,2.0
+t16_followups/causal_matched_summary.json,,full_period.volatility_matched.D_plus,8.0,10.0,2.0
+t16_followups/causal_matched_summary.json,,full_period.volatility_matched.common_mean_delay_fully_causal,22.0,23.0,1.0
+t16_followups/causal_matched_summary.json,,full_period.volatility_matched.common_mean_delay_this,-0.5,0.5,1.0
+t16_followups/causal_matched_summary.json,,full_period.volatility_matched.f1,0.1605584642233857,0.15823152995927867,0.0023269342641070445
+t16_followups/causal_matched_summary.json,,full_period.volatility_matched.fp,46,48,2.0
+t16_followups/causal_matched_summary.json,,full_period.volatility_matched.fpr,0.010332434860736747,0.01078167115902965,0.00044923629829290296
+t16_followups/causal_matched_summary.json,,full_period.volatility_matched.precision,0.75,0.7391304347826086,0.010869565217391353
+t16_followups/causal_matched_summary.json,,full_period.volatility_matched.recall,0.08990228013029317,0.08859934853420195,0.0013029315960912113
 t1_denominators/day_mask_sensitivity_true_window_excluded.csv,0: SPY | Volatility percentile,main_precision,0.6395563770794824,0.6358595194085028,0.003696857670979603
 t1_denominators/day_mask_sensitivity_true_window_excluded.csv,0: SPY | Volatility percentile,main_recall,0.2254071661237785,0.2241042345276873,0.0013029315960912113
 t1_denominators/day_mask_sensitivity_true_window_excluded.csv,0: SPY | Volatility percentile,main_f1,0.3333333333333333,0.3314065510597302,0.0019267822736031004

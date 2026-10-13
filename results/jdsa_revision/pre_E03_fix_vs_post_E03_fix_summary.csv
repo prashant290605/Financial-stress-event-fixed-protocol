@@ -23,6 +23,11 @@ t13_paper_tables/table3_spy_methods.csv,compared,72,23
 t13_paper_tables/table4_vix_benchmark.csv,compared,52,16
 t13_paper_tables/table6_spy_event_level_detection.csv,compared,104,4
 t13_paper_tables/table7_component_diagnosis.csv,compared,104,3
+t16_followups/causal_matched_comparison.csv,compared,600,169
+t16_followups/causal_matched_costs.csv,compared,1620,252
+t16_followups/causal_matched_per_event.csv,compared,1170,39
+t16_followups/causal_matched_summary.json,compared,82,16
+t16_followups/window_width_detections.csv,compared,40,0
 t1_denominators/day_mask_sensitivity_true_window_excluded.csv,compared,200,86
 t1_denominators/denominators_by_asset.csv,compared,20,5
 t1_denominators/event_aware_cost_by_asset_observable.csv,compared,1620,254

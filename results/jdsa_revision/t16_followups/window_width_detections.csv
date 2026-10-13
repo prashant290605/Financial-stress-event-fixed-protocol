@@ -1,0 +1,9 @@
+half_window,rule,events_detected,n_events,events_detected_ids
+20,volatility,10,13,"E01,E02,E03,E05,E06,E07,E08,E10,E11,E12"
+20,retrospective_confirmation,7,13,"E01,E02,E03,E06,E08,E10,E11"
+30,volatility,10,13,"E01,E02,E03,E05,E06,E07,E08,E10,E11,E12"
+30,retrospective_confirmation,7,13,"E01,E02,E03,E06,E08,E10,E11"
+45,volatility,10,13,"E01,E02,E03,E05,E06,E07,E08,E10,E11,E12"
+45,retrospective_confirmation,8,13,"E01,E02,E03,E05,E06,E08,E10,E11"
+60,volatility,10,13,"E01,E02,E03,E05,E06,E07,E08,E10,E11,E12"
+60,retrospective_confirmation,8,13,"E01,E02,E03,E05,E06,E08,E10,E11"
